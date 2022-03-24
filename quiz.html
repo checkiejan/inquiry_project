@@ -1,1 +1,69 @@
+<!doctype HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Quiz based on Ruby on Rails" />
+  <meta name="keywords" content="HTML, CSS, Form, tags" />
+  <meta name="author" content="Dylan Truong"  />
+  <title>Quiz for Ruby on Rails</title>
+  </head>
+<h1> Ruby on Rails Quiz </h1>
+<p>Here's a short quiz to learn about Ruby on Rails!</p>
 
+<form id="Quiz" method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+  <fieldset>
+ <legend>Question 1 </legend>
+ <label for="Question1">In 100 characters or less, explain the difference between Ruby and Ruby on Rails.</label>
+  <p><textarea id="Question1" name="Question 1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
+  </fieldset>
+
+<fieldset>
+<legend>Question 2</legend>
+  <P>Ruby on Rails was created by Yukihiro "Matz" Matsumoto </p>
+    <label><input type="radio" name="Question 2" value="True" required="required" /> True </label> 
+	<label><input type="radio" name="Question 2" value="False" required="required" /> False </label>
+	</fieldset>
+	
+	<fieldset>
+	<legend>Question 3</legend>
+	Which one of these are NOT functions of the Ruby on Rails network?
+	<p><label for="HTML">Rendering HTML</label>
+	<input type="checkbox" id="HTML" name="Question 3" value="Rendering HTML"/>
+	<label for="Videos">Downloading videos</label>
+		<input type="checkbox" id="Videos" name="Question 3" value="Downloading Videos"/>
+	<label for="Databases">Updating databases</label>
+	<input type="checkbox" id="Databases" name="Question 3" value="Updating Databases"/>
+	<label for="Distributing">Distributing information</label>
+	<input type="checkbox" id="Distributing" name="Question 3" value="Distributing Information"/>
+	<label for="Calculations">Calculations</label>
+	<input type="checkbox" id="Calculations" name="Question 3" value="Calculations"/></p>
+	
+</fieldset>
+
+<fieldset>
+<legend>Question 4 </legend>
+	<p><label for="List">Which of the following companies use the Ruby on Rails network?</label> 
+			<select name="Question 4" id="List">
+				<option value="Please Select">Please Select</option>			
+				<option value="Shopify">Shopify</option>			
+				<option value="Amazon">Amazon</option>
+				<option value="Facebook">Facebook</option>
+				<option value="Instagram">Instagram</option>
+				<option value="YouTube">YouTube</option>
+				<option value="Google">Google</option>
+			</select>
+		</p>
+	</fieldset>
+	
+<fieldset>
+<legend>Question 5 </legend>
+<p><label for="Question5">Which of the following....</label>
+<input type="number" id="Question5" name="Question 5" min="0" max="10" value="5" />
+
+</fieldset>
+
+<input type= "submit" value="Submit"/>
+	<input type= "reset" value="Reset Form"/>
+  </form>
+</body>
+</html>
