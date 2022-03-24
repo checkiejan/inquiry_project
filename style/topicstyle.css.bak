@@ -1,0 +1,20 @@
+* {
+	padding: 10px;
+	background-color: #BC5E5E;
+}
+
+img{
+	width: 100px;
+	border-radius: 50%;
+	height: auto;
+}
+
+article{
+	background-size: 100px 80px;
+	background-color: #FFFFFF;
+	z-index: 1;
+}
+
+#topic{
+	background-color: #FFFFFF;
+}
