@@ -18,12 +18,12 @@
     padding: 10px;
   }
 }
-.footer-mail section a{
+.footer-mail> section> a{
   text-decoration: none;
   color: #971549;
 }
 .image-us{
-  width: 15%;
+  width: 40px;
   height: auto;
 }
 .grid-container {
@@ -35,7 +35,7 @@
 }
 .grid-container > div{
   text-align: center;
-  align-items: center;
+
 }
 .p-us{
   margin-bottom: 0;
@@ -57,6 +57,9 @@
   align-items: center;
   margin-left: 10px;
   font-size: large;
+}
+.de >a:hover{
+  color:  #FBD6D2;
 }
 .t{
   margin-top: 0;
