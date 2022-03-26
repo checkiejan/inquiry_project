@@ -1,10 +1,15 @@
-* {font-family:calabri, sans-serif;
+.form {
+	font-family:calabri, sans-serif;
 }
-legend {font-weight: bold
+.legend {
+	font-weight: bold
 }
-h1 {font-weight:bold
+.header1{
+	font-weight:bold
 }
-
+.fieldset {
+	border:0.01px solid black;
+	}
 .about-us{
   font-size: xx-large;
   display: inline-block;
@@ -70,9 +75,10 @@ h1 {font-weight:bold
 }
 .t{
   margin-top: 0;
-  background: url("../images/bg.jpg") no-repeat;
+  background: url("../images/poop.png") no-repeat;
   background-position:-250px -120px ;
+  background-attachment:fixed;
+  background-size:cover;
   height: 90vh;
 }
 
-fieldset {border:0.01px solid black;}
