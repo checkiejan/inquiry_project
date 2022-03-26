@@ -1,16 +1,8 @@
-html {
-	box-sizing: border-box;
+#body{
 	margin: 0;
-	padding: 0;
 	background-color: #BC5E5E;
-	z-index: 0;
-}
-
-.body{
-	margin: 0;
 	width: auto;
 	height: auto;
-	background-color: #BC5E5E;
 }
 
 .topicarticle{
