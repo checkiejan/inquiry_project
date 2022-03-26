@@ -8,6 +8,7 @@
 .list-details {
   display: grid;
   grid-template-columns: auto auto auto;
+
   gap: 10px;
   padding: 10px;
 }
@@ -16,12 +17,28 @@
   .list-details {
     display: grid;
     grid-template-columns: auto;
-    gap: 10px;
-    padding: 10px;
   }
-  .text-ruby{
-
+  .t >button{
+    display: none;
   }
+}
+.t >button{
+  position:relative;
+  left: 60px;
+  top: 35px;
+  background: none;
+  border: 2px solid;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border-radius: 10px;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.t > button:hover{
+  border-color: #470031;
+  color: white;
+  box-shadow: 0 0.5rem 0.5rem -0.4rem #971549;
+  transform: translateY(-0.25rem);
+  cursor: pointer;
 }
 .active{
   box-shadow: 0px 4px 0px 0px #BB8EAC;
@@ -93,14 +110,14 @@
   height: auto;
   color: black;
   position: relative;
-  margin-left: 5%;
-  top: 7%;
+  margin-left: 3%;
+  top: 4%;
   border-left: 4px solid #F4BBBB;
   padding-left: 7px;
   overflow: hidden;
 }
 .t {
-  background: url("../images/bg.jpg") no-repeat;
+  background: url("../images/bg.jpg") ;
   opacity: 0.8;
   background-position: -250px -120px;
   height: 90vh;
