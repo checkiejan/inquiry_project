@@ -122,3 +122,88 @@
   background-position: -250px -120px;
   height: 90vh;
 }
+/* start of topic css */
+#body{
+	margin: 0;
+	background-color: #BC5E5E;
+	width: auto;
+	height: auto;
+}
+
+.topicarticle{
+	height: auto;
+	width: auto;
+	font-size: 60px;
+	background-color: #FFFFFF;
+	text-align: center;
+	padding: 150px;
+	margin: 260px 0 260px 0;
+}
+
+.topicarticle h3{
+	font-size: 40px;
+	padding: 0;
+	margin: 0;
+}
+
+.topicarticle h1{
+	margin: 0;
+	font-size: 72px;
+	background-color: #FFFFFF;
+}
+
+.face{
+	width: 20%;
+	border-radius: 50%;
+	height: 20%;
+	background-color: #FFFFFF;
+}
+
+.body{
+	background-size: 100px 80px;
+	background-color: #FFFFFF;
+	margin-top: 100px;
+	padding: 100px;
+	padding-top: 150px;
+	width: 60%;
+}
+
+.heading{
+	background-color: #FFFFFF;
+	font-size: 36px;
+	padding: 20px 0 0 0;
+	letter-spacing: 2px;
+	line-height: 2;
+
+}
+
+.paragraph{
+	background-color: #FFFFFF;
+	font-size: 24px;
+	padding: 0 100px 0 5px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+}
+
+.li{
+	background-color: #FFFFFF;
+	font-size: 24px;
+	padding: 0 100px 0 5px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+}
+
+.quote{
+	display: flex;
+	padding: 100px 50px 1px 0
+}
+
+.david{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-style: italic;
+	flex-direction: column;
+}
+/* end of topic css */
