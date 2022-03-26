@@ -6,8 +6,10 @@ html {
 	z-index: 0;
 }
 
-body{
+.body{
 	margin: 0;
+	width: auto;
+	height: auto;
 	background-color: #BC5E5E;
 }
 
