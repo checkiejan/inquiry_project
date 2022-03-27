@@ -1,13 +1,13 @@
-.form {
+form {
 	font-family:calabri, sans-serif;
 }
-.legend {
+legend {
 	font-weight: bold
 }
-.header1{
+.h1{
 	font-weight:bold
 }
-.fieldset {
+fieldset {
 	border:0.01px solid black;
 	}
 .about-us{
@@ -81,4 +81,3 @@
   background-size:cover;
   height: 90vh;
 }
-

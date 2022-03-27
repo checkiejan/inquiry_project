@@ -131,13 +131,13 @@
 }
 
 .topicarticle{
-	height: auto;
-	width: auto;
-	font-size: 60px;
+	/* height: auto;
+	width: auto; */
+	/* font-size: 60px; */
 	background-color: #FFFFFF;
 	text-align: center;
 	padding: 150px;
-	margin: 260px 0 260px 0;
+	margin: 100px 0 260px 0;
 }
 
 .topicarticle h3{
@@ -207,3 +207,22 @@
 	flex-direction: column;
 }
 /* end of topic css */
+
+/* start of quiz css */
+.heading-quiz{
+  margin-top: 5px;
+  text-align: center;
+}
+form {
+	font-family:calabri, sans-serif;
+}
+legend {
+	font-weight: bold
+}
+.h1{
+	font-weight:bold
+}
+fieldset {
+	border:0.01px solid black;
+	}
+  /* end of quiz css */
