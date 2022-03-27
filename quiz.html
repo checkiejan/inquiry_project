@@ -1,109 +1,130 @@
 <!doctype HTML>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="description" content="Quiz based on Ruby on Rails" />
   <meta name="keywords" content="HTML, CSS, Form, tags" />
-  <meta name="author" content="Dylan Truong"  />
+  <meta name="author" content="Dylan Truong" />
   <title>Quiz for Ruby on Rails</title>
   <link rel="stylesheet" href="style/bootstrap.min.css">
   <link rel="stylesheet" href="style/style.css">
-  </head>
+  <!-- <link rel="stylesheet" href="quizstyle.css"> -->
+</head>
 
-    <header>
-    <nav class="navbar vl navbar-dark navbar-expand-md ">
-      <div class="container-fluid">
-        <div class="">
-          <img class="ruby_intro" src="images/Ruby_intro.png" alt="ruby image">
-          <a class="navbar-brand " href="index.html">Ruby on Rails</a>
-        </div>
-        <ul class="navbar-nav ms-auto">
-          <li class=" de ">
-            <img class="ruby-icon" src="images/ruby_icon.png" alt="ruby icon">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class=" de ">
-            <img class="ruby-icon" src="images/ruby_icon.png" alt="ruby icon">
-            <a class="nav-link" href="topic.html">Topic</a>
-          </li>
-          <li class="de nav-item">
-            <img class="ruby-icon" src="images/ruby_icon.png" alt="ruby icon">
-            <a class="nav-link active" href="quiz.html">Quiz</a>
-          </li>
-          <li class="de nav-item">
-            <img class="ruby-icon" src="images/ruby_icon.png" alt="ruby icon">
-            <a class="nav-link" href="enhancement.html">Enhancement</a>
-          </li>
-        </ul>
+<header>
+  <nav class="navbar vl navbar-dark navbar-expand-md ">
+    <div class="container-fluid">
+      <div class="">
+        <img class="ruby_intro" src="images/Ruby_intro.png" alt="ruby image">
+        <a class="navbar-brand " href="index.html">Ruby on Rails</a>
       </div>
-    </nav>
-	</header>
-<h1> Ruby on Rails Quiz </h1>
-<p>Here's a short quiz to learn about Ruby on Rails!</p>
-<link rel="stylesheet" href="style/quizstyle.css">
+      <ul class="navbar-nav ms-auto">
+        <li class=" de ">
+          <img class="ruby-icon" src="images/ruby_icon.png" alt="ruby icon">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class=" de ">
+          <img class="ruby-icon" src="images/ruby_icon.png" alt="ruby icon">
+          <a class="nav-link" href="topic.html">Topic</a>
+        </li>
+        <li class="de nav-item">
+          <img class="ruby-icon" src="images/ruby_icon.png" alt="ruby icon">
+          <a class="nav-link active" href="quiz.html">Quiz</a>
+        </li>
+        <li class="de nav-item">
+          <img class="ruby-icon" src="images/ruby_icon.png" alt="ruby icon">
+          <a class="nav-link" href="enhancement.html">Enhancement</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="heading-quiz">
+  <h1 class="h1"> Ruby on Rails Quiz </h1>
+  <p>Here's a short quiz to learn about Ruby on Rails!</p>
+</div>
+
+
 
 
 <form id="Quiz" method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
-  <p><fieldset></p>
- <legend>Question 1 </legend>
- <p><label for="Question1">In 100 characters or less, explain the difference between Ruby and Ruby on Rails.</label></p>
-  <p><textarea id="Question1" name="Question 1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
+  <fieldset>
+  <legend>Student details</legend>
+  <p>
+    <label for="studentid">Student id:</label>
+    <input type="text" pattern="\d{7,10}" name="studentid" id="studentid" value="" required="required">
+  </p>
+  <p>
+    <label for="givenname">Given Name</label>
+    <input type="text" name="givenname" id="givenname" required="required" maxlength="15" pattern="^[a-zA-Z]+$" value="">
+    <label for="familyname">Family Name</label>
+    <input type="text" name="familyname" id="familyname" required="required" maxlength="15" pattern="^[a-zA-Z]+$" value="">
+  </p>
+</fieldset>
+  <fieldset>
+    <legend>Question 1 </legend>
+    <p><label for="Question1">In 100 characters or less, explain the difference between Ruby and Ruby on Rails.</label></p>
+    <p><textarea id="Question1" name="Question 1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
   </fieldset>
 
-<p><fieldset></P>
-<legend>Question 2</legend>
-  <P>Ruby on Rails was created by Yukihiro "Matz" Matsumoto </p>
+  <fieldset>
+    <legend>Question 2</legend>
+    <P>Ruby on Rails was created by Yukihiro "Matz" Matsumoto </p>
     <label><input type="radio" name="Question 2" value="True" required="required" /> True </label>
-	<label><input type="radio" name="Question 2" value="False" required="required" /> False </label>
-	</fieldset>
+    <label><input type="radio" name="Question 2" value="False" required="required" /> False </label>
+  </fieldset>
 
-	<p><fieldset></p>
-	<legend>Question 3</legend>
-	<p>Which one of these are NOT functions of the Ruby on Rails network?</p>
-	<p><label for="HTML">Rendering HTML</label>
-	<input type="checkbox" id="HTML" name="Question 3" value="Rendering HTML"/>
-	<label for="Videos">Downloading videos</label>
-		<input type="checkbox" id="Videos" name="Question 3" value="Downloading Videos"/>
-	<label for="Databases">Updating databases</label>
-	<input type="checkbox" id="Databases" name="Question 3" value="Updating Databases"/>
-	<label for="Distributing">Distributing information</label>
-	<input type="checkbox" id="Distributing" name="Question 3" value="Distributing Information"/>
-	<label for="Calculations">Calculations</label>
-	<input type="checkbox" id="Calculations" name="Question 3" value="Calculations"/></p>
+  <fieldset>
+    <legend>Question 3</legend>
+    <p>Which one of these are NOT functions of the Ruby on Rails network?</p>
+    <p><label for="HTML">Rendering HTML</label>
+      <input type="checkbox" id="HTML" name="Question 3" value="Rendering HTML" />
+      <label for="Videos">Downloading videos</label>
+      <input type="checkbox" id="Videos" name="Question 3" value="Downloading Videos" />
+      <label for="Databases">Updating databases</label>
+      <input type="checkbox" id="Databases" name="Question 3" value="Updating Databases" />
+      <label for="Distributing">Distributing information</label>
+      <input type="checkbox" id="Distributing" name="Question 3" value="Distributing Information" />
+      <label for="Calculations">Calculations</label>
+      <input type="checkbox" id="Calculations" name="Question 3" value="Calculations" />
+    </p>
 
-</fieldset>
+  </fieldset>
 
-<p><fieldset></p>
-<legend>Question 4 </legend>
-	<p><label for="List">Which of the following companies use the Ruby on Rails network?</label>
-			<select name="Question 4" id="List">
-				<option value="Please Select">Please Select</option>
-				<option value="Shopify">Shopify</option>
-				<option value="Amazon">Amazon</option>
-				<option value="Facebook">Facebook</option>
-				<option value="Instagram">Instagram</option>
-				<option value="YouTube">YouTube</option>
-				<option value="Google">Google</option>
-			</select>
-		</p>
-	</fieldset>
+  <fieldset>
+    <legend>Question 4 </legend>
+    <p><label for="List">Which of the following companies use the Ruby on Rails network?</label>
+      <select name="Question 4" id="List">
+        <option value="Please Select">Please Select</option>
+        <option value="Shopify">Shopify</option>
+        <option value="Amazon">Amazon</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Instagram">Instagram</option>
+        <option value="YouTube">YouTube</option>
+        <option value="Google">Google</option>
+      </select>
+    </p>
+  </fieldset>
 
-<p><fieldset></p>
-<legend>Question 5 </legend>
-<p><label for="Question5">From 1-10, how likely are you to use Ruby on Rails in the future?</label>
-<input type="number" id="Question5" name="Question 5" min="0" max="10" value="5" />
-
-</fieldset>
-<input type= "submit" value="Submit"/>
-	<input type= "reset" value="Reset Form"/>
-  </form>
-  <footer>
-    <div class="grid-container">
-      <div >
-        <p class="p-us">ABOUT US</p>
-         <img class="image-us" src="images/email.png" alt="email icon">
-      </div>
-      <div class=" footer-mail list-details">
+  <fieldset>
+    <legend>Question 5 </legend>
+    <p><label for="Question5">From 1-10, how likely are you to use Ruby on Rails in the future?</label>
+      <input type="number" id="Question5" name="Question 5" min="0" max="10" value="5" />
+    </p>
+  </fieldset>
+  <p>
+      <input type= "submit" value="Submit" />
+        <input type="reset" value="Reset Form" />
+      </p>
+</form>
+<footer>
+  <div class="grid-container">
+    <div>
+      <p class="p-us">ABOUT US</p>
+      <img class="image-us" src="images/email.png" alt="email icon">
+    </div>
+    <div class=" footer-mail list-details">
       <div>
         <a href="emailto:">Name: </a>
       </div>
@@ -118,9 +139,10 @@
       </div>
       <div>
         <a href="emailto:">Name: </a>
-      </div>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 </body>
+
 </html>
