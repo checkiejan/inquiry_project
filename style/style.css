@@ -123,6 +123,17 @@
   padding-left: 7px;
   overflow: hidden;
 }
+.t > * {
+  position: relative;
+  animation: frombottom 1.5s ease-in-out 0s;
+  animation-fill-mode: both;
+}
+@keyframes frombottom {
+  from {top: 50vw;
+  box-shadow: 4px 3.5rem 7.5rem -0.4rem #971549;}
+  to {right: 0;
+  }
+}
 .t {
   background: url("../images/bg.jpg") ;
   opacity: 0.8;
