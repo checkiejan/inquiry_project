@@ -230,8 +230,10 @@ legend {
 	font-weight:bold
 }
 @keyframes fromleft {
-  from {left: 100vw;}
-  to {left: 0;}
+  from {left: 100vw;
+  box-shadow: 1px 1.5rem 2.5rem -0.4rem #971549;}
+  to {left: 0;
+  }
 }
 fieldset {
 	/* border:0.01px solid black; */
