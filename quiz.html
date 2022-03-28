@@ -9,7 +9,7 @@
   <title>Quiz for Ruby on Rails</title>
   <link rel="stylesheet" href="style/bootstrap.min.css">
   <link rel="stylesheet" href="style/style.css">
-  <!-- <link rel="stylesheet" href="quizstyle.css"> -->
+  <link rel="icon" href="images/favicon.ico">
 </head>
 
 <body>
@@ -56,7 +56,7 @@
         <p>  <input type="text" pattern="\d{7,10}" name="studentid" id="studentid" value="" required="required"></p>
         </div>
         <div class="first-name">
-        
+
             <label for="firstname">First Name:</label>
           <p><input type="text" name="firstnname" id="firstname" required="required" maxlength="30" pattern="^[a-zA-Z]+$" value=""></p>
 
@@ -65,24 +65,22 @@
 
             <label for="familyname">Family Name:</label>
             <input type="text" name="familyname" id="familyname" required="required" maxlength="30" pattern="^[a-zA-Z]+$" value="">
-
-
         </div>
       </fieldset>
-
+      <hr>
       <fieldset>
         <legend>Question 1 </legend>
         <p><label for="Question1">In 100 characters or less, explain the difference between Ruby and Ruby on Rails.</label></p>
         <p><textarea id="Question1" name="Question 1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
       </fieldset>
-
+      <hr>
       <fieldset>
         <legend>Question 2</legend>
         <P>Ruby on Rails was created by Yukihiro "Matz" Matsumoto </p>
         <label><input type="radio" name="Question 2" value="True" required="required" /> True </label>
         <label><input type="radio" name="Question 2" value="False" required="required" /> False </label>
       </fieldset>
-
+      <hr>
       <fieldset>
         <legend>Question 3</legend>
         <p>Which one of these are NOT functions of the Ruby on Rails network?</p>
@@ -99,7 +97,7 @@
         </p>
 
       </fieldset>
-
+<hr>
       <fieldset>
         <legend>Question 4 </legend>
         <p><label for="List">Which of the following companies use the Ruby on Rails network?</label>
@@ -114,17 +112,18 @@
           </select>
         </p>
       </fieldset>
-
+      <hr>
       <fieldset>
         <legend>Question 5 </legend>
         <p><label for="Question5">From 1-10, how likely are you to use Ruby on Rails in the future?</label>
           <input type="number" id="Question5" name="Question 5" min="0" max="10" value="5" />
         </p>
       </fieldset>
-      <p>
-        <input type="submit" value="Submit" />
-        <input type="reset" value="Reset Form" />
+      <p class="btn">
+        <input class="submit-t submit-t-white submit-t-animated" type="submit" value="Submit" />
+        <input class="submit-t submit-t-white submit-t-animated" type="reset" value="Reset Form" />
       </p>
+
     </form>
   </div>
   <footer>

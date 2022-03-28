@@ -12,7 +12,12 @@
   gap: 10px;
   padding: 10px;
 }
-
+@media screen and (max-width:1000px) {
+  .list-details {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
 @media screen and (max-width:600px) {
   .list-details {
     display: grid;
@@ -22,6 +27,7 @@
     display: none;
   }
 }
+
 .t >button{
   position:relative;
   left: 60px;
@@ -223,24 +229,34 @@ legend {
 .h1{
 	font-weight:bold
 }
+@keyframes fromleft {
+  from {left: 100vw;}
+  to {left: 0;}
+}
 fieldset {
 	/* border:0.01px solid black; */
   display: block;
+  position: relative;
   width: 60%;
   height: auto;
   margin: 30px auto;
   transition: 0.15s;
   padding: 10px;
+  animation: fromleft 1.75s ease-in-out 0s;
+  animation-fill-mode: both;
 	}
 fieldset:hover{
   border-color: #470031;
   box-shadow: 1px 0.5rem 1.0rem -0.4rem #971549;
   transform: translateY(-0.25rem);
-
 }
+
 #quiz-body{
   background-color: #F6E7D8;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+
 }
 label{
     text-align: center;
@@ -262,4 +278,56 @@ label{
   width: 30%;
   margin-right: 3px;
 }
+hr{
+  border-color: black;
+  border-style: none;
+  border-top-style:dotted;
+  border-width: 5px;
+  width: 12%;
+  margin: auto;
+  background: none;
+}
+fieldset:last-of-type input{
+  margin: 20px;
+  background: #EEE;
+}
+/* start of select box */
+select {
+  margin: 20px;
+  width: 150px;
+  padding: 5px 5px 5px 5px;
+  font-size: 16px;
+  background:#EEE;
+}
+select::-ms-expand {
+    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
+}
+@media screen and (min-width:0\0) {
+    select {
+        background: none\9;
+        padding: 5px\9;
+    }
+}
+/* end of select box */
+
+/* start of the button */
+.btn{
+  display: block;
+  margin: auto;
+}
+.submit-t{
+  border-radius: 20px;
+  padding: 10px;
+  transition:scaleX 0.3s,scaleY 0.3s;
+}
+.submit-t:hover {
+    transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.submit-t:active {
+    transform: translateY(-0.5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* end of the button */
   /* end of quiz css */
