@@ -140,7 +140,8 @@
 .t {
   background: url("../images/bg.jpg") ;
   opacity: 0.8;
-  background-position: -250px -120px;
+  background-size: 120%;
+  background-position: -285px -220px ;
   height: 90vh;
 }
 
