@@ -4,7 +4,9 @@
   width: 25%;
   height: auto;
 }
-
+*{
+  font-family: 'Poppins', sans-serif;
+}
 .list-details {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -254,13 +256,14 @@ fieldset {
   height: auto;
   margin: 30px auto;
   transition: 0.15s;
+  border-radius: 25px;
   padding: 10px;
   animation: fromleft 1.75s ease-in-out 0s;
   animation-fill-mode: both;
 	}
 fieldset:hover{
   border-color: #470031;
-  box-shadow: 1px 0.5rem 1.0rem -0.4rem #971549;
+  box-shadow: 0.5px 0.5rem 0.8rem -0.4rem #971549;
   transform: translateY(-0.25rem);
 }
 
