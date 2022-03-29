@@ -145,11 +145,19 @@
 /* start of topic css */
 #body{
 	margin: 0;
-	background-color: #BC5E5E;
 	width: auto;
 	height: auto;
-	background: #BC5E5E url("images/ruby_background.png") repeat center;
-	
+	background-image: url();
+	background-size: 90%;
+	background-color: #BC5E5E;
+	z-index: -2;
+}
+
+
+
+
+.contentandbackground{
+	opacity: 90%;
 }
 
 .topicarticle{
