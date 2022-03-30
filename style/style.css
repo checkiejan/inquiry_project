@@ -252,6 +252,11 @@
 	align-items: center;
 
 }
+/* .article{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+} */
 .asidesection{
 	box-sizing: border-box;
 	width: 22%;
@@ -291,7 +296,7 @@
 	transform: translate(0, -5px);
 }
 
-@media (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
 	.asidesection{
 		border-radius: 15% 0 0 15%;
 		width: 30%;
