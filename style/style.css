@@ -175,8 +175,14 @@
 	padding: 150px;
 	margin: 100px 0 260px 0;
 	color: #808000;
+  animation: appear 1.75s ease-in-out 0.3s;
+  animation-fill-mode: both;
 }
-
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;
+  }
+}
 .topicarticle h3{
 	font-size: 40px;
 	padding: 0;
@@ -414,6 +420,7 @@ legend {
 }
 @keyframes fromleft {
   from {left: 100vw;
+  border-radius: 25px;
   box-shadow: 1px 1.5rem 2.5rem -0.4rem #971549;}
   to {left: 0;
   }
@@ -431,6 +438,7 @@ fieldset {
 	}
 fieldset:hover{
   border-color: #470031;
+  border-radius: 25px;
   box-shadow: 1px 0.5rem 1.0rem -0.4rem #971549;
   transform: translateY(-0.25rem);
 }
