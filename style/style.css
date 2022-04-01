@@ -520,3 +520,43 @@ select::-ms-expand {
 
 /* end of the button */
   /* end of quiz css */
+  /* start of the enhancement css */
+.eh-head{
+  text-align: center;
+  padding: 5rem;
+}
+/* .eh-body{
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+.eh-body{
+  /* background-color: #F6E7D8; */
+  padding-bottom: 5rem;
+}
+
+.eh-body section:not(:first-of-type){
+  margin-bottom: 5rem;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+/* .eh-body section:last-of-type{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+} */
+  /* end of the enhancement css */
