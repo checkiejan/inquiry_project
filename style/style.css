@@ -320,6 +320,19 @@
 }
 
 /*IN HERE */
+	.relatedtechologies, table, th, td {
+	border: 1px solid;
+}
+
+ .relatedtechnologies,table{
+	width: 100%;
+}
+
+th {
+	height: 70px;
+}
+
+
 
 /* Large tablet*/
 @media (max-width: 1150px){
