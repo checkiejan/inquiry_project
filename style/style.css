@@ -220,6 +220,11 @@
 	line-height: 1.5;
 }
 
+table, th, td {
+	width: 50px;
+	border: 1px solid black;
+}
+
 .li{
 	background-color: #FFFFFF;
 	font-size: 24px;
