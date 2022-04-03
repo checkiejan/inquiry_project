@@ -143,6 +143,8 @@
 }
 
 /* start of topic css */
+
+/*Whole page selector*/
 #body{
 	margin: 0;
 	background-color: #BC5E5E;
@@ -152,33 +154,38 @@
 	
 }
 
-.topicarticle{
+/*topic landing screen box section selector*/
+#topicarticle{
 	/* height: auto;
 	width: auto; 
 	font-size: 60px; */
-	background-color: #FFFFFF;
+	background-color: #F6E7D8;
 	text-align: center;
 	padding: 150px;
 	margin: 100px 0 260px 0;
 	color: #808000;
 }
 
-.topicarticle h3{
+/*topic landing screen upper text selector*/
+#topicarticle h3{
 	font-size: 40px;
 	padding: 0;
 	margin: 0;
 }
 
-.topicarticle h1{
+/*topic landing screen lower text selector*/
+#topicarticle h1{
 	margin: 0;
 	font-size: 72px;
-	background-color: #FFFFFF;
 }
 
-
+/*article section selector*/
 .body{
+	border-top: 3px solid #750d00;
+	border-right: 3px solid #750d00;
+	border-bottom: 3px solid #750d00;
 	background-size: 100px 80px;
-	background-color: #FFFFFF;
+	background-color: #F6E7D8;
 	margin-top: 100px;
 	margin-bottom: 100px;
 	padding: 100px;
@@ -189,8 +196,14 @@
 	color: #808000;
 }
 
+/*definition list selector*/
+#definition{
+	border-left: 5px solid #750d00;
+}
+
+/*Select all heading in article section*/
 .heading{
-	background-color: #FFFFFF;
+
 	font-size: 36px;
 	padding: 20px 0 0 0;
 	letter-spacing: 2px;
@@ -198,40 +211,38 @@
 
 }
 
+/*Select all paragraph in article section*/
 .paragraph{
-	background-color: #FFFFFF;
+	background-color: #F6E7D8;
 	font-size: 24px;
 	padding: 0 100px 0 5px;
 	letter-spacing: 1px;
 	line-height: 1.5;
 }
 
+/*ordered list elements selector*/
 .li{
-	background-color: #FFFFFF;
 	font-size: 24px;
 	padding: 0 100px 0 5px;
 	letter-spacing: 1px;
 	line-height: 1.5;
 }
 
-.quote{
-	display: flex;
-	padding: 100px 50px 1px 0
-}
-
-.david{
+/*david's name caption*/
+#david{
 	font-weight: bold;
 	font-style: italic;
 }
 
-.face{
+/*david's image*/
+#face{
 	width: 20%;
 	border-radius: 50%;
 	height: 20%;
-	background-color: #FFFFFF;
 }
 
-.davidandface{
+/*david section selector*/
+#davidandface{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -239,11 +250,15 @@
 	
 }
 
-.asidesection{
+/*Aside section selector*/
+#asidesection{
 	box-sizing: border-box;
-	width: 20%;
+	border-top: 3px solid #750d00;
+	border-left: 3px solid #750d00;
+	border-bottom: 3px solid #750d00;
+	width: 30%;
 	float: right;
-	background-color: #FFFFFF;
+	background-color: #F6E7D8;
 	margin-top: 100px;
 	margin-right: 0;
 	padding: 40px;
@@ -254,11 +269,13 @@
 	border-radius: 15% 0 0 15%;
 }
 
-.asidesection h2{
+/*aside section select all headings*/
+#asidesection h2{
 	color: #808000;
 }
 
-.asidesection a{
+/*aside section select button elements*/
+#asidesection a{
 	color: #333300;
 	background-color: #FF9898;
 	width: 80%;
@@ -268,21 +285,24 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-decoration: none;
 }
 
-.asidesection a:hover{
+/*"On-Hover" psuedo class of aside section button elements*/
+#asidesection a:hover{
 	color: #FFFFFF;
 	background-color: #FBAEAE;
 	box-shadow: 10px 10px 5px #Ffd6d6;
 	transform: translate(0, -5px);
 }
 
+/*Fix text wrapping issue*/
 @media (max-width: 1500px) {
-	.asidesection{
+	#asidesection{
 		border-radius: 15% 0 0 15%;
 		width: 30%;
 	}
-	.asidesection a{
+	#asidesection a{
 	color: #333300;
 	background-color: #FF9898;
 	width: 80%;
@@ -305,23 +325,23 @@
 	
 }
 
-/* Large tablet*/
+/*Responsive: Large tablet*/
 @media (max-width: 1150px){
-	.asidesection{
+	#asidesection{
 		float: right;
 		border-radius: 15% 0 0 15%;
 		width: 70%;
 	}
 	
-	.asidesection h2{
+	#asidesection h2{
 		font-size: 40px;
 	}
 	
-	.asidesection a{
+	#asidesection a{
 		font-size: 20px;
 	}
 	
-	.asidesection h2{
+	#asidesection h2{
 	display: flex;
 	color: #808000;
 	width: 80%;
@@ -334,7 +354,7 @@
 	}
 }
 
-/* medium tablet*/
+/*Responsive: medium tablet*/
 @media (max-width: 773px){
 	.body{
 		width: 99%;
@@ -345,20 +365,20 @@
 		padding: 0 20px 0 5px;
 	}
 	
-	.asidesection{
+	#asidesection{
 		width: 90%;
 	}
 	
-	.topicarticle h3{
+	#topicarticle h3{
 		font-size: 20px;
 	}
 
-	.topicarticle h1{
+	#topicarticle h1{
 		font-size: 52px;
 	}
 }
 
-/* phone*/
+/*Responsive: smartphone*/
 @media (max-width: 650px){
 	.body{
 		width: 100%;
@@ -366,18 +386,18 @@
 		border-radius: 0;
 	}
 	
-	.asidesection{
+	#asidesection{
 		width: 98%;
 	}
 	
-	.topicarticle h3{
+	#topicarticle h3{
 		font-size: 20px;
 	}
 
-	.topicarticle h1{
+	#topicarticle h1{
 		font-size: 40px;
 	}
-	.topicarticle{
+	#topicarticle{
 	padding: 50px;
 }
 }
