@@ -532,6 +532,8 @@ select::-ms-expand {
 
 /* end of the button */
   /* end of quiz css */
+  
+  
   /* start of the enhancement css */
 .eh-head{
   text-align: center;
@@ -555,8 +557,9 @@ select::-ms-expand {
 	}
 } */
 .eh-body{
-  /* background-color: #F6E7D8; */
+   background-color: #F6E7D8;
   padding-bottom: 5rem;
+  
 }
 
 .eh-body section:not(:first-of-type){
