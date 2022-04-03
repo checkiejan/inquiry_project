@@ -156,15 +156,22 @@
 
 /*topic landing screen box section selector*/
 #topicarticle{
-	/* height: auto;
-	width: auto; 
-	font-size: 60px; */
 	background-color: #F6E7D8;
 	text-align: center;
 	padding: 150px;
 	margin: 100px 0 260px 0;
 	color: #808000;
+	animation: appear 1.75s ease-in-out 0.3s;
+	animation-fill-mode: both;
 }
+
+/*topic landing screen fade in animation*/
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;
+  }
+}
+
 
 /*topic landing screen upper text selector*/
 #topicarticle h3{
