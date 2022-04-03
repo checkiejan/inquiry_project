@@ -1,17 +1,12 @@
-.about-us {
-  font-size: xx-large;
-  display: inline-block;
-  width: 25%;
-  height: auto;
-}
-
 .list-details {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 10px;
   padding: 10px;
 }
-
+*{
+  font-family: 'Poppins', sans-serif;
+}
 @media screen and (max-width:1000px) {
   .list-details {
     display: grid;
@@ -25,6 +20,9 @@
   }
   .t >button{
     display: none;
+  }
+  .text-ruby{
+    font-size:
   }
 }
 
@@ -136,11 +134,15 @@
   }
 }
 .t {
+  overflow-y: hidden;
   background: url("../images/bg.jpg") ;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   opacity: 0.8;
-  background-position: -250px -120px;
   height: 90vh;
 }
+
 
 /* start of topic css */
 
