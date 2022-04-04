@@ -493,22 +493,36 @@ fieldset:hover{
 label{
     text-align: center;
   }
+.first-name{
+  margin-right: 2rem;
+}
+.family-name{
+  margin-left: 3rem;
+}
 @media screen and (max-width:1200px){
 #stud-details{ /* when the screen becomes small*/
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto;
 }
 
-.first-name, .family-name{
-  display: inline;
+.family-name{
+  margin-left: 0;
 }
 }
-
+#stud-details input{
+  border-radius: 5px;
+  background: #EEE;
+  padding: 3px;
+  padding-left: 5px;
+}
 .first-name, .family-name{
   display: inline-block;
-  width: 30%;
-  margin-right: 3px;
+  width: 20%;
+}
+fieldset:nth-of-type(2) textarea{
+  border-radius: 10px;
+  background: #EEE;
+  padding: 5px;
 }
 hr{
   border-color: black;
@@ -522,9 +536,11 @@ hr{
 fieldset:last-of-type input{
   margin: 20px;
   background: #EEE;
+  border-radius: 10px;
 }
 /* start of select box */
 select {
+  border-radius: 10px;
   margin: 20px;
   width: 150px;
   padding: 5px 5px 5px 5px;
