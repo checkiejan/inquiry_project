@@ -238,6 +238,12 @@
 	line-height: 1.5;
 }
 
+/*table selector*/
+table, th, td {
+	width: 50px;
+	border: 1px solid black;
+}
+
 /*ordered list elements selector*/
 .li{
 	font-size: 24px;
@@ -343,9 +349,27 @@
 
 }
 
+
+/*IN HERE */
+.relatedtechologies, table, th, td {
+	border: 1px solid;
+}
+
+.relatedtechnologies,table{
+	width: 100%;
+}
+
+th {
+	height: 70px;
+}
+
+
+
+
 /*Responsive: Large tablet*/
 @media screen and (max-width: 1150px){
 	#asidesection{
+
 		float: right;
 		border-radius: 15% 0 0 15%;
 		width: 70%;
