@@ -136,12 +136,21 @@
   background: url("../images/bg.jpg") ;
   background-size: cover;
   background-position: center;
+  backdrop-filter: blur(10px);
   background-repeat: no-repeat;
   opacity: 0.8;
   height: 90vh;
 }
+@media screen and (max-width:1200px){
+  .t{
+    background: url("../images/bg.jpg") ;
+    background-size: cover;
+    background-position: center;
+    /* background-color: #203239; */
+    background-blend-mode: darken;
 
-
+  }
+}
 /* start of topic css */
 
 /*Whole page selector*/
@@ -304,7 +313,7 @@
 }
 
 /*Fix text wrapping issue*/
-@media (max-width: 1500px) {
+@media scren and (max-width: 1500px) {
 	#asidesection{
 		border-radius: 15% 0 0 15%;
 		width: 30%;
@@ -333,7 +342,7 @@
 }
 
 /*Responsive: Large tablet*/
-@media (max-width: 1150px){
+@media screen and (max-width: 1150px){
 	#asidesection{
 		float: right;
 		border-radius: 15% 0 0 15%;
@@ -362,7 +371,7 @@
 }
 
 /*Responsive: medium tablet*/
-@media (max-width: 773px){
+@media screen and (max-width: 773px){
 	.body{
 		width: 99%;
 		padding: 50px;
@@ -386,7 +395,7 @@
 }
 
 /*Responsive: smartphone*/
-@media (max-width: 650px){
+@media screen and (max-width: 650px){
 	.body{
 		width: 100%;
 		padding: 25px;
