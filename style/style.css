@@ -51,7 +51,6 @@
 }
 .de:hover > .ruby-icon{  /* when elements of the navbar being hoverd the ruby icon will rotate */
   transform: rotate(120deg);
-  -webkit-transform: rotate(120deg); /* enable the element to be transformed in 2 dimension*/
 }
 .nav-link{ /* adjust the time for transition when being hovered */
   transition: color 0.4s, box-shadow 1s;
@@ -321,7 +320,7 @@ table, th, td {
 }
 
 /*Fix text wrapping issue*/
-@media scren and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
 	#asidesection{
 		border-radius: 15% 0 0 15%;
 		width: 30%;
@@ -560,15 +559,7 @@ select {
   font-size: 16px;
   background:#EEE;
 }
-select::-ms-expand {
-    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
-}
-@media screen and (min-width:0\0) {
-    select {
-        background: none\9;
-        padding: 5px\9;
-    }
-}
+
 /* end of select box */
 
 /* start of the button */
@@ -579,7 +570,7 @@ select::-ms-expand {
 .submit-t{
   border-radius: 20px;
   padding: 10px;
-  transition:scaleX 0.3s,scaleY 0.3s; /* set time for transition */
+  transition: 0.05s; /* set time for transition */
 }
 .submit-t:hover { /*  when being hovered the button will expand the scale and have shadow */
     transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
