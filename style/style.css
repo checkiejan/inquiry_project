@@ -1,33 +1,31 @@
-.list-details {
+.list-details { /* reponsive footer when default this will show up on three columns */
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 10px;
   padding: 10px;
 }
+
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* set font for the whole webpage */
 }
 @media screen and (max-width:1000px) {
-  .list-details {
+  .list-details {  /* reponsive footer when screen 600px this will show up on two columns */
     display: grid;
     grid-template-columns: auto auto;
   }
 }
 @media screen and (max-width:600px) {
-  .list-details {
+  .list-details {  /* reponsive footer when screen 600px this will show up on one columns */
     display: grid;
     grid-template-columns: auto;
   }
-  .t >button{
+  .t >button{   /* reponsive design when screen 600px button disappears */
     display: none;
-  }
-  .text-ruby{
-    font-size:
   }
 }
 
-.t >button{
-  position:relative;
+.t >button{  /* style the button  */
+  position:relative;  /*  position for the button */
   left: 60px;
   top: 35px;
   background: none;
@@ -35,27 +33,27 @@
   padding: 1rem 2rem;
   font-size: 1em;
   border-radius: 10px;
-  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;  /* transition for the button when hover, setting time for each transition  */
 }
-.t > button:hover{
+.t > button:hover{  /* what the button will look like when being hoverd */
   border-color: #470031;
   color: white;
   box-shadow: 0 0.5rem 0.5rem -0.4rem #971549;
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.25rem);  /* when being hover the button will move on the Y-axis up direction so the value is negative */
   cursor: pointer;
 }
-.active{
+.active{  /* to show the element that is active on the navbar */
   box-shadow: 0px 4px 0px 0px #BB8EAC;
 }
-.de:hover > .nav-link{
+.de:hover > .nav-link{  /* box shadow will show up when elements of the navbar being hoverd */
   box-shadow: 0px 4px 0px 0px #BB8EAC;
   color: #FBD6D2;
 }
-.de:hover > .ruby-icon{
+.de:hover > .ruby-icon{  /* when elements of the navbar being hoverd the ruby icon will rotate */
   transform: rotate(120deg);
-   -webkit-transform: rotate(120deg);
+  -webkit-transform: rotate(120deg); /* enable the element to be transformed in 2 dimension*/
 }
-.nav-link{
+.nav-link{ /* adjust the time for transition when being hovered */
   transition: color 0.4s, box-shadow 1s;
 }
 
@@ -71,7 +69,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 20% auto;
+  grid-template-columns: 20% auto; /* to divide the footer into 2 section one is the icon and the other is for email */
   gap: 10px;
   background-color: #FF9898;
   padding: 10px;
@@ -87,13 +85,13 @@
   margin-bottom: 0;
 }
 
-.vl {
+.vl { /* background color for the nav bar */
   background-color: #CF455C;
 }
 
 .ruby_intro {
   width: 75px;
-  height: auto;
+  height: auto; /* set size for the ruby logo*/
 }
 
 .ruby-icon {
@@ -102,7 +100,7 @@
   display: inline-block;
   overflow: hidden;
    transition-duration: 1s;
-   transition-property: transform;
+   transition-property: transform; /* transformation when being hoverd for 1 second */
 }
 .de {
   display: flex;
@@ -124,8 +122,8 @@
 }
 .t > * {
   position: relative;
-  animation: frombottom 1.5s ease-in-out 0s;
-  animation-fill-mode: both;
+  animation: frombottom 1.5s ease-in-out 0s; /* animation when the page is first loaded the second value is animation duration and the last one is animation delay the third one is for the speed of animation  */
+  animation-fill-mode: both; /* after animation when element will be kept at the original place */
 }
 @keyframes frombottom {
   from {top: 50vw;
@@ -418,20 +416,18 @@
   padding-top: 5px;
   text-align: center;
 }
-form {
-	font-family:calabri, sans-serif;
-}
+
 legend {
 	font-weight: bold
 }
 .h1{
 	font-weight:bold
 }
-@keyframes fromleft {
-  from {left: 100vw;
+@keyframes fromleft { /* animation to make the box move from left */
+  from {left: 100vw; /* the initial position of the box*/
   border-radius: 25px;
   box-shadow: 1px 1.5rem 2.5rem -0.4rem #971549;}
-  to {left: 0;
+  to {left: 0; /* the final position of the box*/
   }
 }
 fieldset {
@@ -442,14 +438,14 @@ fieldset {
   margin: 30px auto;
   transition: 0.15s;
   padding: 10px;
-  animation: fromleft 1.75s ease-in-out 0s;
-  animation-fill-mode: both;
+  animation: fromleft 1.75s ease-in-out 0s; /* animation when the page is first loaded the second value is animation duration and the last one is animation delay the third one is for the speed of animation  */
+  animation-fill-mode: both; /* after animation it will stay at that position */
 	}
 fieldset:hover{
   border-color: #470031;
   border-radius: 25px;
   box-shadow: 1px 0.5rem 1.0rem -0.4rem #971549;
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.25rem); /* when being hoverd, the fieldset will move on the y-axis*/
 }
 
 #quiz-body{
@@ -457,13 +453,13 @@ fieldset:hover{
   margin: 0;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow-x: hidden; /* when animation happens it will expand teh screen so hidden will prevent that from happening */
 }
 label{
     text-align: center;
   }
 @media screen and (max-width:1200px){
-#stud-details{
+#stud-details{ /* when the screen becomes small*/
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -519,14 +515,14 @@ select::-ms-expand {
 .submit-t{
   border-radius: 20px;
   padding: 10px;
-  transition:scaleX 0.3s,scaleY 0.3s;
+  transition:scaleX 0.3s,scaleY 0.3s; /* set time for transition */
 }
-.submit-t:hover {
+.submit-t:hover { /*  when being hovered the button will expand the scale and have shadow */
     transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 .submit-t:active {
-    transform: translateY(-0.5px);
+    transform: translateY(-0.5px); /* when being pressed the button will move along y-axis */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -543,23 +539,6 @@ select::-ms-expand {
   text-align: center;
   padding: 5rem;
 }
-/* .eh-body{
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  height: 100vh;
-}
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-} */
 .eh-body{
    background-color: #F6E7D8;
   padding-bottom: 5rem;
