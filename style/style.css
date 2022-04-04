@@ -1,37 +1,31 @@
-.about-us {
-  font-size: xx-large;
-  display: inline-block;
-  width: 25%;
-  height: auto;
-}
-
-.list-details {
+.list-details { /* reponsive footer when default this will show up on three columns */
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 10px;
   padding: 10px;
 }
+
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* set font for the whole webpage */
 }
 @media screen and (max-width:1000px) {
-  .list-details {
+  .list-details {  /* reponsive footer when screen 600px this will show up on two columns */
     display: grid;
     grid-template-columns: auto auto;
   }
 }
 @media screen and (max-width:600px) {
-  .list-details {
+  .list-details {  /* reponsive footer when screen 600px this will show up on one columns */
     display: grid;
     grid-template-columns: auto;
   }
-  .t >button{
+  .t >button{   /* reponsive design when screen 600px button disappears */
     display: none;
   }
 }
 
-.t >button{
-  position:relative;
+.t >button{  /* style the button  */
+  position:relative;  /*  position for the button */
   left: 60px;
   top: 35px;
   background: none;
@@ -39,27 +33,27 @@
   padding: 1rem 2rem;
   font-size: 1em;
   border-radius: 10px;
-  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;  /* transition for the button when hover, setting time for each transition  */
 }
-.t > button:hover{
+.t > button:hover{  /* what the button will look like when being hoverd */
   border-color: #470031;
   color: white;
   box-shadow: 0 0.5rem 0.5rem -0.4rem #971549;
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.25rem);  /* when being hover the button will move on the Y-axis up direction so the value is negative */
   cursor: pointer;
 }
-.active{
+.active{  /* to show the element that is active on the navbar */
   box-shadow: 0px 4px 0px 0px #BB8EAC;
 }
-.de:hover > .nav-link{
+.de:hover > .nav-link{  /* box shadow will show up when elements of the navbar being hoverd */
   box-shadow: 0px 4px 0px 0px #BB8EAC;
   color: #FBD6D2;
 }
-.de:hover > .ruby-icon{
+.de:hover > .ruby-icon{  /* when elements of the navbar being hoverd the ruby icon will rotate */
   transform: rotate(120deg);
-   -webkit-transform: rotate(120deg);
+  -webkit-transform: rotate(120deg); /* enable the element to be transformed in 2 dimension*/
 }
-.nav-link{
+.nav-link{ /* adjust the time for transition when being hovered */
   transition: color 0.4s, box-shadow 1s;
 }
 
@@ -75,7 +69,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 20% auto;
+  grid-template-columns: 20% auto; /* to divide the footer into 2 section one is the icon and the other is for email */
   gap: 10px;
   background-color: #FF9898;
   padding: 10px;
@@ -91,13 +85,13 @@
   margin-bottom: 0;
 }
 
-.vl {
+.vl { /* background color for the nav bar */
   background-color: #CF455C;
 }
 
 .ruby_intro {
   width: 75px;
-  height: auto;
+  height: auto; /* set size for the ruby logo*/
 }
 
 .ruby-icon {
@@ -106,7 +100,7 @@
   display: inline-block;
   overflow: hidden;
    transition-duration: 1s;
-   transition-property: transform;
+   transition-property: transform; /* transformation when being hoverd for 1 second */
 }
 .de {
   display: flex;
@@ -128,8 +122,8 @@
 }
 .t > * {
   position: relative;
-  animation: frombottom 1.5s ease-in-out 0s;
-  animation-fill-mode: both;
+  animation: frombottom 1.5s ease-in-out 0s; /* animation when the page is first loaded the second value is animation duration and the last one is animation delay the third one is for the speed of animation  */
+  animation-fill-mode: both; /* after animation when element will be kept at the original place */
 }
 @keyframes frombottom {
   from {top: 50vw;
@@ -140,59 +134,74 @@
 .t {
   overflow-y: hidden;
   background: url("../images/bg.jpg") ;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
   opacity: 0.8;
-  /* background-color: #ECA6A6;
-  background-blend-mode: soft-light; */
-  /* background-size: 120%; */
-  background-position: -285px -220px ;
   height: 90vh;
 }
+@media screen and (max-width:1200px){
+  .t{
+    background: url("../images/bg.jpg") ;
+    background-size: cover;
+    background-position: center;
+    /* background-color: #203239; */
+    background-blend-mode: darken;
 
+  }
+}
 /* start of topic css */
+
+/*Whole page selector*/
 #body{
 	margin: 0;
+	background-color: #BC5E5E;
 	width: auto;
 	height: auto;
-	background-image: url();
-	background-size: 90%;
-	background-color: #BC5E5E;
-	z-index: -2;
+	background: #BC5E5E url("images/ruby_background.png") repeat center;
+
 }
 
-
-
-
-.contentandbackground{
-	opacity: 90%;
-}
-
-.topicarticle{
-	/* height: auto;
-	width: auto;
-	font-size: 60px; */
-	background-color: #FFFFFF;
+/*topic landing screen box section selector*/
+#topicarticle{
+	background-color: #F6E7D8;
 	text-align: center;
 	padding: 150px;
 	margin: 100px 0 260px 0;
 	color: #808000;
+	animation: appear 1.75s ease-in-out 0.3s;
+	animation-fill-mode: both;
 }
 
-.topicarticle h3{
+/*topic landing screen fade in animation*/
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;
+  }
+}
+
+
+/*topic landing screen upper text selector*/
+#topicarticle h3{
 	font-size: 40px;
 	padding: 0;
 	margin: 0;
 }
 
-.topicarticle h1{
+/*topic landing screen lower text selector*/
+#topicarticle h1{
 	margin: 0;
 	font-size: 72px;
-	background-color: #FFFFFF;
 }
 
-
+/*article section selector*/
 .body{
+	border-top: 3px solid #750d00;
+	border-right: 3px solid #750d00;
+	border-bottom: 3px solid #750d00;
 	background-size: 100px 80px;
-	background-color: #FFFFFF;
+	background-color: #F6E7D8;
 	margin-top: 100px;
 	margin-bottom: 100px;
 	padding: 100px;
@@ -203,8 +212,14 @@
 	color: #808000;
 }
 
+/*definition list selector*/
+#definition{
+	border-left: 5px solid #750d00;
+}
+
+/*Select all heading in article section*/
 .heading{
-	background-color: #FFFFFF;
+
 	font-size: 36px;
 	padding: 20px 0 0 0;
 	letter-spacing: 2px;
@@ -212,56 +227,60 @@
 
 }
 
+/*Select all paragraph in article section*/
 .paragraph{
-	background-color: #FFFFFF;
+	background-color: #F6E7D8;
 	font-size: 24px;
 	padding: 0 100px 0 5px;
 	letter-spacing: 1px;
 	line-height: 1.5;
 }
 
+/*table selector*/
 table, th, td {
 	width: 50px;
 	border: 1px solid black;
 }
 
+/*ordered list elements selector*/
 .li{
-	background-color: #FFFFFF;
 	font-size: 24px;
 	padding: 0 100px 0 5px;
 	letter-spacing: 1px;
 	line-height: 1.5;
 }
 
-.quote{
-	display: flex;
-	padding: 100px 50px 1px 0
-}
-
-.david{
+/*david's name caption*/
+#david{
 	font-weight: bold;
 	font-style: italic;
 }
 
-.face{
+/*david's image*/
+#face{
 	width: 20%;
 	border-radius: 50%;
 	height: 20%;
-	background-color: #FFFFFF;
 }
 
-.davidandface{
+/*david section selector*/
+#davidandface{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
 }
-.asidesection{
+
+/*Aside section selector*/
+#asidesection{
 	box-sizing: border-box;
-	width: 22%;
+	border-top: 3px solid #750d00;
+	border-left: 3px solid #750d00;
+	border-bottom: 3px solid #750d00;
+	width: 30%;
 	float: right;
-	background-color: #FFFFFF;
+	background-color: #F6E7D8;
 	margin-top: 100px;
 	margin-right: 0;
 	padding: 40px;
@@ -272,11 +291,13 @@ table, th, td {
 	border-radius: 15% 0 0 15%;
 }
 
-.asidesection h2{
+/*aside section select all headings*/
+#asidesection h2{
 	color: #808000;
 }
 
-.asidesection a{
+/*aside section select button elements*/
+#asidesection a{
 	color: #333300;
 	background-color: #FF9898;
 	width: 80%;
@@ -289,19 +310,21 @@ table, th, td {
 	text-decoration: none;
 }
 
-.asidesection a:hover{
+/*"On-Hover" psuedo class of aside section button elements*/
+#asidesection a:hover{
 	color: #FFFFFF;
 	background-color: #FBAEAE;
 	box-shadow: 10px 10px 5px #Ffd6d6;
 	transform: translate(0, -5px);
 }
 
-@media (max-width: 1500px) {
-	.asidesection{
+/*Fix text wrapping issue*/
+@media scren and (max-width: 1500px) {
+	#asidesection{
 		border-radius: 15% 0 0 15%;
 		width: 30%;
 	}
-	.asidesection a{
+	#asidesection a{
 	color: #333300;
 	background-color: #FF9898;
 	width: 80%;
@@ -324,12 +347,13 @@ table, th, td {
 
 }
 
+
 /*IN HERE */
-	.relatedtechologies, table, th, td {
+.relatedtechologies, table, th, td {
 	border: 1px solid;
 }
 
- .relatedtechnologies,table{
+.relatedtechnologies,table{
 	width: 100%;
 }
 
@@ -339,23 +363,25 @@ th {
 
 
 
-/* Large tablet*/
-@media (max-width: 1150px){
-	.asidesection{
+
+/*Responsive: Large tablet*/
+@media screen and (max-width: 1150px){
+	#asidesection{
+
 		float: right;
 		border-radius: 15% 0 0 15%;
 		width: 70%;
 	}
 
-	.asidesection h2{
+	#asidesection h2{
 		font-size: 40px;
 	}
 
-	.asidesection a{
+	#asidesection a{
 		font-size: 20px;
 	}
 
-	.asidesection h2{
+	#asidesection h2{
 	display: flex;
 	color: #808000;
 	width: 80%;
@@ -368,8 +394,8 @@ th {
 	}
 }
 
-/* medium tablet*/
-@media (max-width: 773px){
+/*Responsive: medium tablet*/
+@media screen and (max-width: 773px){
 	.body{
 		width: 99%;
 		padding: 50px;
@@ -379,39 +405,39 @@ th {
 		padding: 0 20px 0 5px;
 	}
 
-	.asidesection{
+	#asidesection{
 		width: 90%;
 	}
 
-	.topicarticle h3{
+	#topicarticle h3{
 		font-size: 20px;
 	}
 
-	.topicarticle h1{
+	#topicarticle h1{
 		font-size: 52px;
 	}
 }
 
-/* phone*/
-@media (max-width: 650px){
+/*Responsive: smartphone*/
+@media screen and (max-width: 650px){
 	.body{
 		width: 100%;
 		padding: 25px;
 		border-radius: 0;
 	}
 
-	.asidesection{
+	#asidesection{
 		width: 98%;
 	}
 
-	.topicarticle h3{
+	#topicarticle h3{
 		font-size: 20px;
 	}
 
-	.topicarticle h1{
+	#topicarticle h1{
 		font-size: 40px;
 	}
-	.topicarticle{
+	#topicarticle{
 	padding: 50px;
 }
 }
@@ -423,19 +449,18 @@ th {
   padding-top: 5px;
   text-align: center;
 }
-form {
-	font-family:calabri, sans-serif;
-}
+
 legend {
 	font-weight: bold
 }
 .h1{
 	font-weight:bold
 }
-@keyframes fromleft {
-  from {left: 100vw;
+@keyframes fromleft { /* animation to make the box move from left */
+  from {left: 100vw; /* the initial position of the box*/
+  border-radius: 25px;
   box-shadow: 1px 1.5rem 2.5rem -0.4rem #971549;}
-  to {left: 0;
+  to {left: 0; /* the final position of the box*/
   }
 }
 fieldset {
@@ -446,13 +471,14 @@ fieldset {
   margin: 30px auto;
   transition: 0.15s;
   padding: 10px;
-  animation: fromleft 1.75s ease-in-out 0s;
-  animation-fill-mode: both;
+  animation: fromleft 1.75s ease-in-out 0s; /* animation when the page is first loaded the second value is animation duration and the last one is animation delay the third one is for the speed of animation  */
+  animation-fill-mode: both; /* after animation it will stay at that position */
 	}
 fieldset:hover{
   border-color: #470031;
+  border-radius: 25px;
   box-shadow: 1px 0.5rem 1.0rem -0.4rem #971549;
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.25rem); /* when being hoverd, the fieldset will move on the y-axis*/
 }
 
 #quiz-body{
@@ -460,13 +486,13 @@ fieldset:hover{
   margin: 0;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow-x: hidden; /* when animation happens it will expand teh screen so hidden will prevent that from happening */
 }
 label{
     text-align: center;
   }
 @media screen and (max-width:1200px){
-#stud-details{
+#stud-details{ /* when the screen becomes small*/
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -522,16 +548,47 @@ select::-ms-expand {
 .submit-t{
   border-radius: 20px;
   padding: 10px;
-  transition:scaleX 0.3s,scaleY 0.3s;
+  transition:scaleX 0.3s,scaleY 0.3s; /* set time for transition */
 }
-.submit-t:hover {
+.submit-t:hover { /*  when being hovered the button will expand the scale and have shadow */
     transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 .submit-t:active {
-    transform: translateY(-0.5px);
+    transform: translateY(-0.5px); /* when being pressed the button will move along y-axis */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* end of the button */
   /* end of quiz css */
+
+  /* start of the enhancement css */
+
+
+
+
+  /* start of the enhancement css */
+.eh-head{
+  text-align: center;
+  padding: 5rem;
+}
+.eh-body{
+   background-color: #F6E7D8;
+  padding-bottom: 5rem;
+
+}
+
+.eh-body section:not(:first-of-type){
+  margin-bottom: 5rem;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+/* .eh-body section:last-of-type{
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+} */
+
+  /* end of the enhancement css */
