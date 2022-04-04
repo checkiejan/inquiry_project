@@ -26,7 +26,7 @@
 
 .t >button{  /* style the button  */
   position:relative;  /*  position for the button */
-  left: 60px;
+  left: 70px;
   top: 35px;
   background: none;
   border: 2px solid;
@@ -143,12 +143,14 @@
 }
 @media screen and (max-width:1200px){
   .t{
-    background: url("../images/bg.jpg") ;
+    background: url("../images/bg2.jpg") ;
     background-size: cover;
     background-position: center;
     /* background-color: #203239; */
-    background-blend-mode: darken;
-
+  }
+  .text-ruby{
+    width: 70%;
+    height: auto;
   }
 }
 /* start of topic css */
