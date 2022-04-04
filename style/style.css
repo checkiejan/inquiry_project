@@ -354,16 +354,18 @@ table, th, td {
 table, th, td {
 	border: 3px solid;
 	padding: 1%;
-	
+
 }
 
 
 table{
-	width: 1000px;
+	width: 100%;
 	height: 100%;
-	overflow: scroll;
-}
 
+}
+#sect06 div{
+  	overflow: scroll;
+}
 td{
 	background-color: #E7CCAE;
 }
@@ -372,7 +374,7 @@ td{
 th {
 	height: 70px;
 	background-color: #DFD0C0;
-	
+
 }
 
 
