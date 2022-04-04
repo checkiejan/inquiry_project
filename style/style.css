@@ -19,12 +19,15 @@
     display: grid;
     grid-template-columns: auto;
   }
-  .t >button{   /* reponsive design when screen 600px button disappears */
+  .ct >button{   /* reponsive design when screen 600px button disappears */
     display: none;
   }
 }
-
-.t >button{  /* style the button  */
+.ct{
+  position: absolute;
+  top: 6.5rem;
+}
+.ct >button{  /* style the button  */
   position:relative;  /*  position for the button */
   left: 60px;
   top: 35px;
@@ -35,7 +38,7 @@
   border-radius: 10px;
   transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;  /* transition for the button when hover, setting time for each transition  */
 }
-.t > button:hover{  /* what the button will look like when being hoverd */
+.ct > button:hover{  /* what the button will look like when being hoverd */
   border-color: #470031;
   color: white;
   box-shadow: 0 0.5rem 0.5rem -0.4rem #971549;
@@ -120,7 +123,7 @@
   padding-left: 7px;
   overflow: hidden;
 }
-.t > * {
+.ct > * {
   position: relative;
   animation: frombottom 1.5s ease-in-out 0s; /* animation when the page is first loaded the second value is animation duration and the last one is animation delay the third one is for the speed of animation  */
   animation-fill-mode: both; /* after animation when element will be kept at the original place */
@@ -131,26 +134,27 @@
   to {right: 0;
   }
 }
+.id-body{
+    overflow-y: hidden;
+}
 .t {
-  overflow-y: hidden;
   background: url("../images/bg.jpg") ;
   background-size: cover;
   background-position: center;
-  backdrop-filter: blur(10px);
+  filter: blur(3px);
   background-repeat: no-repeat;
   opacity: 0.8;
   height: 90vh;
 }
-@media screen and (max-width:1200px){
+/* @media screen and (max-width:1200px){
   .t{
     background: url("../images/bg.jpg") ;
     background-size: cover;
     background-position: center;
-    /* background-color: #203239; */
-    background-blend-mode: darken;
+  \
 
   }
-}
+} */
 /* start of topic css */
 
 /*Whole page selector*/
