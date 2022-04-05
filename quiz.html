@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="description" content="Quiz based on Ruby on Rails" />
   <meta name="keywords" content="HTML, CSS, Form, tags" />
-  <meta name="author" content="Dylan Truong" />
+  <meta name="author" content="Group 5" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz for Ruby on Rails</title>
   <link rel="stylesheet" href="style/bootstrap.min.css">
@@ -57,18 +57,18 @@
         <legend>Student details</legend>
         <div class="studentid">
           <label for="studentid">Student ID:</label>
-        <p>  <input type="text" pattern="\d{7,10}" name="studentid" id="studentid" value="" required="required"></p>
+        <p>  <input type="text" pattern="^\d{7}|^\d{10}$" name="studentid" id="studentid" value="" required="required"></p>
         </div>
         <div class="first-name">
 
             <label for="firstname">First name:</label>
-          <p><input type="text" name="firstnname" id="firstname" required="required" maxlength="30" pattern="^[a-zA-Z]+$" value=""></p>
+          <p><input type="text" name="firstnname" id="firstname" required="required" maxlength="30" pattern="^[a-zA-Z\s-]+$" value=""></p>
 
         </div>
         <div class="family-name">
 
             <label for="familyname">Family name:</label>
-            <input type="text" name="familyname" id="familyname" required="required" maxlength="30" pattern="^[a-zA-Z]+$" value="">
+            <input type="text" name="familyname" id="familyname" required="required" maxlength="30" pattern="^[a-zA-Z\s-]+$" value="">
         </div>
       </fieldset>
       <hr>
@@ -131,26 +131,26 @@
     </form>
   </div>
   <footer>
-    <div class="grid-container">
+    <div class="container-footer">
       <div>
         <p class="p-us">ABOUT US</p>
-        <img class="image-us" src="images/email.png" alt="email icon">
+        <!-- <img class="image-us" src="images/email.png" alt="email icon"> -->
       </div>
       <div class=" footer-mail list-details">
         <div>
-          <a href="emailto:">Name: </a>
+          <a href="mailto:103509199@student.swin.edu.au">Name: Hung</a>
         </div>
         <div>
-          <a href="emailto:">Name: </a>
+          <a href="mailto:103107988@student.swin.edu.au">Name: Ronan</a>
         </div>
         <div>
-          <a href="emailto:">Name: </a>
+          <a href="mailto:103996584@student.swin.edu.au">Name: Dylan </a>
         </div>
         <div>
-          <a href="emailto:">Name: </a>
+          <a href="mailto:">Name: </a>
         </div>
         <div>
-          <a href="emailto:">Name: </a>
+          <a href="mailto:">Name: </a>
         </div>
       </div>
     </div>

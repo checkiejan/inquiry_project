@@ -1,6 +1,8 @@
 .list-details { /* reponsive footer when default this will show up on three columns */
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
   gap: 10px;
   padding: 10px;
 }
@@ -8,12 +10,17 @@
 *{
   font-family: 'Poppins', sans-serif; /* set font for the whole webpage */
 }
+
 @media screen and (max-width:1000px) {
   .list-details {  /* reponsive footer when screen 600px this will show up on two columns */
     display: grid;
     grid-template-columns: auto auto;
   }
+  .list-details :last-child{
+  grid-column: 1 / span 2;
+  }
 }
+
 @media screen and (max-width:600px) {
   .list-details {  /* reponsive footer when screen 600px this will show up on one columns */
     display: grid;
@@ -21,6 +28,9 @@
   }
   .t >button{   /* reponsive design when screen 600px button disappears */
     display: none;
+  }
+  .list-details :last-child{
+  grid-column: span 1;
   }
 }
 
@@ -56,9 +66,10 @@
   transition: color 0.4s, box-shadow 1s;
 }
 
-.footer-mail>div>a {
+.footer-mail>div>a { /* style the anchor tag for the footer*/
   text-decoration: none;
   color: #971549;
+  margin-bottom:  10px;
 }
 
 .image-us {
@@ -66,20 +77,18 @@
   height: auto;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 20% auto; /* to divide the footer into 2 section one is the icon and the other is for email */
-  gap: 10px;
+.container-footer {
   background-color: #FF9898;
   padding: 10px;
   clear: both;
 }
 
-.grid-container>div {
+.container-footer div{
   text-align: center;
+}
+.container-footer div:last-of-type{
   font-style: italic;
 }
-
 .p-us {
   margin-bottom: 0;
 }
@@ -174,7 +183,9 @@
 	animation: appear 1.75s ease-in-out 0.3s;
 	animation-fill-mode: both;
 }
-
+#topicarticle h1:last-of-type{
+font: bold italic 450% 'Poppins', sans-serif ;
+}
 /*topic landing screen fade in animation*/
 @keyframes appear {
   from {opacity: 0;}
