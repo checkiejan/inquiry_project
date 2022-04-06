@@ -29,6 +29,11 @@
   .t >button{   /* reponsive design when screen 600px button disappears */
     display: none;
   }
+  .t >button:last-of-type{
+    display: block;
+
+    top: 20px;
+  }
   .list-details :last-child{
   grid-column: span 1;
   }
@@ -38,6 +43,18 @@
   position:relative;  /*  position for the button */
   left: 70px;
   top: 35px;
+  background: none;
+  border: 2px solid;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border-radius: 10px;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;  /* transition for the button when hover, setting time for each transition  */
+}
+.t >button:last-of-type{  /* style the button  */
+  position:relative;  /*  position for the button */
+  /* left: -94px;
+  top: 110px; */
+  width: 10rem;
   background: none;
   border: 2px solid;
   padding: 1rem 2rem;
