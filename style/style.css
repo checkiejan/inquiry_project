@@ -1,6 +1,8 @@
 .list-details { /* reponsive footer when default this will show up on three columns */
-  display: grid;
-  grid-template-columns: auto auto auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
   gap: 10px;
   padding: 10px;
 }
@@ -8,12 +10,17 @@
 *{
   font-family: 'Poppins', sans-serif; /* set font for the whole webpage */
 }
+
 @media screen and (max-width:1000px) {
   .list-details {  /* reponsive footer when screen 600px this will show up on two columns */
     display: grid;
     grid-template-columns: auto auto;
   }
+  .list-details :last-child{
+  grid-column: 1 / span 2;
+  }
 }
+
 @media screen and (max-width:600px) {
   .list-details {  /* reponsive footer when screen 600px this will show up on one columns */
     display: grid;
@@ -22,11 +29,14 @@
   .t >button{   /* reponsive design when screen 600px button disappears */
     display: none;
   }
+  .list-details :last-child{
+  grid-column: span 1;
+  }
 }
 
 .t >button{  /* style the button  */
   position:relative;  /*  position for the button */
-  left: 60px;
+  left: 70px;
   top: 35px;
   background: none;
   border: 2px solid;
@@ -51,15 +61,15 @@
 }
 .de:hover > .ruby-icon{  /* when elements of the navbar being hoverd the ruby icon will rotate */
   transform: rotate(120deg);
-  -webkit-transform: rotate(120deg); /* enable the element to be transformed in 2 dimension*/
 }
 .nav-link{ /* adjust the time for transition when being hovered */
   transition: color 0.4s, box-shadow 1s;
 }
 
-.footer-mail>div>a {
+.footer-mail>div>a { /* style the anchor tag for the footer*/
   text-decoration: none;
   color: #971549;
+  margin-bottom:  10px;
 }
 
 .image-us {
@@ -67,20 +77,19 @@
   height: auto;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 20% auto; /* to divide the footer into 2 section one is the icon and the other is for email */
-  gap: 10px;
+.container-footer { /* set background color for the footer */
   background-color: #FF9898;
   padding: 10px;
   clear: both;
 }
 
-.grid-container>div {
+.container-footer div{
+  color: #971549;
   text-align: center;
+}
+.container-footer div:last-of-type{
   font-style: italic;
 }
-
 .p-us {
   margin-bottom: 0;
 }
@@ -98,6 +107,7 @@
   width: 30px;
   height: 30px;
   display: inline-block;
+  vertical-align: inherit;
   overflow: hidden;
    transition-duration: 1s;
    transition-property: transform; /* transformation when being hoverd for 1 second */
@@ -133,22 +143,22 @@
 }
 .t {
   overflow-y: hidden;
-  background: url("../images/bg.jpg") ;
-  background-size: cover;
+  background: url("../images/bg.jpg") ; /* background image for index page */
+  background-size: cover;  /* make it cover the whole div */
   background-position: center;
-  backdrop-filter: blur(10px);
   background-repeat: no-repeat;
-  opacity: 0.8;
+  opacity: 0.9;
   height: 90vh;
 }
 @media screen and (max-width:1200px){
   .t{
-    background: url("../images/bg.jpg") ;
+    background: url("../images/bg2.jpg") ;  /* bg image more blur */
     background-size: cover;
     background-position: center;
-    /* background-color: #203239; */
-    background-blend-mode: darken;
-
+  }
+  .text-ruby{
+    width: 70%;
+    height: auto;
   }
 }
 /* start of topic css */
@@ -173,7 +183,9 @@
 	animation: appear 1.75s ease-in-out 0.3s;
 	animation-fill-mode: both;
 }
-
+#topicarticle h1:last-of-type{
+font: bold italic 450% 'Poppins', sans-serif ;
+}
 /*topic landing screen fade in animation*/
 @keyframes appear {
   from {opacity: 0;}
@@ -218,7 +230,7 @@
 }
 
 /*Select all heading in article section*/
-.heading{
+.headings{
 
 	font-size: 36px;
 	padding: 20px 0 0 0;
@@ -260,6 +272,7 @@ table, th, td {
 #face{
 	width: 20%;
 	border-radius: 50%;
+  vertical-align: inherit;
 	height: 20%;
 }
 
@@ -319,7 +332,7 @@ table, th, td {
 }
 
 /*Fix text wrapping issue*/
-@media scren and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
 	#asidesection{
 		border-radius: 15% 0 0 15%;
 		width: 30%;
@@ -348,17 +361,30 @@ table, th, td {
 }
 
 
-/*IN HERE */
-.relatedtechologies, table, th, td {
-	border: 1px solid;
+/*Whole table selector*/
+table, th, td {
+	border: 3px solid;
+	padding: 1%;
+
 }
 
-.relatedtechnologies,table{
+
+table{
 	width: 100%;
+	height: 100%;
+}
+#sect06 div{
+  	overflow-x: auto;
+}
+td{
+	background-color: #E7CCAE;
 }
 
+/*Table Headers*/
 th {
 	height: 70px;
+	background-color: #DFD0C0;
+
 }
 
 
@@ -491,22 +517,36 @@ fieldset:hover{
 label{
     text-align: center;
   }
+.first-name{
+  margin-right: 2rem;
+}
+.family-name{
+  margin-left: 3rem;
+}
 @media screen and (max-width:1200px){
 #stud-details{ /* when the screen becomes small*/
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto;
 }
 
-.first-name, .family-name{
-  display: inline;
+.family-name{
+  margin-left: 0;
 }
 }
-
+#stud-details input{
+  border-radius: 5px;
+  background: #EEE;
+  padding: 3px;
+  padding-left: 5px;
+}
 .first-name, .family-name{
   display: inline-block;
-  width: 30%;
-  margin-right: 3px;
+  width: 20%;
+}
+fieldset:nth-of-type(2) textarea{
+  border-radius: 10px;
+  background: #EEE;
+  padding: 5px;
 }
 hr{
   border-color: black;
@@ -520,35 +560,30 @@ hr{
 fieldset:last-of-type input{
   margin: 20px;
   background: #EEE;
+  border-radius: 10px;
 }
 /* start of select box */
 select {
+  border-radius: 10px;
   margin: 20px;
   width: 150px;
   padding: 5px 5px 5px 5px;
   font-size: 16px;
   background:#EEE;
 }
-select::-ms-expand {
-    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
-}
-@media screen and (min-width:0\0) {
-    select {
-        background: none\9;
-        padding: 5px\9;
-    }
-}
+
 /* end of select box */
 
 /* start of the button */
 .btn{
   display: block;
+  vertical-align: inherit;
   margin: auto;
 }
 .submit-t{
   border-radius: 20px;
   padding: 10px;
-  transition:scaleX 0.3s,scaleY 0.3s; /* set time for transition */
+  transition: 0.05s; /* set time for transition */
 }
 .submit-t:hover { /*  when being hovered the button will expand the scale and have shadow */
     transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
