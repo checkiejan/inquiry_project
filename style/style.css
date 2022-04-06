@@ -77,7 +77,7 @@
   height: auto;
 }
 
-.container-footer {
+.container-footer { /* set background color for the footer */
   background-color: #FF9898;
   padding: 10px;
   clear: both;
@@ -107,6 +107,7 @@
   width: 30px;
   height: 30px;
   display: inline-block;
+  vertical-align: inherit;
   overflow: hidden;
    transition-duration: 1s;
    transition-property: transform; /* transformation when being hoverd for 1 second */
@@ -142,20 +143,18 @@
 }
 .t {
   overflow-y: hidden;
-  background: url("../images/bg.jpg") ;
-  background-size: cover;
+  background: url("../images/bg.jpg") ; /* background image for index page */
+  background-size: cover;  /* make it cover the whole div */
   background-position: center;
-  backdrop-filter: blur(10px);
   background-repeat: no-repeat;
-  opacity: 0.8;
+  opacity: 0.9;
   height: 90vh;
 }
 @media screen and (max-width:1200px){
   .t{
-    background: url("../images/bg2.jpg") ;
+    background: url("../images/bg2.jpg") ;  /* bg image more blur */
     background-size: cover;
     background-position: center;
-    /* background-color: #203239; */
   }
   .text-ruby{
     width: 70%;
@@ -273,6 +272,7 @@ table, th, td {
 #face{
 	width: 20%;
 	border-radius: 50%;
+  vertical-align: inherit;
 	height: 20%;
 }
 
@@ -577,6 +577,7 @@ select {
 /* start of the button */
 .btn{
   display: block;
+  vertical-align: inherit;
   margin: auto;
 }
 .submit-t{
