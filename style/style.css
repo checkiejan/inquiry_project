@@ -638,6 +638,16 @@ select {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+.eh-body section a{
+  text-decoration: none;
+  margin-left: 3px;
+  color: #CF455C;
+  transition: 0.15s;
+}
+.eh-body section a:hover{
+  color: #FF9898;
+  /* text-decoration: underline; */
+}
 /* .eh-body section:last-of-type{
   margin-left: 0.5rem;
   margin-right: 0.5rem;
