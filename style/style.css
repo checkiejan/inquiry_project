@@ -381,7 +381,7 @@ table, th, td {
 /*Whole table selector*/
 table, th, td {
 	border: 3px solid;
-	padding: 1%;
+	padding: 3px;
 
 }
 
@@ -396,7 +396,6 @@ table{
 td{
 	background-color: #E7CCAE;
 }
-
 /*Table Headers*/
 th {
 	height: 70px;
