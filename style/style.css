@@ -564,6 +564,12 @@ fieldset:nth-of-type(2) textarea{
   background: #EEE;
   padding: 5px;
 }
+@media screen and (max-width: 600px){
+  textarea{
+    width: 100%;
+    height: auto;
+  }
+}
 hr{
   border-color: black;
   border-style: none;
