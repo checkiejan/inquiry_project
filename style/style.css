@@ -569,6 +569,10 @@ fieldset:nth-of-type(2) textarea{
     width: 100%;
     height: auto;
   }
+  .studentid input, .first-name input, .family-name input{
+    width: auto;
+    height: auto;
+  }
 }
 hr{
   border-color: black;
