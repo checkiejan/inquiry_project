@@ -38,7 +38,7 @@
   grid-column: span 1;
   }
 }
-
+/* these buttons below is inspired by this website https://1stwebdesigner.com/20-amazing-pure-css-animated-buttons/ */
 .t >button{  /* style the button  */
   position:relative;  /*  position for the button */
   left: 70px;
@@ -89,10 +89,7 @@
   margin-bottom:  10px;
 }
 
-.image-us {
-  width: 40px;
-  height: auto;
-}
+
 
 .container-footer { /* set background color for the footer */
   background-color: #FF9898;
@@ -540,7 +537,7 @@ label{
   margin-left: 3rem;
 }
 @media screen and (max-width:1200px){
-#stud-details{ /* when the screen becomes small*/
+#stud-details{ /* when the screen becomes small all the elements stands in one column*/
   display: grid;
   grid-template-columns: auto;
 }
@@ -601,6 +598,7 @@ select {
 /* end of select box */
 
 /* start of the button */
+/* button below is inspired by this website: https://freefrontend.com/css-submit-buttons/ */
 .btn{
   display: block;
   vertical-align: inherit;
@@ -647,19 +645,15 @@ select {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
+/* style the anchor tag */
 .eh-body section a{
   text-decoration: none;
   margin-left: 3px;
   color: #CF455C;
   transition: 0.15s;
 }
+/* style the anchor tag when being hoverd */
 .eh-body section a:hover{
   color: #FF9898;
-  /* text-decoration: underline; */
 }
-/* .eh-body section:last-of-type{
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-} */
-
   /* end of the enhancement css */
