@@ -157,7 +157,7 @@
 }
 .t {
   overflow-y: hidden;
-  background: url("../images/bg.jpg") ; /* background image for index page */
+  background: url("../style/images/bg.jpg") ; /* background image for index page */
   background-size: cover;  /* make it cover the whole div */
   background-position: center;
   background-repeat: no-repeat;
@@ -166,7 +166,7 @@
 }
 @media screen and (max-width:1200px){
   .t{
-    background: url("../images/bg2.jpg") ;  /* bg image more blur */
+    background: url("../style/images/bg2.jpg") ;  /* bg image more blur */
     background-size: cover;
     background-position: center;
   }
