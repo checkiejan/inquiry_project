@@ -7,7 +7,7 @@
   <body>
     <h1>Manage attempts</h1>
     <hr>
-    <form class="" action="markquiz.php" method="post">
+    <form class="" action="manage.php" method="post">
       <p><label for="firstname">First name</label>
 		<input type="text" name="firstname" maxlength="30" id="firstname" size="20" />
 	</p>
