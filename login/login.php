@@ -1,9 +1,19 @@
 <?php  session_start();   // session starts with the help of this function
-
+if(isset($_SESSION['attempt_again'])){
+  $now = time();
+  if($now >= $_SESSION['attempt_again']){
+      unset($_SESSION['error']);
+    unset($_SESSION['attempt']);
+    unset($_SESSION['attempt_again']);
+  }
+}
+if(!isset($_SESSION['attempt'])){
+			$_SESSION['attempt'] = 0;
+		}
 if(isset($_SESSION['use']))   // Checking whether the session is already there or not if
                               // true then header redirect it to the home page directly
  {
-    header("Location:home.php");
+    header("Location:manage1.php");
  }
 
 if(isset($_POST['login']))   // it checks whether the user clicked login button or not
@@ -20,7 +30,9 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
      else{
        // echo "<p>Database connection sucess</p>";
 
-
+       if($_SESSION['attempt'] == 3){
+         echo $_SESSION['error'];
+       } else {
          if(isset($_POST['username']) && isset($_POST['pass']) ){
 
              $uname=$_POST['username'];
@@ -38,19 +50,39 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
              if($row['username']==$uname && $row['pwd']==$password  && $uname != "" && $password !=""){
 
                  $_SESSION['use']=$_POST['username'];
+                 unset($_SESSION['attempt']);
+                 unset($_SESSION['error']);
+                 unset($_SESSION['attempt_again']);
                  mysqli_close($conn);
-		header("location:./home.php");
+		header("location:./manage1.php");
                  // header("location:./home.php");
              }
              else{
-                 echo "invalid UserName or Password";
+
+					//this is where we put our 3 attempt limit
+					$_SESSION['attempt'] += 1;
+          if(isset($_SESSION['attempt'])&&$_SESSION['attempt']<3)
+          {
+            $tmp=3-$_SESSION['attempt'];
+            echo "<p>you have $tmp try left</p>";
+
+
+          }
+					//set the time to allow login if third attempt is reach
+					if($_SESSION['attempt'] == 3){
+            $_SESSION['error']= "<p>please wait 10 seconds before try again</p>";
+						$_SESSION['attempt_again'] = time() + 10;
+						//note 5*60 = 5mins, 60*60 = 1hr, to set to 2hrs change it to 2*60*60
+					}
+          if($_SESSION['attempt']<3){
+                 echo "<p>invalid UserName or Password</p>";}
                 mysqli_free_result($result);
                 mysqli_close($conn);
              }
 
          }
 
-
+       }
 
        }
 
