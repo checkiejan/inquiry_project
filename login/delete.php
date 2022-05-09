@@ -8,7 +8,16 @@ session_start();
  else{
 
 if (isset($_SESSION["studid"])){
-  echo $_SESSION["studid"];
+$id= $_SESSION["studid"];
+  $query="DELETE FROM student WHERE stu_id= $id";
+  $result= mysqli_query($conn, $query);
+  if(!$result){
+    echo "<p>Something is wrong with ",$query,"</p>";
+  }
+  else{
+    echo"Success";
+
+  }
 }
 else {
   echo "none";

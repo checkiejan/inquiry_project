@@ -32,7 +32,7 @@ function create_student_table {
       stu_id INT NOT NULL,
       doa DATETIME  NOT NULL,
       score INT NOT NULL,
-      FOREIGN KEY (stu_id) REFERENCES student(stu_id)
+      FOREIGN KEY (stu_id) REFERENCES student(stu_id) ON DELETE CASCADE
   )";
      // $sql="select * from supervisor where user='", $uname ,"'AND Pass='", $password ,"' limit 1";
 
