@@ -30,9 +30,22 @@ if (isset($_POST["studid"]))
   unset($_SESSION["firstname"]);
   }
 }
-if(isset($_SESSION["choice"])){
-  echo $_SESSION["choice"];
+if(isset($_POST["sort"])){
+
+    if ($_POST["sort"]== "all"){
+      $_SESSION["choice"]=0;}
+    elseif ($_POST["sort"]== "allfirst") {
+      $_SESSION["choice"]=1;}
+  elseif ($_POST["sort"]== "half") {
+      $_SESSION["choice"]=2;}
+  elseif ($_POST["sort"]== "name"){
+    $_SESSION["choice"]=3;}
+  elseif ($_POST["sort"]== "id") {
+    $_SESSION["choice"]=4;}
+  
 }
+
+
  ?>
 <html lang="en" dir="ltr">
   <head>
@@ -58,28 +71,31 @@ if(isset($_SESSION["choice"])){
 		<label for="sort">How to sort</label>
 		<select name="sort" id="sort" >
 			<!-- <option value="none">Please select</option> -->
-      <?php
-      $arr= array("<option value=\"all\">All attempt</option>","<option value=\"allfirst\">Sort by 100% on first attempt</option>","<option value=\"half\">Sort by 50% on second attempt</option>","<option value=\"name\">Sort by name</option>","<option value=\"id\">Sort by Student Id</option>");
-      if(!isset($_SESSION["choice"])){
-        foreach ($arr as  $value) {
-          echo $value;
-        }
-      }
-      else{
-        echo $arr[$_SESSION["choice"]];
-        for ($i=0; $i<5;$i++){
-          if($i==$_SESSION["choice"]){
-            continue;
-          }
-          echo $arr[$i];
-        }
-      }
+
+      <option value="all"
+      <?php if(isset($_SESSION["choice"]))
+     {if ($_SESSION["choice"]==0) echo "selected"; }
        ?>
-      <!-- <option value="all">All attempt</option>
-			<option value="allfirst">Sort by 100% on first attempt</option>
-			<option value="half">Sort by 50% on second attempt</option>
-			<option value="name">Sort by name</option>
-			<option value="id">Sort by Student Id</option> -->
+      >All attempt</option>
+			<option value="allfirst" <?php if(isset($_SESSION["choice"]))
+      {if ($_SESSION["choice"]==1) echo "selected"; }
+        ?>
+      >Sort by 100% on first attempt</option>
+			<option value="half"
+      <?php if(isset($_SESSION["choice"]))
+     {if ($_SESSION["choice"]==2) echo "selected"; }
+       ?>
+      >Sort by 50% on second attempt</option>
+			<option value="name"
+      <?php if(isset($_SESSION["choice"]))
+     {if ($_SESSION["choice"]==3) echo "selected"; }
+       ?>
+      >Sort by name</option>
+			<option value="id"
+      <?php if(isset($_SESSION["choice"]))
+     {if ($_SESSION["choice"]==4) echo "selected"; }
+       ?>
+      >Sort by Student Id</option>
 		</select>
 	</p>
    <input type="submit" name="submit" value="Filter" />
@@ -95,7 +111,6 @@ if(isset($_SESSION["choice"])){
         //   echo "<p>$tmp</p>";
         // }
         if ($_POST["sort"]=="all") {
-          $_SESSION["choice"]=0;
          $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
          if (!$conn){
            echo "<p>Database connection failure</p>";
@@ -144,7 +159,6 @@ if(isset($_SESSION["choice"])){
          }
        }
        elseif ($_POST["sort"]=="allfirst"){
-         $_SESSION["choice"]=1;
          $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
          if (!$conn){
            echo "<p>Database connection failure</p>";
@@ -188,7 +202,6 @@ if(isset($_SESSION["choice"])){
        }
 
        elseif ($_POST["sort"]=="half"){
-         $_SESSION["choice"]=2;
          $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
          if (!$conn){
            echo "<p>Database connection failure</p>";
@@ -231,9 +244,8 @@ if(isset($_SESSION["choice"])){
          }
        }
        elseif ($_POST["sort"]=="name") {
-         $_SESSION["choice"]=3;
-         $_SESSION=$_POST["firstname"];
-         $_SESSION=$_POST["lastname"];
+         // $_SESSION=$_POST["firstname"];
+         // $_SESSION=$_POST["lastname"];
          $check=true;
           $firstname=$_POST["firstname"];
            $lastname=$_POST["lastname"];
@@ -311,8 +323,8 @@ if(isset($_SESSION["choice"])){
      }
 
      elseif ($_POST["sort"]=="id"){
-       $_SESSION["choice"]=4;
-        $_SESSION=$_POST["studid"];
+      // $_SESSION["list"]=array();
+      //  $_SESSION["studid"]=$_POST["studid"];
        $check=true;
         $studentid= $_POST["studid"];
        if ($_POST["studid"]==""){
@@ -353,6 +365,7 @@ if(isset($_SESSION["choice"])){
              ."<th scope=\"col\">Score</th>\n"
              ."<th scope=\"col\">Edit</th>\n"
              ."</tr>\n";
+
              while ($row=mysqli_fetch_assoc($result)){
                echo "<tr>\n";
                echo "<td>",$row["stu_id"],"</td>\n";
@@ -360,6 +373,7 @@ if(isset($_SESSION["choice"])){
                echo "<td>",$row["lastname"],"</td>\n";
                echo "<td>",$row["doa"],"</td>\n";
               // echo "<td>",$row["noa"],"</td>\n";
+              //array_push($_SESSION["list"],$row["stu_id"]);
                echo "<td>",$row["attempt_id"],"</td>\n";
                echo "<form  action=\"edit.php\" method=\"post\">";
                echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
@@ -374,8 +388,12 @@ if(isset($_SESSION["choice"])){
            mysqli_close($conn);
          }
 
-
+         echo "<form action=\"delete.php\" method=\"post\">";
+         echo "<input type=\"submit\" name=\"delete\" value=\"delete\">";
+         echo "</form>";
        }
+
+
      }
 
 
