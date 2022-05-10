@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <?php
+require_once '../create_table.php';
+$conn= @mysqli_connect($host,$user,$pwd,$sql_db);
+create_student_table($conn);
+$conn= @mysqli_connect($host,$user,$pwd,$sql_db);
+create_attempt_table($conn);
 session_start();
 if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
  {
@@ -30,6 +35,20 @@ if (isset($_POST["studid"]))
   unset($_SESSION["firstname"]);
   }
 }
+if (isset($_POST["sort"])){
+  if($_POST["sort"]!="name" && $_POST["sort"]!="id"){
+    if(isset($_SESSION["studid"])){
+      unset($_SESSION["studid"]);
+
+    }
+    if(isset($_SESSION["firstname"])){
+      unset($_SESSION["firstname"]);
+    }
+    if(isset($_SESSION["lastname"])){
+      unset($_SESSION["lastname"]);
+    }
+  }
+}
 if(isset($_POST["sort"])){
 
     if ($_POST["sort"]== "all"){
@@ -42,7 +61,7 @@ if(isset($_POST["sort"])){
     $_SESSION["choice"]=3;}
   elseif ($_POST["sort"]== "id") {
     $_SESSION["choice"]=4;}
-  
+
 }
 
 
@@ -211,7 +230,7 @@ if(isset($_POST["sort"])){
            // $query="select * from attempt ";
            $query ="SELECT student.firstname, student.lastname, student.noa, student.stu_id, attempt.doa, attempt.score, attempt.attempt_id
                     FROM student
-                    INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE student.noa=1 and attempt.score>=6";
+                    INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE attempt.attempt_id=2 and attempt.score<6";
            $result= mysqli_query($conn, $query);
            if(!$result){
              echo "<p>Something is wrong with ",$query,"</p>";

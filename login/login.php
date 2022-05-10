@@ -1,4 +1,7 @@
 <?php  session_start();   // session starts with the help of this function
+require_once '../create_table.php';
+$conn= @mysqli_connect($host,$user,$pwd,$sql_db);
+create_supervisor_table($conn);
 if(isset($_SESSION['attempt_again'])){
   $now = time();
   if($now >= $_SESSION['attempt_again']){
