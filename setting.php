@@ -3,10 +3,5 @@
   $user= "s103509199";
   $pwd= "hungdeptrai";
   $sql_db= "s103509199_db";
-  function sanitise_input($data){
-     $data= trim($data);
-     $data= stripslashes($data);
-     $data=htmlspecialchars($data);
-     return $data;
-   }
+
  ?>
