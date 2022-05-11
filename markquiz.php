@@ -138,7 +138,7 @@
 		}
 
 
-		if ($quizinvalid == true){
+		if ($quizinvalid == false){
 			echo "This quiz is invalid";
 		}else {
 
@@ -224,7 +224,7 @@
 				echo "<p>You have another attempt. <a href='quiz.html'>Click here</a></p>";
 			} 
 
-		if ($quizinvalid == true) {
+		if ($quizinvalid == false) {
 			echo "<p>This is an unsuccessful attempt</p>";
 		} else {
 			//Sending data to database//
