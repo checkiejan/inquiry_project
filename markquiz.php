@@ -138,8 +138,9 @@
 		}
 
 
-
-
+		if ($quizinvalid == true){
+			echo "This quiz is invalid";
+		}else {
 
 		//-----------------------//
 		create_attempt_table();
@@ -181,6 +182,7 @@
 		
 		if ($firstname =="") {
 			$errMsg .= "<p>You must enter your first name.</p>";
+			echo "$errMsg";
 			$quizinvalid = true;
 		}
 		else if (!preg_match("/^[a-zA-Z\s-]{0,30}$/", $firstname)) {
@@ -189,12 +191,15 @@
 		
 		if ($familyname =="") {
 			$errMsg .= "<p>You must enter your family name.</p>";
+			echo "$errMsg";
+			$quizinvalid = true;
 		}
 		else if (!preg_match("/^[a-zA-Z\s-]{0,30}$/", $familyname)) {
 			$errMsg .= "<p>Only alpha letters allowed in your family name.</p>";
 		}
 		if ($studentid =="") {
 			$errMsg .= "<p>You must enter your studentid.</p>";
+			echo "$errMsg";
 			$quizinvalid = true;
 		}
 		else if (!preg_match("/\d{7}|^\d{10}$/", $studentid)) {
@@ -254,7 +259,7 @@
 		
 
 
-
+		}
    ?>
 </body>
 
