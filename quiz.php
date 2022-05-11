@@ -48,7 +48,7 @@
       <hr>
       <fieldset>
         <legend>Question 1 </legend>
-        <p><label for="Question1">In 100 characters or less, explain the difference between Ruby and Ruby on Rails.</label></p>
+        <p><label for="Question1">What is the difference between Ruby and 'Ruby on Rails'</label></p>
         <p><textarea id="Question1" name="Question 1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
       </fieldset>
       <hr>
@@ -93,7 +93,7 @@
       <hr>
       <fieldset>
         <legend>Question 5 </legend>
-        <p><label for="Question5">From 1-10, how likely are you to use Ruby on Rails in the future?</label>
+        <p><label for="Question5">How many characteristics are associated with the Ruby on Rails network?</label>
           <input type="number" id="Question5" name="Question 5" min="0" max="10" value="5" />
         </p>
       </fieldset>
