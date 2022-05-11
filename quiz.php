@@ -56,8 +56,8 @@
       <fieldset id="question2">
         <legend>Question 2</legend>
         <P>Ruby on Rails was created by Yukihiro "Matz" Matsumoto </p>
-        <label for="question2"><input type="radio" name="question2" id="true" value="True" required="required" /> True </label>
-        <label for="question2"><input type="radio" name="question2" id="false" value="False" required="required" /> False </label>
+        <label for="question2"><input type="radio" name="question2" id="true" value="True"  /> True </label>
+        <label for="question2"><input type="radio" name="question2" id="false" value="False"  /> False </label>
       </fieldset>
       <hr>
       <fieldset>

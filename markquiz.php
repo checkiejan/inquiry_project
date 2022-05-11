@@ -54,10 +54,12 @@
 		if (isset ($_POST["lastname"]))
 			$familyname = $_POST["lastname"];
 		
-		if (isset ($_POST["question1"]))
+		$question = "";
+		if (isset($_POST["question1"]) && ($_POST["question1"])!=""){
 			$question1 = $_POST["question1"];
 			echo "<p>question 1: $question1</p>";
-		if ($question1 = ""){
+		}else{
+			
 			$errMsg = "<p>Your question 1 is invalid</p>";
 			echo "<p>$errMsg</p>";
 			$quizinvalid = true;
@@ -69,21 +71,20 @@
 			$score++;
 		}
 
-
+		$question2 = "";
 		  // v Do this v 
-		if (isset ($_POST["question2"])) {
+		if (isset($_POST["question2"]) && ($_POST["question2"])!="") {
 			$question2 = $_POST["question2"];
 			echo "<p>question 2: $question2</p>";
-		}
-		
-		if ($question2 = ""){
+		} else {
 			$errMsg = "<p>Your question 2 is invalid</p>";
 			echo "<p>$errMsg</p>";
 			$quizinvalid = true;
-		} else if ($question2 == 'False'){
-			echo "<p>correct</p>";
-			$score++;
 		}
+		//else if ($question2 == 'False'){
+			//echo "<p>correct</p>";
+			//$score++;
+		
 		
 			// v Do this v 
 		$question3 = "";
@@ -100,20 +101,22 @@
 
 			echo "<p>question 3: $question3</p>";
 
-		if ($question3 = ""){
+		if ($question3 = "") {
 			$errMsg = "<p>Your question 3 is invalid</p>";
 			echo "<p>$errMsg</p>";
 			$quizinvalid = true;
 			// v Mark this v
-		} else if ($question3 == "Calculations"){
+		} else {
 			$score++;
 		}
+		//if ($question3 == "Calculations")
 	
+		
 		if (isset ($_POST["question4"]))
 			$question4 = $_POST["question4"];
 			echo "<p>question 4: $question4</p>";
 		// v Do this v
-		if ($question4 = ""){
+		if (isset($_POST["question4"]) && ($_POST["question4"])!=""){
 			$errMsg = "<p>Your question 4 is invalid</p>";
 			echo "<p>$errMsg</p>";
 			$quizinvalid = true;
@@ -125,7 +128,7 @@
 		if (isset ($_POST["question5"]))
 			$question5 = $_POST["question5"];
 			echo "<p>question 5: $question5</p>";
-		if ($question5 = ""){
+		if (isset($_POST["question5"]) && ($_POST["question5"])!=""){
 			$errMsg = "<p>Your question 5 is invalid</p>";
 			echo "<p>$errMsg</p>";
 			$quizinvalid = true;
