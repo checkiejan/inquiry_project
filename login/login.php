@@ -97,12 +97,12 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
 <head>
 
 <title> Login Page   </title>
-
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="login-bd">
 
-<form action="" method="post">
+<!-- <form action="" method="post">
 
     <table width="200" border="0">
   <tr>
@@ -118,7 +118,23 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
     <td></td>
   </tr>
 </table>
-</form>
+</form> -->
+<div class="login-page">
+  <div class="form">
+    <div class="login">
+      <div class"login-header">
+      <h3>LOGIN</h3>
+      <p>Please enter your credentials below.</p>
 
+      </div>
+    </div>
+    <form class="login-form" action=""method="post">
+      <input type="text" name="username" placeholder="username"/>
+    <input type="password" name="pass" placeholder="password"/>
+    <input type="submit"  class="btn-form" name="login" value="LOGIN">
+    <!-- <button class="btn-form">login</button> -->
+  </form>
+</div>
+</div>
 </body>
 </html>
