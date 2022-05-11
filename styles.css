@@ -38,7 +38,7 @@ background: #FAEBD7;
   text-transform: uppercase;
   outline: 0;
   background-color: #FBD6D2;
-  background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+  background-image: linear-gradient(45deg,#971549,#CF455C);
   width: 100%;
   border: 0;
   padding: 15px;
@@ -54,7 +54,7 @@ background: #FAEBD7;
   font-size: 12px;
 }
 .form .message a {
-  color: #4CAF50;
+  color: #971549;
   text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ background: #FAEBD7;
 
 body {
   background-color: #FBD6D2;
-  background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+  background-image: linear-gradient(45deg,#CF455C,#FF9898);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

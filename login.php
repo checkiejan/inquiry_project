@@ -61,7 +61,7 @@ if(isset($_POST['login']))   // it checks whether the user clicked login button 
 <html>
 
 <head>
-  <link rel="stylesheet" href="style/styles.css">
+  <link rel="stylesheet" href="/cos10026/s103999554/mainproject/style/styles.css">
    <!-- Link to Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
