@@ -45,7 +45,6 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
       <div class"login-header">
       <h3>LOGIN</h3>
       <p>Please enter your credentials below.</p>
-
       </div>
     </div>
     <?php
