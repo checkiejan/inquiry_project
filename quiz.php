@@ -46,7 +46,7 @@
           <input type="text" name="lastname" id="lastname" required="required" maxlength="30" pattern="^[a-zA-Z\s-]+$" value="">
         </div>
       </fieldset>
-      <hr>
+      <hrc class="r-quiz">
       <fieldset>
         <legend>Question 1 </legend>
         <p><label for="Question1">What is the difference between Ruby and 'Ruby on Rails'</label></p>

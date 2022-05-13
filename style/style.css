@@ -765,9 +765,13 @@ select {
   }
 
   .login-bd {
+    height: 90vh;
     background-color: #FBD6D2;
     background-image: linear-gradient(45deg,#CF455C,#FF9898);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+.err{
+  color: red;
+}

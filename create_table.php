@@ -10,8 +10,7 @@ function create_student_table($conn) {
     $query= "CREATE TABLE IF NOT EXISTS student (
     stu_id INT NOT NULL PRIMARY KEY,
     firstname VARCHAR(30) NOT NULL,
-    lastname VARCHAR(30) NOT NULL,
-    noa INT NOT NULL,
+    lastname VARCHAR(30) NOT NULL
   )";
      // $sql="select * from supervisor where user='", $uname ,"'AND Pass='", $password ,"' limit 1";
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 
-require_once '../create_table.php';
+require_once 'create_table.php';
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 create_student_table($conn);
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
@@ -71,9 +71,17 @@ if(isset($_POST["sort"])){
   <head>
     <meta charset="utf-8">
     <title>Mark quiz</title>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="images/favicon.ico">
+    <!-- Link to Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <?php require_once '../header.inc'; ?>
+    <?php require_once 'header.inc'; ?>
     <h1>Manage attempts</h1>
     <hr>
     <?php   echo "<a href='logout.php'> Logout</a> "; ?>
@@ -124,7 +132,7 @@ if(isset($_POST["sort"])){
      <hr>
 
     <?php
-      require_once '../setting.php';
+      require_once 'setting.php';
   if(isset($_POST['submit'])&& isset($_POST["sort"])&& $_POST["sort"]!="none"){
 
         // if (isset($_POST["sort"])&& $_POST["sort"]!="none" ){
