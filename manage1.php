@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <?php
-
+session_start();
 require_once 'create_table.php';
+require_once 'setting.php';
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 create_student_table($conn);
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 create_attempt_table($conn);
-session_start();
+
 if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
  {
      header("Location:login.php");
@@ -132,7 +133,6 @@ if(isset($_POST["sort"])){
      <hr>
 
     <?php
-      require_once 'setting.php';
   if(isset($_POST['submit'])&& isset($_POST["sort"])&& $_POST["sort"]!="none"){
 
         // if (isset($_POST["sort"])&& $_POST["sort"]!="none" ){

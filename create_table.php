@@ -1,5 +1,5 @@
 <?php
-require_once 'setting.php';
+#require_once 'setting.php';
 function create_student_table($conn) {
 //   $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
    if(!$conn){
@@ -47,8 +47,7 @@ function create_supervisor_table($conn) {
    }
    else{
     $query= "CREATE TABLE IF NOT EXISTS supervisor (
-      id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-      username	varchar(30) NOT NULL,
+      username	varchar(30) NOT NULL PRIMARY KEY,
       pwd	varchar(30)  NOT NULL
   )";
      // $sql="select * from supervisor where user='", $uname ,"'AND Pass='", $password ,"' limit 1";
@@ -57,5 +56,43 @@ function create_supervisor_table($conn) {
       mysqli_close($conn);
    }
 
+}
+function  create_account($conn){
+  if($conn){
+    $query = "SELECT * FROM supervisor WHERE username='haha' ";
+      $result= mysqli_query($conn, $query);
+      if ($result){
+        $arr=mysqli_fetch_assoc($result);
+        if(count($arr)==0){
+          $query= "INSERT INTO supervisor (`username`, `pwd`) VALUES ('haha', '123')";
+          $result= mysqli_query($conn, $query);
+        }
+      }
+      $query = "SELECT * FROM supervisor WHERE username='henry' ";
+        $result= mysqli_query($conn, $query);
+        if ($result){
+          $arr=mysqli_fetch_assoc($result);
+          if(count($arr)==0){
+            $query= "INSERT INTO `supervisor` (`username`, `pwd`) VALUES ('henry', '234')";
+            $result= mysqli_query($conn, $query);
+          }
+        }
+        $query = "SELECT * FROM supervisor WHERE username='hjk' ";
+          $result= mysqli_query($conn, $query);
+          if ($result){
+            $arr=mysqli_fetch_assoc($result);
+            if(count($arr)==0){
+              $query= "INSERT INTO `supervisor` (`username`, `pwd`) VALUES ('hjk', '234')";
+              $result= mysqli_query($conn, $query);
+            }
+          }
+          mysqli_close($conn);
+      // if(!mysql_fetch_array($result) ){
+      //   echo "<p>yes</p>";
+      // }
+      // else{
+      //   echo "<p>no</p>";
+      // }
+  }
 }
  ?>

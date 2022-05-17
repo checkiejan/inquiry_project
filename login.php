@@ -1,7 +1,10 @@
 <?php  session_start();   // session starts with the help of this function
 require_once 'create_table.php';
+  require_once 'setting.php';
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 create_supervisor_table($conn);
+$conn= @mysqli_connect($host,$user,$pwd,$sql_db);
+create_account($conn);
 if(isset($_SESSION['attempt_again'])){
   $now = time();
   if($now >= $_SESSION['attempt_again']){
@@ -53,7 +56,7 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
           // $user = $_POST['user'];
           // $pass = $_POST['pass'];
 
-        require_once 'setting.php';
+
 
          $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
          if (!$conn){
