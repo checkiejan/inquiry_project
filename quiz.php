@@ -26,7 +26,7 @@
       <p>Here's a short quiz to learn about Ruby on Rails!</p>
     </div>
       <!-- ronan change below-->
-    <form id="Quiz" method="post" action="markquiz.php" novalidate>
+    <form id="Quiz" method="POST" action="markquiz.php" novalidate>
         <!-- end -->
       <fieldset id="stud-details">
         <legend>Student details</legend>
@@ -49,8 +49,8 @@
       <hrc class="r-quiz">
       <fieldset>
         <legend>Question 1 </legend>
-        <p><label for="Question1">What is the difference between Ruby and 'Ruby on Rails'</label></p>
-        <p><textarea id="Question1" name="Question 1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
+        <p><label for="question1">What is the difference between Ruby and 'Ruby on Rails'</label></p>
+        <p><textarea id="question1" name="question1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
       </fieldset>
       <hr>
       <fieldset id="question2">
@@ -64,15 +64,15 @@
         <legend>Question 3</legend>
         <p>Which one of these are NOT functions of the Ruby on Rails network?</p>
         <p><label for="html">Rendering HTML</label>
-          <input type="checkbox" id="html" name="question3" value="Rendering HTML" />
+          <input type="checkbox" id="html" name="question3[]" value="Rendering HTML" />
           <label for="videos">Downloading videos</label>
-          <input type="checkbox" id="videos" name="question3" value="Downloading Videos" />
+          <input type="checkbox" id="videos" name="question3[]" value="Downloading Videos" />
           <label for="databases">Updating databases</label>
-          <input type="checkbox" id="databases" name="question3" value="Updating Databases" />
+          <input type="checkbox" id="databases" name="question3[]" value="Updating Databases" />
           <label for="distributing">Distributing information</label>
-          <input type="checkbox" id="distributing" name="question3" value="Distributing Information" />
+          <input type="checkbox" id="distributing" name="question3[]" value="Distributing Information" />
           <label for="calculations">Calculations</label>
-          <input type="checkbox" id="calculations" name="question3" value="Calculations" />
+          <input type="checkbox" id="calculations" name="question3[]" value="Calculations" />
         </p>
 
       </fieldset>
@@ -94,8 +94,8 @@
       <hr>
       <fieldset>
         <legend>Question 5 </legend>
-        <p><label for="Question5">How many characteristics are associated with the Ruby on Rails network?</label>
-          <input type="number" id="Question5" name="Question 5" min="0" max="10" value="5" />
+        <p><label for="question5">How many characteristics are associated with the Ruby on Rails network?</label>
+          <input type="number" id="question5" name="question5" min="0" max="10" value="5" />
         </p>
       </fieldset>
       <p class="btn">

@@ -18,7 +18,7 @@
 		require 'create_table.php';
 
 		//Connection to database//
-		require 'setting.php';
+		require_once 'setting.php';
 
 		//global values//
 		$quizinvalid = false;
@@ -27,16 +27,8 @@
 		$date .= " ";
 		$date .= date('h:i:s');
 		//------------//
+	
 
-
-
-		function sanitise_input($data) {
-			$data = trim($data);
-			$data = stripslashes($data);
-			$data = htmlspecialchars($data);
-			return $data;
-
-		}
 
 		$errMsg = "";
 
@@ -54,39 +46,40 @@
 		if (isset ($_POST["lastname"]))
 			$familyname = $_POST["lastname"];
 
-		if (isset ($_POST["question1"]))
+
+		$question1 = "";
+		if (isset($_POST["question1"]) && ($_POST["question1"])!=""){
 			$question1 = $_POST["question1"];
 			echo "<p>question 1: $question1</p>";
-		if ($question1 = ""){
+		}else{	
 			$errMsg = "<p>Your question 1 is invalid</p>";
 			echo "<p>$errMsg</p>";
-			$quizinvalid = true;
-			// v Mark this v
+			
+			
 		}
-
+		
 		if ($question1 == "One"){
 			echo "<p>true</p>";
 			$score++;
 		}
 
-
-		  // v Do this v
-		if (isset ($_POST["question2"])) {
+		$question2 = "";
+		  // v Do this v 
+		if (isset($_POST["question2"]) && ($_POST["question2"])!="") {
 			$question2 = $_POST["question2"];
 			echo "<p>question 2: $question2</p>";
-		}
-
-		if ($question2 = ""){
+		} else {
 			$errMsg = "<p>Your question 2 is invalid</p>";
 			echo "<p>$errMsg</p>";
 			$quizinvalid = true;
-		} else if ($question2 == 'False'){
-			echo "<p>correct</p>";
-			$score++;
 		}
-
-			// v Do this v
-		$question3 = "";
+		//else if ($question2 == 'False'){
+			//echo "<p>correct</p>";
+			//$score++;
+		
+		
+			// v Do this v 
+		$question3 = $_POST["question3"];
 		if (isset ($_POST["html"]))
 			$question3 = $question3. "Rendering HTML";
 		if (isset ($_POST["videos"]))
@@ -98,41 +91,50 @@
 		if (isset ($_POST["calculations"]))
 			$question3 = $question3. "Calculations";
 
-			echo "<p>question 3: $question3</p>";
+			echo "<p>question 3:  </p>";
+			echo $question3[0];
 
-		if ($question3 = ""){
+		if ($question3 = "") {
 			$errMsg = "<p>Your question 3 is invalid</p>";
 			echo "<p>$errMsg</p>";
 			$quizinvalid = true;
 			// v Mark this v
-		} else if ($question3 == "Calculations"){
+		} else {
 			$score++;
 		}
-
-		if (isset ($_POST["question4"]))
+		//if ($question3 == "Calculations")
+	
+		$question4 = "";
+		if (isset($_POST["question4"]) && ($_POST["question4"])!=""){
 			$question4 = $_POST["question4"];
 			echo "<p>question 4: $question4</p>";
-		// v Do this v
-		if ($question4 = ""){
+		}else{
 			$errMsg = "<p>Your question 4 is invalid</p>";
 			echo "<p>$errMsg</p>";
 			$quizinvalid = true;
-		}else if ($question4 = "Shopify") {
+		}
+
+		if ($question4 = "Shopify") {
 			$score++;
 		}
 
-
-		if (isset ($_POST["question5"]))
+		$question5 = "";
+		if (isset($_POST["question5"]) && ($_POST["question5"])!=""){
 			$question5 = $_POST["question5"];
-			echo "<p>question 5: $question5</p>";
-		if ($question5 = ""){
+			echo "<p>question 5: $question5</p>";	
+		} else {
 			$errMsg = "<p>Your question 5 is invalid</p>";
 			echo "<p>$errMsg</p>";
-			$quizinvalid = true;
-			// v Mark this v
-		} else if ($question5 == '5'){
+		}
+		
+		if($question5 == "5"){
 			$score++;
 		}
+
+
+		if ($quizinvalid == true){
+			echo "This quiz is invalid";
+		}else {
 
 
 
@@ -180,24 +182,32 @@
 
 		if ($firstname =="") {
 			$errMsg .= "<p>You must enter your first name.</p>";
+			echo "$errMsg";
 			$quizinvalid = true;
 		}
 		else if (!preg_match("/^[a-zA-Z\s-]{0,30}$/", $firstname)) {
 			$errMsg .= "<p>Only alpha letters allowed in your first name.</p>";
+			echo "$errMsg";
 		}
 
 		if ($familyname =="") {
 			$errMsg .= "<p>You must enter your family name.</p>";
+			echo "$errMsg";
+			$quizinvalid = true;
 		}
 		else if (!preg_match("/^[a-zA-Z\s-]{0,30}$/", $familyname)) {
 			$errMsg .= "<p>Only alpha letters allowed in your family name.</p>";
+			echo "$errMsg";
+
 		}
 		if ($studentid =="") {
 			$errMsg .= "<p>You must enter your studentid.</p>";
+			echo "$errMsg";
 			$quizinvalid = true;
 		}
 		else if (!preg_match("/\d{7}|^\d{10}$/", $studentid)) {
 			$errMsg .= "<p>incorrect student id</p>";
+			echo "$errMsg";
 		}
 
 		if ($score == 0)
@@ -218,7 +228,7 @@
 				echo "<p>You have another attempt. <a href='quiz.html'>Click here</a></p>";
 			}
 
-		if ($quizinvalid == true) {
+		if ($quizinvalid == false) {
 			echo "<p>This is an unsuccessful attempt</p>";
 		} else {
 			//Sending data to database//
@@ -253,7 +263,7 @@
 
 
 
-
+}
    ?>
 </body>
 
