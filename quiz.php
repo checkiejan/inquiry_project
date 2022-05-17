@@ -64,15 +64,15 @@
         <legend>Question 3</legend>
         <p>Which one of these are NOT functions of the Ruby on Rails network?</p>
         <p><label for="html">Rendering HTML</label>
-          <input type="checkbox" id="html" name="question3[]" value="Rendering HTML" />
+          <input type="checkbox" name="question3[]" value="Rendering HTML" />
           <label for="videos">Downloading videos</label>
-          <input type="checkbox" id="videos" name="question3[]" value="Downloading Videos" />
+          <input type="checkbox" name="question3[]" value="Downloading Videos" />
           <label for="databases">Updating databases</label>
-          <input type="checkbox" id="databases" name="question3[]" value="Updating Databases" />
+          <input type="checkbox" name="question3[]" value="Updating Databases" />
           <label for="distributing">Distributing information</label>
-          <input type="checkbox" id="distributing" name="question3[]" value="Distributing Information" />
+          <input type="checkbox" name="question3[]" value="Distributing Information" />
           <label for="calculations">Calculations</label>
-          <input type="checkbox" id="calculations" name="question3[]" value="Calculations" />
+          <input type="checkbox" name="question3[]" value="Calculations" />
         </p>
 
       </fieldset>

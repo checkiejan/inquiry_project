@@ -26,11 +26,8 @@
 		$date = date('Y-m-d');
 		$date .= " ";
 		$date .= date('h:i:s');
-		//------------//
-	
-
-
 		$errMsg = "";
+		//------------//
 
 		//if (isset ($_POST["noa"]))
 		//	$attemptnum = $_POST["noa"];
@@ -41,6 +38,16 @@
 
 		if (isset ($_POST["firstname"]))
 			$firstname = $_POST["firstname"];
+
+		if ($firstname =="") {
+			$errMsg .= "<p>You must enter your first name.</p>";
+			echo "$errMsg";
+			$quizinvalid = true;
+		}
+		else if (!preg_match("/^[a-zA-Z\s-]{0,30}$/", $firstname)) {
+			$errMsg .= "<p>Only alpha letters allowed in your first name.</p>";
+			echo "$errMsg";
+		}
 
 
 		if (isset ($_POST["lastname"]))
@@ -80,8 +87,9 @@
 		
 			// v Do this v 
 		$question3 = $_POST["question3"];
-		if (isset ($_POST["html"]))
+		if (isset ($_POST["html"]) && ($_POST["question3"])!=""){
 			$question3 = $question3. "Rendering HTML";
+			}
 		if (isset ($_POST["videos"]))
 			$question3 = $question3. "Downloading videos";
 		if (isset ($_POST["databases"]))
@@ -178,7 +186,7 @@
 		$question5 = sanitise_input($question5);
 
 
-		$errMsg = "";
+		
 
 		if ($firstname =="") {
 			$errMsg .= "<p>You must enter your first name.</p>";
@@ -198,7 +206,6 @@
 		else if (!preg_match("/^[a-zA-Z\s-]{0,30}$/", $familyname)) {
 			$errMsg .= "<p>Only alpha letters allowed in your family name.</p>";
 			echo "$errMsg";
-
 		}
 		if ($studentid =="") {
 			$errMsg .= "<p>You must enter your studentid.</p>";
