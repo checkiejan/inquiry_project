@@ -125,7 +125,8 @@
             } else{
               $attemptid=2;
             }
-            $query= "INSERT INTO attempt (`stu_id`, `score`, `attempt_id`) VALUES ($studentid, $score, $attemptid)";
+        
+            $query= "INSERT INTO attempt (`stu_id`,`doa`, `score`, `attempt_id`) VALUES ($studentid, UTC_TIMESTAMP(), $score, $attemptid)";
             $result= mysqli_query($conn, $query);
           }
       }
