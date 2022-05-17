@@ -15,10 +15,13 @@
 
    
    <?php
-		require 'create_table.php';
-
-		//Connection to database//
+		require 'create_table.php';/
 		require_once 'setting.php';
+
+		$conn= @mysqli_connect($host,$user,$pwd,$sql_db);
+		create_student_table($conn);
+		$conn= @mysqli_connect($host,$user,$pwd,$sql_db);
+		create_attempt_table($conn);
 
 		//global values//
 		$quizinvalid = false;
