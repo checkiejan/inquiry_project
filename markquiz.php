@@ -17,11 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Ruby on Rails</title>
   </head>
-
-
+ <body class="bodybg">
+  <?php
+  require 'header.inc';
+  // display_header;
+     ?>
 
 <?php
-    
+
     require_once 'create_table.php';
     require_once 'setting.php';
     $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
@@ -35,9 +38,8 @@
     $date = date('Y-m-d');
 	$date .= " ";
 	$date .= date('h:i:s');
-
     ////
-    if ($_POST["stu_id"]=="")
+    if (!isset($_POST["stu_id"])||$_POST["stu_id"]=="")
     {
         $errMsg .="<p>You must input your student id</p>";
         $flag=false;
@@ -50,7 +52,7 @@
       $studentid = sanitise_input($_POST["stu_id"]);
     }
     //////
-    if ($_POST["firstname"]=="")
+    if (!isset($_POST["firstname"])||$_POST["firstname"]=="")
     {
         $errMsg .="<p>You must input your first name</p>";
         $flag=false;
@@ -63,7 +65,7 @@
       $firstname = sanitise_input($_POST["firstname"]);
     }
     ///////
-    if ($_POST["lastname"]=="")
+    if (!isset($_POST["lastname"])||$_POST["lastname"]=="")
     {
         $errMsg .="<p>You must input your last name</p>";
         $flag=false;
@@ -171,41 +173,38 @@
             } else{
               $attemptid=2;
             }
-            
+
 
             $query= "INSERT INTO attempt (`stu_id`,`doa`, `score`, `attempt_id`) VALUES ($studentid, UTC_TIMESTAMP(), $score, $attemptid)";
             $result= mysqli_query($conn, $query);
-            
+
           }
       }
     }
  ?>
 
  <?php
- 
+
     if(!$flag){
-      
+
     }else{
     ?>
-    
-         <body class="bodybg">
-         <div id="bodybg">
+
+
+
              <!-- navbar -->
-          <?php
-          require 'header.inc';
-          // display_header;
-             ?>
+
           <!-- navbar  -->
           <br></br>
           <h1 class="markquizheader">Quiz Completed!</h1>
         <!--Student Results-->
         <fieldset class="Box1">
-               <div class = "StudentResults1"> 
+               <div class = "StudentResults1">
                   <P>Student Results</P></div>
-               <div class = "Name1"> 
-                  <p>Name: <?php echo"$firstname $lastname"; ?></p></div> 
+               <div class = "Name1">
+                  <p>Name: <?php echo"$firstname $lastname"; ?></p></div>
                <div class = "TotalScore1">
-                  <p>Total Score: <?php echo"$score"; ?>%</p></div> 
+                  <p>Total Score: <?php echo"$score"; ?>%</p></div>
                <div class = "MaximumScore1">
                   <p>Maximum Score: 100%</p></div>
                <div class = "AttemptNumber1">
@@ -216,19 +215,14 @@
         <a href="QUIZPAGE" class="QuizLink">Return to quiz page</a>
         </fieldset>
         <br></br>
-        
-        </body>
-            <?php
-              require 'footer.inc';
-              // display_header;
-            ?>
-        </div>
+        <?php
+        }
+      ?>
+
+        <?php
+          require 'footer.inc';
+          // display_header;
+        ?>
+      </body>
+
         </html>
-
-
-
-    <?php
-    }
- ?>
-
- 

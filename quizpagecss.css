@@ -1,67 +1,7 @@
 *{
     font-family: 'Poppins', sans-serif; /* set font for the whole webpage */
   }
-  @media screen and (max-width:1000px) {
-    .list-details {  /* reponsive footer when screen 600px this will show up on two columns */
-      display: grid;
-      grid-template-columns: auto auto;
-    }
-    .list-details :last-child{
-    grid-column: 1 / span 2;
-    }
-  }
-
-  .t > button:hover{  /* what the button will look like when being hoverd */
-    border-color: #470031;
-    color: white;
-    box-shadow: 0 0.5rem 0.5rem -0.4rem #971549;
-    transform: translateY(-0.25rem);  /* when being hover the button will move on the Y-axis up direction so the value is negative */
-    cursor: pointer;
-  }
-  .active{  /* to show the element that is active on the navbar */
-    box-shadow: 0px 4px 0px 0px #BB8EAC;
-  }
-  .de:hover > .nav-link{  /* box shadow will show up when elements of the navbar being hoverd */
-    box-shadow: 0px 4px 0px 0px #BB8EAC;
-    color: #FBD6D2;
-  }
-  .de:hover > .ruby-icon{  /* when elements of the navbar being hoverd the ruby icon will rotate */
-    transform: rotate(120deg);
-  }
-  .nav-link{ /* adjust the time for transition when being hovered */
-    transition: color 0.4s, box-shadow 1s;
-  }
- 
-  .vl { /* background color for the nav bar */
-    background-color: #CF455C;
-  }
   
-  .ruby_intro {
-    width: 75px;
-    height: auto; /* set size for the ruby logo*/
-  }
-  
-  .ruby-icon {
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    vertical-align: inherit;
-    overflow: hidden;
-     transition-duration: 1s;
-     transition-property: transform; /* transformation when being hoverd for 1 second */
-  }
-  .de {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-    font-size: large;
-  }
-  
-  .t > * {
-    position: relative;
-    animation: frombottom 1.5s ease-in-out 0s; /* animation when the page is first loaded the second value is animation duration and the last one is animation delay the third one is for the speed of animation  */
-    animation-fill-mode: both; /* after animation when element will be kept at the original place */
-  }
 .bodybg
 {
     background-color: #F6E7D8;}
@@ -91,7 +31,7 @@
 	border-radius: 25px;
       }
       .Box1:hover {
-        box-shadow: 0px 8px 28px rgba(33,33,33,.2); 
+        box-shadow: 0px 8px 28px rgba(33,33,33,.2);
         transition: all 300ms ease-in-out;
       }
 
@@ -108,10 +48,10 @@ font-size:larger;
     padding: 12px;
     width: 20px;
     height: 20px
-    
+
 }
 .QuizLink:hover {
-    box-shadow: 0px 8px 11px rgba(33,33,33,.2); 
+    box-shadow: 0px 8px 11px rgba(33,33,33,.2);
     transition: all 300ms ease-in-out;
 }
 .Box2 {
@@ -128,10 +68,10 @@ font-size:larger;
 }
 
 .Box2:hover {
-        box-shadow: 0px 8px 28px rgba(33,33,33,.2); 
+        box-shadow: 0px 8px 28px rgba(33,33,33,.2);
         transition: all 300ms ease-in-out;
       }
-    
+
 .StudentResults2{
         font-weight:bold;
         font-size: larger;
@@ -152,24 +92,24 @@ a:link {
     color: white;
     text-decoration: none;
   }
-  
+
   /* visited link */
   a:visited {
     color: white;
   }
-  
+
   /* mouse over link */
   a:hover {
     color: white;
   }
-  
+
   /* selected link */
   a:active {
     color: white;
   }
 
 .TopicLink:hover {
-            box-shadow: 0px 8px 11px rgba(33,33,33,.2); 
+            box-shadow: 0px 8px 11px rgba(33,33,33,.2);
             transition: all 300ms ease-in-out;
         }
 
@@ -182,12 +122,12 @@ a:link {
         gap: 10px;
         padding: 10px;
     }
-          
+
     .container-footer { /* set background color for the footer */
         background-color: #FF9898;
         padding: 10px;
         clear: both;
-    }      
+    }
 
     .p-us {
         margin-bottom: 0;

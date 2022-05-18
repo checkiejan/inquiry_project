@@ -807,6 +807,7 @@ select {
 	width: 60%;
 	height: auto;
 	margin: 30px auto;
+  margin-bottom: 150px;
 	transition: 0.15s;
 	padding: 30px;
 	/* style | colour | width */
@@ -927,5 +928,3 @@ a:active {
 }
 
 /* end of the Quiz Completed css */
-
-

@@ -23,7 +23,7 @@ else {
   echo "none";
 }
 mysqli_close($conn);
-
+  header("location: manage1.php");
 }
 //  header("Location:manage1.php");
  ?>
