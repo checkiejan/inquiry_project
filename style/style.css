@@ -13,7 +13,9 @@
 *{
   font-family: 'Poppins', sans-serif; /* set font for the whole webpage */
 }
-
+#err-notice{
+  margin-bottom: 290px;
+}
 @media screen and (max-width:1000px) {
   .list-details {  /* reponsive footer when screen 600px this will show up on two columns */
     display: grid;
@@ -799,6 +801,7 @@ select {
 	position: relative;
 	text-align: center;
 	font-weight: bold;
+  margin-top: 30px;
 }
 
 .Box1 {

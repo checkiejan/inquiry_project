@@ -79,7 +79,14 @@
     }
     ///////
     if(!$flag){
-      print $errMsg;
+
+      echo "<h1 class=\"markquizheader\">Error!</h1>";
+    echo "<fieldset id=\"err-notice\" class=\"Box1 \">";
+          echo "<div class = \"StudentResults1\">";
+            echo  "<P>Error</P></div>";
+          echo $errMsg;
+    echo "<a href=\"quiz.php\" class=\"QuizLink\">Return to quiz page</a>";
+    echo "</fieldset>";
     }
     else{
 
@@ -97,7 +104,14 @@
         }
       }
       if(!$flag){
-        print "<p>You have reached your limit of 2 attempts</p>";
+
+        echo "<h1 class=\"markquizheader\">Error!</h1>";
+      echo "<fieldset id=\"err-notice\" class=\"Box1 \">";
+            echo "<div class = \"StudentResults1\">";
+              echo  "<P>Error</P></div>";
+          print "<p>You have reached your limit of 2 attempts</p>";
+      echo "<a href=\"quiz.php\" class=\"QuizLink\">Return to quiz page</a>";
+      echo "</fieldset>";
       }
       else{
           $query = "SELECT * FROM student WHERE stu_id=$studentid";
@@ -132,7 +146,13 @@
               $query="DELETE FROM student WHERE stu_id=$studentid";
               $result= mysqli_query($conn, $query);
             }
-            echo $errMsg;
+            echo "<h1 class=\"markquizheader\">Error!</h1>";
+          echo "<fieldset id=\"err-notice\" class=\"Box1 \">";
+                echo "<div class = \"StudentResults1\">";
+                  echo  "<P>Error</P></div>";
+                echo $errMsg;
+          echo "<a href=\"quiz.php\" class=\"QuizLink\">Return to quiz page</a>";
+          echo "</fieldset>";
           }
           else{
             // where to check if the answer is correct
@@ -212,7 +232,7 @@
                <div class = "DateAttempted1">
                  <P>Date attempted: <?php echo"$date"; ?></P></div>
         <!-- Link to quiz here-->
-        <a href="QUIZPAGE" class="QuizLink">Return to quiz page</a>
+        <a href="quiz.php" class="QuizLink">Return to quiz page</a>
         </fieldset>
         <br></br>
         <?php
