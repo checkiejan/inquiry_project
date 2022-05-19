@@ -158,7 +158,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
                  ."<th scope=\"col\">Student Id</th>\n"
                  ."<th scope=\"col\">First name</th>\n"
@@ -206,7 +206,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
@@ -249,7 +249,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
@@ -319,7 +319,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
@@ -386,7 +386,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
