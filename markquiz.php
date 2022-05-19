@@ -184,7 +184,7 @@
             if($question5 == "5"){
 			    $score++;
 		    }
-            $score = $score / 5 * 100;
+            #$score = $score / 5 * 100;
 
             // below part will update the score into the databases
 
@@ -224,9 +224,9 @@
                <div class = "Name1">
                   <p>Name: <?php echo"$firstname $lastname"; ?></p></div>
                <div class = "TotalScore1">
-                  <p>Total Score: <?php echo"$score"; ?>%</p></div>
+                  <p>Total Score: <?php echo"$score"; ?></p></div>
                <div class = "MaximumScore1">
-                  <p>Maximum Score: 100%</p></div>
+                  <p>Maximum Score: 5</p></div>
                <div class = "AttemptNumber1">
                   <P>Attempt Number: <?php echo"$attemptid"; ?></P></div>
                <div class = "DateAttempted1">
