@@ -46,7 +46,7 @@
         $errMsg .="<p>You must input your student id</p>";
         $flag=false;
     }
-    elseif(!preg_match("/\d{7}|^\d{10}$/",$_POST["stu_id"])){
+    elseif(!preg_match("/^([0-9]{7}|[0-9]{10})$/",$_POST["stu_id"])){
       $errMsg .="<p>Your student id must contain 7 or 10 digits</p>";
       $flag=false;
     }
