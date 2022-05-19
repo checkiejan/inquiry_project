@@ -83,6 +83,9 @@ if(isset($_POST["sort"])){
   </head>
   <body>
     <?php require_once 'header.inc'; ?>
+    <main class="body-manage">
+
+
     <h1>Manage attempts</h1>
     <hr>
     <?php   echo "<a href='logout.php'> Logout</a> "; ?>
@@ -430,6 +433,9 @@ if(isset($_POST["sort"])){
 
 
      }
+     ?>
+       </main>
+     <?php
      require 'footer.inc';
      ?>
   </body>

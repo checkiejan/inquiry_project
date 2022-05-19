@@ -22,6 +22,8 @@
   require 'header.inc';
   // display_header;
      ?>
+ <main class="body-manage">
+
 
 <?php
 
@@ -238,7 +240,7 @@
         <?php
         }
       ?>
-
+       </main>
         <?php
           require 'footer.inc';
           // display_header;

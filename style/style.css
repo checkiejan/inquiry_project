@@ -630,6 +630,12 @@ hr{
   width: 12%;
   margin: auto;
   background: none;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.body-manage{
+  min-height: 90vh;
+  background-color: #F6E7D8;
 }
 fieldset:last-of-type input{
   margin: 20px;
