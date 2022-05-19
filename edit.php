@@ -20,5 +20,5 @@ else{
 mysqli_close($conn);
 }
 }
-  header("Location:manage1.php");
+  header("Location:manage.php");
  ?>

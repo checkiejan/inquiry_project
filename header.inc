@@ -30,7 +30,7 @@
                   <a  href='enhancement.php'>Enhancement</a>
                 </li>
                 <li class='small-list nav-link '>
-                  <a  href='manage1.php'>Manage</a>
+                  <a  href='manage.php'>Manage</a>
                 </li>
               </ul>
             </div>
@@ -56,7 +56,7 @@
           </li>
           <li class='de '>
             <img class='ruby-icon' src='images/ruby_icon.png' alt='ruby icon'>
-            <a class='nav-link' href='manage1.php'>Manage</a>
+            <a class='nav-link' href='manage.php'>Manage</a>
           </li>
         </ul>
       </div>
