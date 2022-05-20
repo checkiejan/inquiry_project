@@ -49,7 +49,7 @@
       <hrc class="r-quiz">
       <fieldset>
         <legend>Question 1 </legend>
-        <p><label for="Question1">What is the difference between Ruby and 'Ruby on Rails'</label></p>
+        <p><label for="Question1">Finish the sentence: 'Ruby on Rails is a ......... designed by David Heinemeier Hansson.' </label></p>
         <p><textarea id="question1" name="question1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
       </fieldset>
       <hr>

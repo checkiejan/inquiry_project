@@ -165,7 +165,7 @@
             $score=0;
 
             //Q1
-            if ($question1 == "One"){
+            if (($question1 == "framework") || ($question1 == "Framework")){
 			    $score++;
 		    }
             //Q2
