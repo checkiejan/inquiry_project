@@ -25,16 +25,18 @@ require 'header.inc'; ?>
   <!-- navbar  -->
   <br></br>
   <h1 class="enhancementheader">Enhancements</h1>
+ <main class="main-2">
+
 
 <!--First Enhancements Box-->
 <fieldset class="Box1">
-       <div class = "firsttitle"> 
-          <P>First Enhancement: Normalisation</P></div>
-       <div class = "Enhance1"> 
+       <div class = "firsttitle">
+          <P> Normalisation</P></div>
+       <div class = "Enhance1">
           <p>Primary keys are primarily used to uniquely idenity each record in a table.</p>
           <p>Foreign keys are used to prevent actions that would destroy links between tables.</p>
           <!--Source: https://www.w3schools.com/sql/sql_foreignkey.asp-->
-          <p>The attempt table created has the foreign key, and the student tables have the primary keys. 
+          <p>The attempt table created has the foreign key, and the student tables have the primary keys.
              The key for both of them is the student ID, and thus has to be unique. </p>
           <p>The student ID needs to be created with the student table first, to prevent errors from occuring.</p></div>
           <img src="primarycode.png" alt="Ruby login page" class="primarycode">
@@ -42,23 +44,23 @@ require 'header.inc'; ?>
 <br></br>
 <!--Second Enhancements Box-->
 <fieldset class="Box2">
-  <div class = "SecondE"> 
-    <P>Second Enhancement: Login and session</P></div>
- <div class = "Enhance2"> 
+  <div class = "SecondE">
+    <P>Login and session</P></div>
+ <div class = "Enhance2">
     <p>This enhancement stores user information and allows it
-      to be used across multiple pages, such as usernames. 
+      to be used across multiple pages, such as usernames.
     </p>
     <p>Essentially, it holds information about a singular user,
-      and all pages can access said information. 
+      and all pages can access said information.
     </p>
     <p>The session used for our quiz temporarily stores numbers of attempts
-      to login and if failed after a certain threshold, locks the page for 30 seconds. 
+      to login and if failed after a certain threshold, locks the page for 30 seconds.
     </p>
     <p>The login information is stored within the database, rather than processes of hard coding.
     </p></div>
     <img src="rubylogin.png" alt="Ruby login page" class="loginpng">
 </fieldset>
-</body>
+ </main>
 
 
  <?php

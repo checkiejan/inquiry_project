@@ -791,6 +791,7 @@ select {
 
 .bodybg {
 	background-color: #F6E7D8;
+  overflow-x: hidden;
 }
 
 #bodybg {
@@ -809,8 +810,11 @@ select {
 	font-weight: bold;
   margin-top: 30px;
 }
-
+.main-2{
+  overflow-x: hidden;
+}
 .Box1 {
+  overflow-x: hidden;
 	display: block;
 	position: relative;
 	width: 60%;
@@ -851,6 +855,7 @@ select {
 	}
 
 .Box2 {
+  overflow-x: hidden;
 	display: block;
 	position: relative;
 	width: 60%;
@@ -947,7 +952,7 @@ a:active {
       text-align: center;
       font-weight: bold;
   }
-  
+
 .firsttitle{
 font-weight:bolder;
 font-size:x-large;
