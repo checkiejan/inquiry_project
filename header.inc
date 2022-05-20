@@ -57,7 +57,7 @@
           <li class='de '>
             <img class='ruby-icon' src='images/ruby_icon.png' alt='ruby icon'>
 
-            <a class='nav-link' href='enhancement.php'>Enhancement 2</a>
+            <a class='nav-link' href='enhancements2.php'>Enhancement 2</a>
           </li>
           <li class='de '>
             <img class='ruby-icon' src='images/ruby_icon.png' alt='ruby icon'>

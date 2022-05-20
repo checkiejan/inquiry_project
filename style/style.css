@@ -937,3 +937,51 @@ a:active {
 }
 
 /* end of the Quiz Completed css */
+
+
+/*Start of Enhancement 2*/
+
+.enhancementheader {
+      display:block;
+      position:relative;
+      text-align: center;
+      font-weight: bold;
+  }
+  
+.firsttitle{
+font-weight:bolder;
+font-size:x-large;
+text-align: center;
+}
+
+.primarycode{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height: auto;
+  }
+
+.Enhance1{
+    font-size: large;
+    }
+
+.SecondE{
+        font-weight:bolder;
+        font-size: x-large;
+        text-align: center;
+        }
+.Enhance2{
+        font-size: large;
+        }
+.loginpng{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: auto;
+  }
+
+
+
+/*End of Enhancement 2*/
