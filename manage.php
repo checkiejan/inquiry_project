@@ -83,10 +83,13 @@ if(isset($_POST["sort"])){
   </head>
   <body>
     <?php require_once 'header.inc'; ?>
+    <main class="body-manage">
+
+
     <h1>Manage attempts</h1>
     <hr>
     <?php   echo "<a href='logout.php'> Logout</a> "; ?>
-    <form class="" action="manage1.php" method="post">
+    <form class="" action="manage.php" method="post">
       <p><label for="firstname">First name</label>
 		<input type="text" name="firstname" value= "<?php if(isset($_SESSION["firstname"])) { echo $_SESSION["firstname"]; } ?>"   maxlength="30" id="firstname" size="20" />
 	</p>
@@ -115,7 +118,7 @@ if(isset($_POST["sort"])){
       <?php if(isset($_SESSION["choice"]))
      {if ($_SESSION["choice"]==2) echo "selected"; }
        ?>
-      >Sort by 50% on second attempt</option>
+      >Sort by under 50% on second attempt</option>
 			<option value="name"
       <?php if(isset($_SESSION["choice"]))
      {if ($_SESSION["choice"]==3) echo "selected"; }
@@ -155,7 +158,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
                  ."<th scope=\"col\">Student Id</th>\n"
                  ."<th scope=\"col\">First name</th>\n"
@@ -176,7 +179,7 @@ if(isset($_POST["sort"])){
                echo "<td>",$row["attempt_id"],"</td>\n";
                echo "<form  action=\"edit.php\" method=\"post\">";
                echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
-               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"12\"></td>\n";
+               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
                echo "<td> <input type='submit' value='Edit'> </td>";
                echo "</form>";
                echo "</tr>\n";
@@ -197,13 +200,13 @@ if(isset($_POST["sort"])){
            // $query="select * from attempt ";
            $query ="SELECT student.firstname, student.lastname, student.stu_id, attempt.doa, attempt.score, attempt.attempt_id
                     FROM student
-                    INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE attempt.attempt_id=1 and attempt.score=12";
+                    INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE attempt.attempt_id=1 and attempt.score=5";
            $result= mysqli_query($conn, $query);
            if(!$result){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
@@ -240,13 +243,13 @@ if(isset($_POST["sort"])){
            // $query="select * from attempt ";
            $query ="SELECT student.firstname, student.lastname,  student.stu_id, attempt.doa, attempt.score, attempt.attempt_id
                     FROM student
-                    INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE attempt.attempt_id=2 and attempt.score<6";
+                    INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE attempt.attempt_id=2 and attempt.score<3";
            $result= mysqli_query($conn, $query);
            if(!$result){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
@@ -316,7 +319,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
@@ -337,7 +340,7 @@ if(isset($_POST["sort"])){
                echo "<td>",$row["attempt_id"],"</td>\n";
                echo "<form  action=\"edit.php\" method=\"post\">";
                echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
-               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"12\"></td>\n";
+               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
                echo "<td> <input type='submit' value='Edit'> </td>";
                echo "</form>";
                echo "</tr>\n";
@@ -383,7 +386,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table border=\"1\">\n";
+             echo "<table >\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
@@ -406,7 +409,7 @@ if(isset($_POST["sort"])){
                echo "<td>",$row["attempt_id"],"</td>\n";
                echo "<form  action=\"edit.php\" method=\"post\">";
                echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
-               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"12\"></td>\n";
+               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
                echo "<td> <input type='submit' value='Edit'> </td>";
                echo "</form>";
                echo "</tr>\n";
@@ -430,7 +433,10 @@ if(isset($_POST["sort"])){
 
 
      }
-
+     ?>
+       </main>
+     <?php
+     require 'footer.inc';
      ?>
   </body>
 </html>

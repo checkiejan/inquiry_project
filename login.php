@@ -19,7 +19,7 @@ if(!isset($_SESSION['attempt'])){
 if(isset($_SESSION['use']))   // Checking whether the session is already there or not if
                               // true then header redirect it to the home page directly
  {
-    header("Location:manage1.php");
+    header("Location:manage.php");
  }
 
  ?>
@@ -89,7 +89,7 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
                      unset($_SESSION['error']);
                      unset($_SESSION['attempt_again']);
                      mysqli_close($conn);
-    		header("location:./manage1.php");
+    		             header("location:./manage.php");
                      // header("location:./home.php");
                  }
                  else{

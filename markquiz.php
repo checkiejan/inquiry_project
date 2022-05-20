@@ -22,6 +22,8 @@
   require 'header.inc';
   // display_header;
      ?>
+ <main class="body-manage">
+
 
 <?php
 
@@ -44,7 +46,7 @@
         $errMsg .="<p>You must input your student id</p>";
         $flag=false;
     }
-    elseif(!preg_match("/\d{7}|^\d{10}$/",$_POST["stu_id"])){
+    elseif(!preg_match("/^([0-9]{7}|[0-9]{10})$/",$_POST["stu_id"])){
       $errMsg .="<p>Your student id must contain 7 or 10 digits</p>";
       $flag=false;
     }
@@ -57,7 +59,7 @@
         $errMsg .="<p>You must input your first name</p>";
         $flag=false;
     }
-    elseif (!preg_match("/^[a-zA-z\s-]*$/",$_POST["firstname"])){
+    elseif (!preg_match("/^[a-zA-z\s-]{1,30}$/",$_POST["firstname"])){
       $errMsg .="<p>Only alpha letters and hyphen allowed in your first name.</p>";
       $flag=false;
     }
@@ -70,7 +72,7 @@
         $errMsg .="<p>You must input your last name</p>";
         $flag=false;
     }
-    elseif (!preg_match("/^[a-zA-z\s-]*$/",$_POST["lastname"])){
+    elseif (!preg_match("/^[a-zA-z\s-]{1,30}$/",$_POST["lastname"])){
       $errMsg .="<p>Only alpha letters and hyphen allowed in your last name.</p>";
       $flag=false;
     }
@@ -238,7 +240,7 @@
         <?php
         }
       ?>
-
+       </main>
         <?php
           require 'footer.inc';
           // display_header;
