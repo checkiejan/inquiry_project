@@ -33,6 +33,8 @@
     create_student_table($conn);
     $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
     create_attempt_table($conn);
+    $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
+    set_timezone($conn);
     $errMsg = "";
     $flag=true;
     $firsttime=false;
@@ -123,7 +125,7 @@
             if(count($arr)==0){
               $firsttime=true;
               mysqli_free_result($result);
-              $query= "INSERT INTO student (`stu_id`, `firstname`, `lastname`) VALUES ($studentid, '$firstname', '$lastname')";
+              $query= "INSERT INTO student (`stu_id`, `firstname`, `lastname`) VALUES ('$studentid', '$firstname', '$lastname')";
               $result= mysqli_query($conn, $query);
             }
           }
@@ -175,11 +177,11 @@
 			    $score++;
             }
             //Q3
-            if ($question3[0] == "Calculations"){
+            if (count($question3)==1 && $question3[0] == "Calculations"){
 			    $score++;
             }
             //Q4
-            if ($question4 = "Shopify") {
+            if ($question4 == "Shopify") {
 			    $score++;
 		    }
             //Q5
@@ -197,7 +199,7 @@
             }
 
 
-            $query= "INSERT INTO attempt (`stu_id`,`doa`, `score`, `attempt_id`) VALUES ($studentid, UTC_TIMESTAMP(), $score, $attemptid)";
+            $query= "INSERT INTO attempt (`stu_id`,`doa`, `score`, `attempt_id`) VALUES ('$studentid', CURRENT_TIMESTAMP, $score, $attemptid)";
             $result= mysqli_query($conn, $query);
 
           }

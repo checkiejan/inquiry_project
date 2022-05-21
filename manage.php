@@ -7,6 +7,8 @@ $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 create_student_table($conn);
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 create_attempt_table($conn);
+$conn= @mysqli_connect($host,$user,$pwd,$sql_db);
+set_timezone($conn);
 
 if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
  {
@@ -85,10 +87,13 @@ if(isset($_POST["sort"])){
     <?php require_once 'header.inc'; ?>
     <main class="body-manage">
 
+      <div class="h-manage">
+        <h1>Manage attempts</h1>
+        <?php   echo "<button class=\"btn btn-outline-dark\" onclick=\"document.location='logout.php'\" type=\"button\">Logout</button> "; ?>
+      </div>
 
-    <h1>Manage attempts</h1>
     <hr>
-    <?php   echo "<a href='logout.php'> Logout</a> "; ?>
+
     <form class="" action="manage.php" method="post">
       <p><label for="firstname">First name</label>
 		<input type="text" name="firstname" value= "<?php if(isset($_SESSION["firstname"])) { echo $_SESSION["firstname"]; } ?>"   maxlength="30" id="firstname" size="20" />
@@ -131,7 +136,7 @@ if(isset($_POST["sort"])){
       >Sort by Student Id</option>
 		</select>
 	</p>
-   <input type="submit" name="submit" value="Filter" />
+   <input class=" btn-secondary btn-sm" type="submit" name="submit" value="Filter" />
      </form>
      <hr>
 
@@ -249,7 +254,7 @@ if(isset($_POST["sort"])){
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             echo "<table >\n";
+             echo "<table>\n";
              echo "<tr>\n"
              ."<th scope=\"col\">Student Id</th>\n"
              ."<th scope=\"col\">First name</th>\n"
@@ -421,7 +426,7 @@ if(isset($_POST["sort"])){
          }
 
          echo "<form action=\"delete.php\" method=\"post\">";
-         echo "<input type=\"submit\" name=\"delete\" value=\"delete\">";
+         echo "<input class=\"btn-secondary btn-sm\" type=\"submit\" name=\"delete\" value=\"delete\">";
          echo "</form>";
        }
 

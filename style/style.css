@@ -633,10 +633,7 @@ hr{
   margin-top: 10px;
   margin-bottom: 15px;
 }
-.body-manage{
-  min-height: 90vh;
-  background-color: #F6E7D8;
-}
+
 fieldset:last-of-type input{
   margin: 20px;
   background: #EEE;
@@ -990,3 +987,25 @@ text-align: center;
 
 
 /*End of Enhancement 2*/
+/* start of manage */
+.body-manage{
+  min-height: 90vh;
+  background-color: #F6E7D8;
+}
+.body-manage table{
+  width: 97%;
+  margin:10px auto;
+}
+.body-manage form {
+  margin-left: 5px;
+}
+
+.btn-outline-dark{
+  position: absolute;
+  right: 15px;
+}
+.h-manage h1{
+text-align: center;
+}
+
+/* end of manage */

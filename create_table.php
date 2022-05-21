@@ -7,8 +7,9 @@ function create_student_table($conn) {
      echo "<p>Database connection failure</p>";
    }
    else{
+
     $query= "CREATE TABLE IF NOT EXISTS student (
-    stu_id INT NOT NULL PRIMARY KEY,
+    stu_id VARCHAR(10) NOT NULL PRIMARY KEY,
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL
   )";
@@ -17,6 +18,17 @@ function create_student_table($conn) {
       $result= mysqli_query($conn, $query);
       mysqli_close($conn);
    }
+}
+function set_timezone($conn){
+  if(!$conn){
+
+    echo "<p>Database connection failure</p>";
+  }
+  else{
+    $query="SET time_zone= '+10:00'";
+    $result= mysqli_query($conn, $query);
+    mysqli_close($conn);
+  }
 }
 function create_attempt_table($conn) {
   // $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
@@ -27,8 +39,8 @@ function create_attempt_table($conn) {
    else{
     $query= "CREATE TABLE IF NOT EXISTS attempt (
       id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-      stu_id INT NOT NULL,
-      doa DATETIME  NOT NULL,
+      stu_id VARCHAR(10) NOT NULL,
+      doa TIMESTAMP  NOT NULL,
       score INT NOT NULL,
       attempt_id INT NOT NULL,
       FOREIGN KEY (stu_id) REFERENCES student(stu_id) ON DELETE CASCADE
