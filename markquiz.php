@@ -23,7 +23,18 @@
   // display_header;
      ?>
  <main class="body-manage">
-
+<?php
+session_start();
+if(isset($_POST["stu_id"])){
+  $_SESSION["studentid"]=$_POST["stu_id"];
+}
+if(isset($_POST["firstname"])){
+  $_SESSION["f_name"]=$_POST["firstname"];
+}
+if(isset($_POST["lastname"])){
+  $_SESSION["l_name"]=$_POST["lastname"];
+}
+ ?>
 
 <?php
 

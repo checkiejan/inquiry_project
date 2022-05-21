@@ -18,6 +18,7 @@
 
 <body>
   <?php
+  session_start();
   require 'header.inc'; ?>
 
   <div id="quiz-body">
@@ -32,25 +33,25 @@
         <legend>Student details</legend>
         <div class="studentid">
           <label for="stu_id">Student ID:</label>
-          <p> <input type="text" pattern="^\d{7}|^\d{10}$" name="stu_id" id="stu_id" value="" required="required"></p>
+          <p> <input type="text" pattern="^\d{7}|^\d{10}$" name="stu_id" id="stu_id" value="<?php if(isset($_SESSION["studentid"])) echo $_SESSION["studentid"]; ?>" required="required"></p>
         </div>
         <div class="first-name">
 
           <label for="firstname">First name:</label>
-          <p><input type="text" name="firstname" id="firstname" required="required" maxlength="30" pattern="^[a-zA-Z\s-]+$" value=""></p>
+          <p><input type="text" name="firstname" id="firstname" required="required" maxlength="30" pattern="^[a-zA-Z\s-]+$" value="<?php if(isset($_SESSION["f_name"])) echo $_SESSION["f_name"]; ?>"></p>
 
         </div>
         <div class="family-name">
 
           <label for="lastname">Family name:</label>
-          <input type="text" name="lastname" id="lastname" required="required" maxlength="30" pattern="^[a-zA-Z\s-]+$" value="">
+          <input type="text" name="lastname" id="lastname" required="required" maxlength="30" pattern="^[a-zA-Z\s-]+$" value="<?php if(isset($_SESSION["l_name"])) echo $_SESSION["l_name"]; ?>">
         </div>
       </fieldset>
       <hrc class="r-quiz">
       <fieldset>
         <legend>Question 1 </legend>
         <p><label for="Question1">Finish the sentence: 'Ruby on Rails is a ......... designed by David Heinemeier Hansson.' </label></p>
-        <p><textarea id="question1" name="question1" rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
+        <p><textarea id="question1" name="question1"  rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
       </fieldset>
       <hr>
       <fieldset id="question2">
