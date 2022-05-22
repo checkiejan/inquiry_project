@@ -29,14 +29,14 @@
       <h1>Ruby on Rails</h1>
       <p>A popular web application framework, used by sites such as Twitch, AirBnb and GitHub. Since its inception in 2003 by David Hansson, it has gone on to be the baseline of many webpages for its intuitiveness and convenience.</p>
     </div>
-    <button onclick="document.location='topic.html'" type="button">
+    <button onclick="document.location='topic.php'" type="button">
       <!-- button link to topic.html -->
       Learn more
     </button>
     <!-- button links to the group video -->
     <button onclick="document.location='https://youtu.be/MdYvke6b2XQ'" type="button">Our video</button>
   </section>
-  
+
   <?php
   require 'footer.inc'
    ?>

@@ -35,9 +35,9 @@ require 'header.inc'; ?>
         specific way, duration time, the speed during the process, and delay time for that to happen. Moreover, there is an animation-fill-mode property to make sure that the element can be filled in the right place.
       </p>
       <ol>
-        <li>Enhancement: Text animation fly in from the right of the quiz page. <a href="quiz.html">Click here</a></li>
-        <li>Enhancement: Text animation fly in from the bottom of the introduction page. <a href="index.html">Click here</a></li>
-        <li>Enhancement: Fade in animation in the topic page <a href="topic.html">Click here</a></li>
+        <li>Enhancement: Text animation fly in from the right of the quiz page. <a href="quiz.php">Click here</a></li>
+        <li>Enhancement: Text animation fly in from the bottom of the introduction page. <a href="index.php">Click here</a></li>
+        <li>Enhancement: Fade in animation in the topic page <a href="topic.php">Click here</a></li>
       </ol>
     </section>
 
@@ -49,9 +49,9 @@ require 'header.inc'; ?>
       </p>
       <ol>
         <li>Enhancement: Icon rotate when we hover our mouse over the button. (Test it out on the navigation header of every page)</li>
-        <li>Enhancement: The "Learn More" button when we hover our mouse over it, it does a pop up transition. <a href="index.html">Click here</a></li>
-        <li>Enhancement: The question content box when we hover our mouse over it, it does a pop up transition. <a href="quiz.html">Click here</a></li>
-        <li>Enhancement: The table of content elements when we hover our mouse over it, it does a pop up transition. <a href="topic.html">Click here</a></li>
+        <li>Enhancement: The "Learn More" button when we hover our mouse over it, it does a pop up transition. <a href="index.php">Click here</a></li>
+        <li>Enhancement: The question content box when we hover our mouse over it, it does a pop up transition. <a href="quiz.php">Click here</a></li>
+        <li>Enhancement: The table of content elements when we hover our mouse over it, it does a pop up transition. <a href="topic.php">Click here</a></li>
       </ol>
     </section>
 
