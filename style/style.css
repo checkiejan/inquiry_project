@@ -991,6 +991,7 @@ text-align: center;
 .body-manage{
   min-height: 90vh;
   background-color: #F6E7D8;
+  padding-bottom: 5px;
 }
 .body-manage table{
   width: 97%;

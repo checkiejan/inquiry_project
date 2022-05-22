@@ -52,7 +52,7 @@ if(isset($_POST["lastname"])){
 
     $date = date('Y-m-d');
 	$date .= " ";
-	$date .= date('h:i:s');
+	$date .= date('H:i:s');
     ////
     if (!isset($_POST["stu_id"])||$_POST["stu_id"]=="")
     {
@@ -236,6 +236,9 @@ if(isset($_POST["lastname"])){
         <fieldset class="Box1">
                <div class = "StudentResults1">
                   <P>Student Results</P></div>
+                  <div class="">
+                    <p>Student id: <?php echo $studentid; ?></p>
+                  </div>
                <div class = "Name1">
                   <p>Name: <?php echo"$firstname $lastname"; ?></p></div>
                <div class = "TotalScore1">
