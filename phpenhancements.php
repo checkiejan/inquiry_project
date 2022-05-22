@@ -39,7 +39,7 @@ require 'header.inc'; ?>
           <p>The attempt table created has the foreign key, and the student tables have the primary keys.
              The key for both of them is the student ID, and thus has to be unique. </p>
           <p>The student ID needs to be created with the student table first, to prevent errors from occuring.</p></div>
-          <img src="primarycode.png" alt="Ruby login page" class="primarycode">
+          <!-- <img src="primarycode.png" alt="Ruby login page" class="primarycode"> -->
 </fieldset>
 <br></br>
 <!--Second Enhancements Box-->
@@ -58,7 +58,7 @@ require 'header.inc'; ?>
     </p>
     <p>The login information is stored within the database, rather than processes of hard coding.
     </p></div>
-    <img src="rubylogin.png" alt="Ruby login page" class="loginpng">
+    <!-- <img src="rubylogin.png" alt="Ruby login page" class="loginpng"> -->
 </fieldset>
  </main>
 
