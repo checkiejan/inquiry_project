@@ -70,8 +70,8 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
            } else {
              if(isset($_POST['username']) && isset($_POST['pass']) ){
 
-                 $uname=$_POST['username'];
-                 $password=$_POST['pass'];
+                 $uname=sanitise_input($_POST['username']);
+                 $password= sanitise_input($_POST['pass']);
                  $query="select * from supervisor where username='$uname' AND pwd='$password' ";
 
                  // $sql="select * from supervisor where user='", $uname ,"'AND Pass='", $password ,"' limit 1";
@@ -110,7 +110,7 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
     						//note 5*60 = 5mins, 60*60 = 1hr, to set to 2hrs change it to 2*60*60
     					}
               if($_SESSION['attempt']<3){
-                     echo "<p class=\"err\">invalid UserName or Password</p>";}
+                     echo "<p class=\"err\">Invalid UserName or Password</p>";}
                     mysqli_free_result($result);
                     mysqli_close($conn);
                  }
@@ -125,8 +125,8 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
 
      ?>
     <form class="login-form" action=""method="post">
-      <input type="text" name="username" placeholder="Username"/>
-    <input type="password" name="pass" placeholder="Password"/>
+      <input type="text" name="username"  required placeholder="Username"/>
+    <input type="password" name="pass" required placeholder="Password"/>
     <input type="submit"  class="btn-form" name="login" value="LOGIN">
     <!-- <button class="btn-form">login</button> -->
   </form>
