@@ -1,0 +1,1123 @@
+.list-details { /* reponsive footer when default this will show up on three columns */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  gap: 10px;
+  padding: 10px;
+}
+.menu-small{
+  display:none;
+}
+
+*{
+  font-family: 'Poppins', sans-serif; /* set font for the whole webpage */
+}
+#err-notice{
+  margin-bottom: 290px;
+}
+@media screen and (max-width:1000px) {
+  .list-details {  /* reponsive footer when screen 600px this will show up on two columns */
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .list-details :last-child{
+  grid-column: 1 / span 2;
+  }
+}
+.small-menu{
+  display: none;
+}
+.small-menu ul{
+  list-style: none;
+}
+.small-menu a:hover{
+  box-shadow: 0px 4px 0px 0px #BB8EAC;
+  color: white;
+}
+.small-menu a{
+  color: #FBD6D2;
+  text-decoration: none;
+  transition: color 0.15s, box-shadow 0.25s;
+}
+@media screen and (max-width:1200px) {
+  .navbar-nav{
+    display: none;
+  }
+  .menu-small{
+    display:block;
+  }
+  .menu-small .bar div{
+    width: 30px;
+    height: 4px;
+    background-color: #DDDDDD;
+    border-radius: 25px;
+    margin: 7px;
+  }
+.menu-small:hover .bar div{
+  background-color: white;
+}
+  .menu-small:hover  .small-menu{
+    display: block;
+    position: absolute;
+    background-color: #CF455C;
+    right: 0px;
+    z-index: 2;
+
+  }
+  .menu-small:hover  .small-menu ul{
+    display: block;
+    margin: 10px;
+  }
+.menu-small:hover  .small-menu ul li{
+  background: transparent;
+  height: 3rem;
+}
+  .list-details {  /* reponsive footer when screen 600px this will show up on one columns */
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .t >button{   /* reponsive design when screen 600px button disappears */
+    display: none;
+  }
+  .t >button:last-of-type{
+    display: block;
+
+    top: 20px;
+  }
+  .list-details :last-child{
+  grid-column: span 1;
+  }
+}
+/* these buttons below is inspired by this website https://1stwebdesigner.com/20-amazing-pure-css-animated-buttons/ */
+.t >button{  /* style the button  */
+  position:relative;  /*  position for the button */
+  left: 70px;
+  top: 35px;
+  background: none;
+  border: 2px solid;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border-radius: 10px;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;  /* transition for the button when hover, setting time for each transition  */
+}
+.t >button:last-of-type{  /* style the button  */
+  position:relative;  /*  position for the button */
+  /* left: -94px;
+  top: 110px; */
+  width: 10rem;
+  background: none;
+  border: 2px solid;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  border-radius: 10px;
+  transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;  /* transition for the button when hover, setting time for each transition  */
+}
+.t > button:hover{  /* what the button will look like when being hoverd */
+  border-color: #470031;
+  color: white;
+  box-shadow: 0 0.5rem 0.5rem -0.4rem #971549;
+  transform: translateY(-0.25rem);  /* when being hover the button will move on the Y-axis up direction so the value is negative */
+  cursor: pointer;
+}
+.active{  /* to show the element that is active on the navbar */
+  box-shadow: 0px 4px 0px 0px #BB8EAC;
+}
+.de:hover > .nav-link{  /* box shadow will show up when elements of the navbar being hoverd */
+  box-shadow: 0px 4px 0px 0px #BB8EAC;
+  color: #FBD6D2;
+}
+.de:hover > .ruby-icon{  /* when elements of the navbar being hoverd the ruby icon will rotate */
+  transform: rotate(120deg);
+}
+.nav-link{ /* adjust the time for transition when being hovered */
+  transition: color 0.4s, box-shadow 1s;
+}
+
+.footer-mail>div>a { /* style the anchor tag for the footer*/
+  text-decoration: none;
+  color: #971549;
+  margin-bottom:  10px;
+}
+
+
+
+.container-footer { /* set background color for the footer */
+  background-color: #FF9898;
+  padding: 10px;
+  clear: both;
+}
+
+.container-footer div{
+  color: #971549;
+  text-align: center;
+}
+.container-footer div:last-of-type{
+  font-style: italic;
+}
+.p-us {
+  margin-bottom: 0;
+}
+
+.vl { /* background color for the nav bar */
+  background-color: #CF455C;
+}
+
+.ruby_intro {
+  width: 75px;
+  height: auto; /* set size for the ruby logo*/
+}
+
+.ruby-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: inherit;
+  overflow: hidden;
+   transition-duration: 1s;
+   transition-property: transform; /* transformation when being hoverd for 1 second */
+}
+.de {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  font-size: large;
+}
+
+.text-ruby{
+  width: 45%;
+  height: auto;
+  color: black;
+  position: relative;
+  margin-left: 3%;
+  top: 4%;
+  border-left: 4px solid #F4BBBB;
+  padding-left: 7px;
+  overflow: hidden;
+}
+.t > * {
+  position: relative;
+  animation: frombottom 1.5s ease-in-out 0s; /* animation when the page is first loaded the second value is animation duration and the last one is animation delay the third one is for the speed of animation  */
+  animation-fill-mode: both; /* after animation when element will be kept at the original place */
+}
+@keyframes frombottom {
+  from {top: 50vw;
+  box-shadow: 4px 3.5rem 7.5rem -0.4rem #971549;}
+  to {right: 0;
+  }
+}
+.t {
+  overflow-y: hidden;
+  background: url("../style/images/bg.jpg") ; /* background image for index page */
+  background-size: cover;  /* make it cover the whole div */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  height: 90vh;
+}
+@media screen and (max-width:1200px){
+  .t{
+    background: url("../style/images/bg2.jpg") ;  /* bg image more blur */
+    background-size: cover;
+    background-position: center;
+  }
+  .text-ruby{
+    width: 70%;
+    height: auto;
+  }
+}
+/* start of topic css */
+
+/*Whole page selector*/
+#body{
+	margin: 0;
+	background-color: #BC5E5E;
+	width: auto;
+	height: auto;
+	background: #BC5E5E url("images/ruby_background.png") repeat center;
+
+}
+
+/*topic landing screen box section selector*/
+#topicarticle{
+	background-color: #F6E7D8;
+	text-align: center;
+	padding: 150px;
+	margin: 100px 0 260px 0;
+	color: #808000;
+	animation: appear 1.75s ease-in-out 0.3s;
+	animation-fill-mode: both;
+}
+#topicarticle h1:last-of-type{
+font: bold italic 450% 'Poppins', sans-serif ;
+}
+/*topic landing screen fade in animation*/
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;
+  }
+}
+
+
+/*topic landing screen upper text selector*/
+#topicarticle h3{
+	font-size: 40px;
+	padding: 0;
+	margin: 0;
+}
+
+/*topic landing screen lower text selector*/
+#topicarticle h1{
+	margin: 0;
+	font-size: 72px;
+}
+
+/*article section selector*/
+.body{
+	border-top: 3px solid #750d00;
+	border-right: 3px solid #750d00;
+	border-bottom: 3px solid #750d00;
+	background-size: 100px 80px;
+	background-color: #F6E7D8;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	padding: 100px;
+	padding-top: 150px;
+	width: 60%;
+	float: left;
+	border-radius: 0 5% 5% 0;
+	color: #808000;
+}
+
+/*definition list selector*/
+#definition{
+	border-left: 5px solid #750d00;
+}
+
+/*Select all heading in article section*/
+.headings{
+
+	font-size: 36px;
+	padding: 20px 0 0 0;
+	letter-spacing: 2px;
+	line-height: 2;
+
+}
+
+/*Select all paragraph in article section*/
+.paragraph{
+	background-color: #F6E7D8;
+	font-size: 24px;
+	padding: 0 100px 0 5px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+}
+
+/*table selector*/
+table, th, td {
+	width: 50px;
+	border: 1px solid black;
+}
+
+/*ordered list elements selector*/
+.li{
+	font-size: 24px;
+	padding: 0 100px 0 5px;
+	letter-spacing: 1px;
+	line-height: 1.5;
+}
+
+/*david's name caption*/
+#david{
+	font-weight: bold;
+	font-style: italic;
+}
+
+/*david's image*/
+#face{
+	width: 20%;
+	border-radius: 50%;
+  vertical-align: inherit;
+	height: 20%;
+}
+
+/*david section selector*/
+#davidandface{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+/*Aside section selector*/
+#asidesection{
+	box-sizing: border-box;
+	border-top: 3px solid #750d00;
+	border-left: 3px solid #750d00;
+	border-bottom: 3px solid #750d00;
+	width: 30%;
+	float: right;
+	background-color: #F6E7D8;
+	margin-top: 100px;
+	margin-right: 0;
+	padding: 40px;
+	padding-top: 75px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border-radius: 15% 0 0 15%;
+}
+
+/*aside section select all headings*/
+#asidesection h2{
+	color: #808000;
+}
+
+/*aside section select button elements*/
+#asidesection a{
+	color: #333300;
+	background-color: #FF9898;
+	width: 80%;
+	height: 30px;
+	border-radius: 5%;
+	transition: transform 0.5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
+
+/*"On-Hover" psuedo class of aside section button elements*/
+#asidesection a:hover{
+	color: #FFFFFF;
+	background-color: #FBAEAE;
+	box-shadow: 10px 10px 5px #Ffd6d6;
+	transform: translate(0, -5px);
+}
+
+/*Fix text wrapping issue*/
+@media screen and (max-width: 1500px) {
+	#asidesection{
+		border-radius: 15% 0 0 15%;
+		width: 30%;
+	}
+	#asidesection a{
+	color: #333300;
+	background-color: #FF9898;
+	width: 80%;
+	height: 50px;
+	border-radius: 5%;
+	transition: transform 0.5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	}
+
+	.paragraph{
+		padding: 0 40px 0 5px;
+	}
+
+	.body{
+		width: 65%;
+	}
+
+
+}
+
+
+/*Whole table selector*/
+table, th, td {
+	border: 3px solid;
+	padding: 3px;
+
+}
+
+
+table{
+	width: 100%;
+	height: 100%;
+}
+#sect06 div{
+  	overflow-x: auto;
+}
+td{
+	background-color: #E7CCAE;
+}
+/*Table Headers*/
+th {
+	height: 70px;
+	background-color: #DFD0C0;
+
+}
+
+
+
+
+/*Responsive: Large tablet*/
+@media screen and (max-width: 1150px){
+	#asidesection{
+
+		float: right;
+		border-radius: 15% 0 0 15%;
+		width: 70%;
+	}
+
+	#asidesection h2{
+		font-size: 40px;
+	}
+
+	#asidesection a{
+		font-size: 20px;
+	}
+
+	#asidesection h2{
+	display: flex;
+	color: #808000;
+	width: 80%;
+	justify-content: center;
+	align-items: center;
+	}
+
+	.body{
+		width: 90%;
+	}
+}
+
+/*Responsive: medium tablet*/
+@media screen and (max-width: 773px){
+	.body{
+		width: 99%;
+		padding: 50px;
+	}
+
+	.paragraph{
+		padding: 0 20px 0 5px;
+	}
+
+	#asidesection{
+		width: 90%;
+	}
+
+	#topicarticle h3{
+		font-size: 20px;
+	}
+
+	#topicarticle h1{
+		font-size: 52px;
+	}
+}
+
+/*Responsive: smartphone*/
+@media screen and (max-width: 650px){
+	.body{
+		width: 100%;
+		padding: 25px;
+		border-radius: 0;
+	}
+
+	#asidesection{
+		width: 98%;
+	}
+
+	#topicarticle h3{
+		font-size: 20px;
+	}
+
+	#topicarticle h1{
+		font-size: 40px;
+	}
+	#topicarticle{
+	padding: 50px;
+}
+}
+
+/* end of topic css */
+
+/* start of quiz css */
+.heading-quiz{
+  padding-top: 5px;
+  text-align: center;
+}
+
+legend {
+	font-weight: bold
+}
+.h1{
+	font-weight:bold
+}
+@keyframes fromleft { /* animation to make the box move from left */
+  from {left: 100vw; /* the initial position of the box*/
+  border-radius: 25px;
+  box-shadow: 1px 1.5rem 2.5rem -0.4rem #971549;}
+  to {left: 0; /* the final position of the box*/
+  }
+}
+fieldset {
+  display: block;
+  position: relative;
+  width: 60%;
+  height: auto;
+  margin: 30px auto;
+  transition: 0.15s;
+  padding: 10px;
+  animation: fromleft 1.75s ease-in-out 0s; /* animation when the page is first loaded the second value is animation duration and the last one is animation delay the third one is for the speed of animation  */
+  animation-fill-mode: both; /* after animation it will stay at that position */
+	}
+fieldset:hover{
+  border-color: #470031;
+  border-radius: 25px;
+  box-shadow: 1px 0.5rem 1.0rem -0.4rem #971549;
+  transform: translateY(-0.25rem); /* when being hoverd, the fieldset will move on the y-axis*/
+}
+
+#quiz-body{
+  background-color: #F6E7D8;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden; /* when animation happens it will expand teh screen so hidden will prevent that from happening */
+}
+label{
+    text-align: center;
+  }
+.first-name{
+  margin-right: 2rem;
+}
+.family-name{
+  margin-left: 3rem;
+}
+@media screen and (max-width:1200px){
+#stud-details{ /* when the screen becomes small all the elements stands in one column*/
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.family-name{
+  margin-left: 0;
+}
+}
+#stud-details input{
+  border-radius: 5px;
+  background: #EEE;
+  padding: 3px;
+  padding-left: 5px;
+}
+.first-name, .family-name{
+  display: inline-block;
+  width: 20%;
+}
+fieldset:nth-of-type(2) textarea{
+  border-radius: 10px;
+  background: #EEE;
+  padding: 5px;
+}
+@media screen and (max-width: 600px){
+  textarea{
+    width: 100%;
+    height: auto;
+  }
+  .studentid input, .first-name input, .family-name input{
+    width: auto;
+    height: auto;
+  }
+}
+hr{
+  border-color: black;
+  border-style: none;
+  border-top-style:dotted;
+  border-width: 5px;
+  width: 12%;
+  margin: auto;
+  background: none;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+fieldset:last-of-type input{
+  margin: 20px;
+  background: #EEE;
+  border-radius: 10px;
+}
+/* start of select box */
+select {
+  border-radius: 10px;
+  margin: 20px;
+  width: 150px;
+  padding: 5px 5px 5px 5px;
+  font-size: 16px;
+  background:#EEE;
+}
+
+/* end of select box */
+
+/* start of the button */
+/* button below is inspired by this website: https://freefrontend.com/css-submit-buttons/ */
+.btn{
+  display: block;
+  vertical-align: inherit;
+  margin: auto;
+}
+.submit-t{
+  border-radius: 20px;
+  padding: 10px;
+  transition: 0.05s; /* set time for transition */
+}
+.submit-t:hover { /*  when being hovered the button will expand the scale and have shadow */
+    transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.submit-t:active {
+    transform: translateY(-0.5px); /* when being pressed the button will move along y-axis */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* end of the button */
+  /* end of quiz css */
+
+  /* start of the enhancement css */
+
+
+
+
+  /* start of the enhancement css */
+.eh-head{
+  text-align: center;
+  padding: 5rem;
+}
+.eh-body{
+   background-color: #F6E7D8;
+  padding-bottom: 5rem;
+
+}
+.eh-body section:not(:first-of-type){
+  margin-bottom: 5rem;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+/* style the anchor tag */
+.eh-body section a{
+  text-decoration: none;
+  margin-left: 3px;
+  color: #CF455C;
+  transition: 0.15s;
+}
+/* style the anchor tag when being hoverd */
+.eh-body section a:hover{
+  color: #FF9898;
+}
+  /* end of the enhancement css */
+  /*  */
+
+  
+
+/*LOGIN PAGE  */
+
+}
+ 
+  .login-page .form .login{
+  	margin-top: -31px;
+  margin-bottom: 26px;
+  }
+
+/*whitebox*/
+
+  .form{
+  	position: relative;
+  z-index: 1;
+  background: #FAEBD7;
+    max-width: 400px;
+    margin: 0 auto 100px;
+    padding: 60px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+ 	border: 3px #FAEBD7;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px; 
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px; 
+	display: block;
+}
+
+
+  .form input:not(:last-of-type) {
+      border-radius: 15px;
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+/* Login Button */
+
+  .btn-form {
+    border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #FBD6D2;
+    background-image: linear-gradient(45deg,#971549,#CF455C);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+
+.btn-form {
+  border-radius: 20px;
+  padding: 10px;
+  transition: 0.05s; /* set time for transition */
+}
+.btn-form:hover { /*  when being hovered the button will expand the scale and have shadow */
+    transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-form:active {
+    transform: translateY(-0.5px); /* when being pressed the button will move along y-axis */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+  .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+  .form .message a {
+    color: #971549;
+    text-decoration: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .login-bd {
+    height: 90vh;
+    padding: 40px;
+    background-color: #FBD6D2;
+    background-image: linear-gradient(45deg,#CF455C,#FF9898);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+.err{
+  color: red;
+}
+
+
+
+/* start of the Quiz Completed css */
+
+.bodybg {
+	background-color: #F6E7D8;
+  overflow-x: hidden;
+}
+
+#bodybg {
+	background-color: #000000;
+}
+
+.text-ruby {
+	width: 70%;
+	height: auto;
+}
+
+.markquizheader {
+	display: block;
+	position: relative;
+	text-align: center;
+	font-weight: bold;
+  margin-top: 30px;
+}
+.main-2{
+  overflow-x: hidden;
+}
+.Box1 {
+  overflow-x: hidden;
+	display: block;
+	position: relative;
+	width: 60%;
+	height: auto;
+	margin: 30px auto;
+  margin-bottom: 150px;
+	transition: 0.15s;
+	padding: 30px;
+	/* style | colour | width */
+	border: solid #CF455C 4px;
+	background: #FF9898;
+	border-radius: 25px;
+}
+
+	.Box1:hover {
+		box-shadow: 0px 8px 28px rgba(33,33,33,.2);
+		transition: all 300ms ease-in-out;
+	}
+
+.StudentResults1 {
+	font-weight: bold;
+	font-size: larger;
+}
+
+.QuizLink {
+	text-align: center;
+	position: relative;
+	border-radius: 15px 5px 15px 5px;
+	background: #470031;
+	padding: 12px;
+	width: 20px;
+	height: 20px
+}
+
+	.QuizLink:hover {
+		box-shadow: 0px 8px 11px rgba(33,33,33,.2);
+		transition: all 300ms ease-in-out;
+	}
+
+.Box2 {
+  overflow-x: hidden;
+	display: block;
+	position: relative;
+	width: 60%;
+	height: auto;
+	margin: 30px auto;
+	transition: 0.15s;
+	padding: 30px;
+	border: solid #CF455C 4px;
+	background: #FF9898;
+	border-radius: 25px;
+}
+
+	.Box2:hover {
+		box-shadow: 0px 8px 28px rgba(33,33,33,.2);
+		transition: all 300ms ease-in-out;
+	}
+
+.StudentResults2 {
+	font-weight: bold;
+	font-size: larger;
+}
+
+.TopicLink {
+	text-align: center;
+	position: relative;
+	border-radius: 15px 5px 15px 5px;
+	background: #470031;
+	padding: 12px;
+	width: 20px;
+	height: 20px
+}
+/* not sure on how to create just the hyperlink being bold, nor a little wider of a text box for functionality. */
+/* unvisited link */
+a:link {
+	/*font-weight: ; */
+	color: white;
+	text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+	color: white;
+}
+
+/* mouse over link */
+a:hover {
+	color: white;
+}
+
+/* selected link */
+a:active {
+	color: white;
+}
+
+.TopicLink:hover {
+	box-shadow: 0px 8px 11px rgba(33,33,33,.2);
+	transition: all 300ms ease-in-out;
+}
+
+
+.list-details { /* reponsive footer when default this will show up on three columns */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	text-align: center;
+	gap: 10px;
+	padding: 10px;
+}
+
+.container-footer { /* set background color for the footer */
+	background-color: #FF9898;
+	padding: 10px;
+	clear: both;
+}
+
+.p-us {
+	margin-bottom: 0;
+}
+
+.footer-mail > div > a { /* style the anchor tag for the footer*/
+	text-decoration: none;
+	color: #971549;
+	margin-bottom: 10px;
+}
+
+/* end of the Quiz Completed css */
+
+
+/*Start of Enhancement 2*/
+
+.enhancementheader {
+      display:block;
+      position:relative;
+      text-align: center;
+      font-weight: bold;
+  }
+
+.firsttitle{
+font-weight:bolder;
+font-size:x-large;
+text-align: center;
+}
+
+.primarycode{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height: auto;
+  }
+
+.Enhance1{
+    font-size: large;
+    }
+
+.SecondE{
+        font-weight:bolder;
+        font-size: x-large;
+        text-align: center;
+        }
+.Enhance2{
+        font-size: large;
+        }
+.loginpng{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: auto;
+  }
+
+
+
+/*End of Enhancement 2*/
+
+
+
+
+
+/* start of manage */
+.body-manage{
+  min-height: 90vh;
+  background-color: #F6E7D8;
+  padding-bottom: 5px;
+}
+
+/* table */
+.body-manage table{
+  width: 97%;
+  margin:10px auto;
+}
+
+.body-manage table  {
+	border: 1px solid;
+	border spacing: 10px;
+}
+
+
+.body-manage tr:not(:first-child):hover{
+   font-weight:bold;
+   cursor:default;
+   background-color:#FF9898;
+   color:white;
+}
+
+.body-manage {
+   border-spacing:0px;
+}
+
+.body-manage table td {
+	background-color: #FF9898;
+}
+
+.body-manage table td:hover {
+	Background-color: #FAD4D4
+}
+
+.body-manage table th {
+  background-color: #CF455C;
+	color: black;
+}
+
+
+/* names/id */
+.body-manage form {
+  margin-left: 25px;
+}
+
+/* logout button */
+.btn-outline-dark{
+	border-radius: 25px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #FBD6D2;
+    background-image: linear-gradient(45deg,#971549,#CF455C);
+    width: 10%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+position: absolute;
+  right: 30px;
+  }
+
+.btn-outline-dark{
+border-radius: 20px;
+  padding: 10px;
+  transition: 0.05s; /* set time for transition */
+}
+
+.btn-outline-dark:hover { /*  when being hovered the button will expand the scale and have shadow */
+    transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-outline-dark:active {
+    transform: translateY(-0.5px); /* when being pressed the button will move along y-axis */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.h-manage h1{
+text-align: center;
+}
+
+/* end of manage */
+
