@@ -128,15 +128,15 @@ if(isset($_POST["sort"])){
       <?php if(isset($_SESSION["choice"]))
      {if ($_SESSION["choice"]==3) echo "selected"; }
        ?>
-      >Sort by name</option>
+      >Search by name</option>
 			<option value="id"
       <?php if(isset($_SESSION["choice"]))
      {if ($_SESSION["choice"]==4) echo "selected"; }
        ?>
-      >Sort by Student Id</option>
+      >Search by Student Id</option>
 		</select>
 	</p>
-   <input class=" btn_filter" type="submit" name="submit" value="Filter" />
+   <input class=" btn btn-secondary" type="submit" name="submit" value="Filter" />
      </form>
      <hr>
 
@@ -172,7 +172,7 @@ if(isset($_POST["sort"])){
               //   ."<th scope=\"col\">Number of attempt</th>\n"
                  ."<th scope=\"col\">Attempt order</th>\n"
                  ."<th scope=\"col\">Score</th>\n"
-                 ."<th scope=\"col\">Edit</th>\n"
+                 ."<th scope=\"col\">Update</th>\n"
                  ."</tr>\n";
              while ($row=mysqli_fetch_assoc($result)){
                echo "<tr>\n";
@@ -185,7 +185,7 @@ if(isset($_POST["sort"])){
                echo "<form  action=\"edit.php\" method=\"post\">";
                echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
                echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
-               echo "<td> <input type='submit' value='Edit'> </td>";
+               echo "<td> <input type='submit' value='Update'> </td>";
                echo "</form>";
                echo "</tr>\n";
              }
@@ -333,7 +333,7 @@ if(isset($_POST["sort"])){
           //   ."<th scope=\"col\">Number of attempt</th>\n"
              ."<th scope=\"col\">Attempt order</th>\n"
              ."<th scope=\"col\">Score</th>\n"
-             ."<th scope=\"col\">Edit</th>\n"
+             ."<th scope=\"col\">Update</th>\n"
              ."</tr>\n";
              while ($row=mysqli_fetch_assoc($result)){
                echo "<tr>\n";
@@ -346,7 +346,7 @@ if(isset($_POST["sort"])){
                echo "<form  action=\"edit.php\" method=\"post\">";
                echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
                echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
-               echo "<td> <input type='submit' value='Edit'> </td>";
+               echo "<td> <input type='submit' value='Update'> </td>";
                echo "</form>";
                echo "</tr>\n";
              }
@@ -400,7 +400,7 @@ if(isset($_POST["sort"])){
           //   ."<th scope=\"col\">Number of attempt</th>\n"
              ."<th scope=\"col\">Attempt order</th>\n"
              ."<th scope=\"col\">Score</th>\n"
-             ."<th scope=\"col\">Edit</th>\n"
+             ."<th scope=\"col\">Update</th>\n"
              ."</tr>\n";
 
              while ($row=mysqli_fetch_assoc($result)){
@@ -415,7 +415,7 @@ if(isset($_POST["sort"])){
                echo "<form  action=\"edit.php\" method=\"post\">";
                echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
                echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
-               echo "<td> <input type='submit' value='Edit'> </td>";
+               echo "<td> <input type='submit' value='Update'> </td>";
                echo "</form>";
                echo "</tr>\n";
              }
@@ -426,7 +426,7 @@ if(isset($_POST["sort"])){
          }
 
          echo "<form action=\"delete.php\" method=\"post\">";
-         echo "<input class=\"btn_filter\" type=\"submit\" name=\"delete\" value=\"delete\">";
+         echo "<input class=\"btn btn-secondary\" type=\"submit\" name=\"delete\" value=\"delete\">";
          echo "</form>";
        }
 

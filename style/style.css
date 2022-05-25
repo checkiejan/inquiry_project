@@ -1051,21 +1051,19 @@ text-align: center;
 .body-manage tr:not(:first-child):hover{
    font-weight:bold;
    cursor:default;
-   background-color:#FF9898;
-   color:white;
+
+}
+.body-manage tr:not(:first-child):hover td{
+  background-color:#FF9898;
 }
 
-.body-manage {
-   border-spacing:0px;
-}
-
-.body-manage table td {
+/* .body-manage table td {
 	background-color: #FF9898;
 }
 
 .body-manage table td:hover {
 	Background-color: #FAD4D4
-}
+} */
 
 .body-manage table th {
   background-color: #CF455C;
@@ -1080,8 +1078,8 @@ text-align: center;
 
 /* logout button */
 .btn-outline-dark{
-	border-radius: 25px;
-    font-family: "Roboto", sans-serif;
+ /*	border-radius: 25px;
+     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
     background-color: #FBD6D2;
@@ -1091,27 +1089,26 @@ text-align: center;
     padding: 15px;
     color: #FFFFFF;
     font-size: 14px;
-    -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
-    cursor: pointer;
+    cursor: pointer; */
 position: absolute;
   right: 30px;
   }
 
-.btn-outline-dark{
+/* .btn-outline-dark{
 border-radius: 20px;
   padding: 10px;
-  transition: 0.05s; /* set time for transition */
+  transition: 0.05s;
 }
 
-.btn-outline-dark:hover { /*  when being hovered the button will expand the scale and have shadow */
+.btn-outline-dark:hover {
     transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 .btn-outline-dark:active {
-    transform: translateY(-0.5px); /* when being pressed the button will move along y-axis */
+    transform: translateY(-0.5px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .list-details { /* reponsive footer when default this will show up on three columns */
   display: flex;
@@ -2163,16 +2160,16 @@ text-align: center;
 }
 
 
-.body-manage tr:not(:first-child):hover{
+.body-manage tr:not(:first-of-type):hover{
    font-weight:bold;
    cursor:default;
-   background-color:#FF9898;
-   color:white;
+
+   /* color:white; */
+}
+.body-manage tr:not(:first-of-type):hover td{
+  background-color:#FFCBCB;
 }
 
-.body-manage {
-   border-spacing:0px;
-}
 
 .body-manage table td {
 	background-color: #FF9898;
@@ -2194,42 +2191,8 @@ text-align: center;
 }
 
 /* logout button */
-.btn-outline-dark{
-	border-radius: 25px;
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background-color: #FBD6D2;
-    background-image: linear-gradient(45deg,#971549,#CF455C);
-    width: 10%;
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-position: absolute;
-  right: 30px;
-  }
-
-.btn-outline-dark{
-border-radius: 20px;
-  padding: 10px;
-  transition: 0.05s; /* set time for transition */
-}
-
-.btn-outline-dark:hover { /*  when being hovered the button will expand the scale and have shadow */
-    transform: translateY(-3px)  scaleX(1.1) scaleY(1.1);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-.btn-outline-dark:active {
-    transform: translateY(-0.5px); /* when being pressed the button will move along y-axis */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
 
 .btn_filter {
-	border-radius: 25px;
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -2246,7 +2209,7 @@ border-radius: 20px;
   }
 
 .btn_filter {
-border-radius: 20px;
+border-radius: 10px;
   padding: 10px;
   transition: 0.05s; /* set time for transition */
 }
@@ -2263,6 +2226,12 @@ border-radius: 20px;
 
 .h-manage h1{
 text-align: center;
+}
+
+
+.btn-secondary{
+
+  margin-left: 20px;
 }
 
 /* end of manage */
