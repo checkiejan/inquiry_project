@@ -136,7 +136,7 @@ if(isset($_POST["sort"])){
       >Sort by Student Id</option>
 		</select>
 	</p>
-   <input class=" btn-secondary btn-sm" type="submit" name="submit" value="Filter" />
+   <input class="btn_filter" type="submit" name="submit" value="Filter" />
      </form>
      <hr>
 
@@ -426,7 +426,7 @@ if(isset($_POST["sort"])){
          }
 
          echo "<form action=\"delete.php\" method=\"post\">";
-         echo "<input class=\"btn-secondary btn-sm\" type=\"submit\" name=\"delete\" value=\"delete\">";
+         echo "<input class=\"btn_filter\" type=\"submit\" name=\"delete\" value=\"delete\">";
          echo "</form>";
        }
 
