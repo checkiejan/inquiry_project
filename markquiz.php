@@ -37,7 +37,7 @@ if(isset($_POST["lastname"])){
  ?>
 
 <?php
-
+    // Establishing Connection to database
     require_once 'create_table.php';
     require_once 'setting.php';
     $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
@@ -53,7 +53,7 @@ if(isset($_POST["lastname"])){
     $date = date('Y-m-d');
 	$date .= " ";
 	$date .= date('H:i:s');
-    ////
+    ////Error Checking
     if (!isset($_POST["stu_id"])||$_POST["stu_id"]=="")
     {
         $errMsg .="<p>You must input your student id</p>";
@@ -92,7 +92,7 @@ if(isset($_POST["lastname"])){
     else{
       $lastname = sanitise_input($_POST["lastname"]);
     }
-    ///////
+    ///////Displaying Error Message Webpage
     if(!$flag){
 
       echo "<h1 class=\"markquizheader\">Error!</h1>";
@@ -104,7 +104,7 @@ if(isset($_POST["lastname"])){
     echo "</fieldset>";
     }
     else{
-
+      
       $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
       if($conn){
         $query = "SELECT * FROM attempt WHERE stu_id=$studentid and attempt_id=2 ";
@@ -129,6 +129,7 @@ if(isset($_POST["lastname"])){
       echo "</fieldset>";
       }
       else{
+        //Inserting into Student table
           $query = "SELECT * FROM student WHERE stu_id=$studentid";
           $result= mysqli_query($conn, $query);
           if ($result){
@@ -170,13 +171,14 @@ if(isset($_POST["lastname"])){
           echo "</fieldset>";
           }
           else{
-            // where to check if the answer is correct
+            //Sanitising Inputs
+           
             $question1= sanitise_input($_POST["question1"]);
             $question2= sanitise_input($_POST["question2"]);
             $question3= $_POST["question3"];
             $question4= sanitise_input($_POST["question4"]);
             $question5= sanitise_input($_POST["question5"]);
-            /// you will start from here to mark
+            //Marking the quiz
             $score=0;
 
             //Q1
@@ -188,9 +190,22 @@ if(isset($_POST["lastname"])){
 			    $score++;
             }
             //Q3
-            if (count($question3)==1 && $question3[0] == "Calculations"){
-			    $score++;
-            }
+            #if (count($question3)==1 && $question3[0] == "Calculations"){
+                $index = 0;
+
+                while($index < count($question3))
+                {
+                     if ($question3[$index] = "Calculations"){
+                           $score = $score + 0.5;
+                     }
+                     if ($question3[$index] = "Sing"){
+                          $score = $score + 0.5;
+                     }
+                     $index++;
+                }
+                
+			   # $score++;
+            #}
             //Q4
             if ($question4 == "Shopify") {
 			    $score++;
@@ -200,9 +215,9 @@ if(isset($_POST["lastname"])){
 			    $score++;
 		    }
             #$score = $score / 5 * 100;
-
+            
             // below part will update the score into the databases
-
+            //Inserting into attempt table
             if($firsttime){
               $attemptid=1;
             } else{
@@ -244,7 +259,7 @@ if(isset($_POST["lastname"])){
                <div class = "TotalScore1">
                   <p>Total Score: <?php echo"$score"; ?></p></div>
                <div class = "MaximumScore1">
-                  <p>Maximum Score: 5</p></div>
+                  <p>Maximum Score: 6</p></div>
                <div class = "AttemptNumber1">
                   <P>Attempt Number: <?php echo"$attemptid"; ?></P></div>
                <div class = "DateAttempted1">
