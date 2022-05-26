@@ -33,7 +33,7 @@ require 'header.inc'; ?>
        <div class = "firsttitle">
           <P> Normalisation</P></div>
        <div class = "Enhance1">
-          <p>Primary keys are primarily used to uniquely idenity each record in a table.</p>
+          <p>Primary keys are mainly used to uniquely identify each record in a table.</p>
           <p>Foreign keys are used to prevent actions that would destroy links between tables.</p>
           <!--Source: https://www.w3schools.com/sql/sql_foreignkey.asp-->
           <p>The attempt table created has the foreign key, and the student tables have the primary keys.
@@ -53,8 +53,8 @@ require 'header.inc'; ?>
     <p>Essentially, it holds information about a singular user,
       and all pages can access said information.
     </p>
-    <p>The session used for our quiz temporarily stores numbers of attempts
-      to login and if failed after a certain threshold, locks the page for 30 seconds.
+    <p>The session used for our quiz temporarily stores numbers of attempts to login 
+        and if failed after a certain threshold, prompts the user to wait 10 seconds before retrying.
     </p>
     <p>The login information is stored within the database, rather than processes of hard coding.
     </p></div>
@@ -64,7 +64,7 @@ require 'header.inc'; ?>
 
 
  <?php
-  require 'footer.inc' ?>
+  require 'footer.inc'; ?>
 </body>
 
 </html>
