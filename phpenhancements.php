@@ -53,8 +53,8 @@ require 'header.inc'; ?>
     <p>Essentially, it holds information about a singular user,
       and all pages can access said information.
     </p>
-    <p>The session used for our quiz temporarily stores numbers of attempts
-      to login and if failed after a certain threshold, locks the page for 30 seconds.
+    <p>The session used for our quiz temporarily stores numbers of attempts to login 
+        and if failed after a certain threshold, prompts the user to wait 10 seconds before retrying.
     </p>
     <p>The login information is stored within the database, rather than processes of hard coding.
     </p></div>
