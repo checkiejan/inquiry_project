@@ -190,22 +190,9 @@ if(isset($_POST["lastname"])){
 			    $score++;
             }
             //Q3
-            #if (count($question3)==1 && $question3[0] == "Calculations"){
-                $index = 0;
-
-                while($index < count($question3))
-                {
-                     if ($question3[$index] = "Calculations"){
-                           $score = $score + 0.5;
-                     }
-                     if ($question3[$index] = "Sing"){
-                          $score = $score + 0.5;
-                     }
-                     $index++;
+                if ((isset($question3[1])) && ($question3[1] == "Calculations") && ($question3[0] = "Sing")){
+                    $score++;
                 }
-                
-			   # $score++;
-            #}
             //Q4
             if ($question4 == "Shopify") {
 			    $score++;
@@ -259,7 +246,7 @@ if(isset($_POST["lastname"])){
                <div class = "TotalScore1">
                   <p>Total Score: <?php echo"$score"; ?></p></div>
                <div class = "MaximumScore1">
-                  <p>Maximum Score: 6</p></div>
+                  <p>Maximum Score: 5</p></div>
                <div class = "AttemptNumber1">
                   <P>Attempt Number: <?php echo"$attemptid"; ?></P></div>
                <div class = "DateAttempted1">
