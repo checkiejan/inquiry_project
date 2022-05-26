@@ -70,8 +70,8 @@
           <input type="checkbox" id="videos" name="question3[]" value="Downloading Videos" />
           <label for="databases">Updating databases</label>
           <input type="checkbox" id="databases" name="question3[]" value="Updating Databases" />
-          <label for="distributing">Distributing information</label>
-          <input type="checkbox" id="distributing" name="question3[]" value="Distributing Information" />
+          <label for="sing">Sing</label>
+          <input type="checkbox" id="sing" name="question3[]" value="Sing" />
           <label for="calculations">Calculations</label>
           <input type="checkbox" id="calculations" name="question3[]" value="Calculations" />
         </p>
