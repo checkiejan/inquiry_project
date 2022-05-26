@@ -2133,7 +2133,30 @@ text-align: center;
     height: auto;
   }
 
+.list-details { /* reponsive footer when default this will show up on three columns */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	text-align: center;
+	gap: 10px;
+	padding: 10px;
+}
 
+.container-footer { /* set background color for the footer */
+	background-color: #FF9898;
+	padding: 10px;
+	clear: both;
+}
+
+.p-us {
+	margin-bottom: 0;
+}
+
+.footer-mail > div > a { /* style the anchor tag for the footer*/
+	text-decoration: none;
+	color: #971549;
+	margin-bottom: 10px;
+}
 
 /*End of Enhancement 2*/
 
