@@ -49,15 +49,15 @@
       </fieldset>
       <fieldset>
         <legend>Question 1 </legend>
-        <p><label for="Question1">Finish the sentence: 'Ruby on Rails is a ......... designed by David Heinemeier Hansson.' </label></p>
+        <p><label for="question1">Finish the sentence: 'Ruby on Rails is a ......... designed by David Heinemeier Hansson.' </label></p>
         <p><textarea id="question1" name="question1"  rows="4" placeholder="Please answer the question" cols="40" required="required" maxlength="100"></textarea></p>
       </fieldset>
       <hr>
-      <fieldset id="question2">
+      <fieldset >
         <legend>Question 2</legend>
         <P>Ruby on Rails was created by Yukihiro "Matz" Matsumoto </p>
-        <label for="question2"><input type="radio" name="question2" id="question2" value="True"  /> True </label>
-        <label for="question2"><input type="radio" name="question2" id="question2" value="False"  /> False </label>
+        <input type="radio" name="question2" id="question2-true" value="True" /> <label for="question2-true">True</label>
+        <input type="radio" name="question2" id="question2-false" value="False" /> <label for="question2-false">False</label> 
       </fieldset>
       <hr>
       <fieldset>
@@ -105,6 +105,7 @@
 
     </form>
 
+    </div>
   <?php
   require 'footer.inc'; ?>
 </body>

@@ -23,8 +23,8 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
  }
 
  ?>
-
-<html>
+<!DOCTYPE html>
+<html  lang="en" dir="ltr">
 <head>
 
 <title> Login Page   </title>
@@ -45,7 +45,7 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
 <div class="login-page">
   <div class="form">
     <div class="login">
-      <div class"login-header">
+      <div class="login-header">
       <h3>LOGIN</h3>
       <p>Please enter your credentials below.</p>
       </div>
@@ -124,7 +124,7 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
     }
 
      ?>
-    <form class="login-form" action=""method="post">
+    <form class="login-form" action="login.php" method="post">
       <input type="text" name="username"  required placeholder="Username"/>
     <input type="password" name="pass" required placeholder="Password"/>
     <input type="submit"  class="btn-form" name="login" value="LOGIN">
