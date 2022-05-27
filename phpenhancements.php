@@ -23,7 +23,7 @@
  <?php
 require 'header.inc'; ?>
   <!-- navbar  -->
-  <br></br>
+  <br>
   <h1 class="enhancementheader">Enhancements</h1>
  <main class="main-2">
 
@@ -41,7 +41,7 @@ require 'header.inc'; ?>
           <p>The student ID needs to be created with the student table first, to prevent errors from occuring.</p></div>
           <!-- <img src="primarycode.png" alt="Ruby login page" class="primarycode"> -->
 </fieldset>
-<br></br>
+<br>
 <!--Second Enhancements Box-->
 <fieldset class="Box2">
   <div class = "SecondE">
