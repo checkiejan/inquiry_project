@@ -9,7 +9,7 @@ session_start();
 
 if (isset($_SESSION["studid"])){
 $id= $_SESSION["studid"];
-  $query="DELETE FROM student WHERE stu_id= $id";
+  $query="DELETE FROM student WHERE stu_id= $id"; // delete his student id and all of the attempt with this student id also be deleted
   $result= mysqli_query($conn, $query);
   if(!$result){
     echo "<p>Something is wrong with ",$query,"</p>";
@@ -23,6 +23,6 @@ else {
   echo "none";
 }
 mysqli_close($conn);
-  header("location: manage.php");
+  header("location: manage.php"); // direct back to the manage page
 }
  ?>

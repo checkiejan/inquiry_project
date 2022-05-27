@@ -34,7 +34,7 @@
       Learn more
     </button>
     <!-- button links to the group video -->
-    <button onclick="document.location='https://youtu.be/MdYvke6b2XQ'" type="button">Our video</button>
+    <button onclick="document.location='https://www.youtube.com/watch?v=hoEJ2A7XL5o'" type="button">Our video</button>
   </section>
 
   <?php

@@ -1,19 +1,16 @@
 <?php
-#require_once 'setting.php';
 function create_student_table($conn) {
-//   $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
    if(!$conn){
 
      echo "<p>Database connection failure</p>";
    }
    else{
-
+     // check if the table exists or not to create
     $query= "CREATE TABLE IF NOT EXISTS student (
     stu_id VARCHAR(10) NOT NULL PRIMARY KEY,
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL
   )";
-     // $sql="select * from supervisor where user='", $uname ,"'AND Pass='", $password ,"' limit 1";
 
       $result= mysqli_query($conn, $query);
       mysqli_close($conn);
@@ -25,6 +22,7 @@ function set_timezone($conn){
     echo "<p>Database connection failure</p>";
   }
   else{
+    // set the timezone for the database to make sure they store data with correct time
     $query="SET time_zone= '+10:00'";
     $result= mysqli_query($conn, $query);
     mysqli_close($conn);
@@ -37,6 +35,7 @@ function create_attempt_table($conn) {
      echo "<p>Database connection failure</p>";
    }
    else{
+     // check if the table exists or not to create
     $query= "CREATE TABLE IF NOT EXISTS attempt (
       id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
       stu_id VARCHAR(10) NOT NULL,
@@ -45,24 +44,23 @@ function create_attempt_table($conn) {
       attempt_id INT NOT NULL,
       FOREIGN KEY (stu_id) REFERENCES student(stu_id) ON DELETE CASCADE
   )";
-     // $sql="select * from supervisor where user='", $uname ,"'AND Pass='", $password ,"' limit 1";
 
       $result= mysqli_query($conn, $query);
       mysqli_close($conn);
    }
 }
 function create_supervisor_table($conn) {
-//   $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
    if(!$conn){
 
      echo "<p>Database connection failure</p>";
    }
    else{
+     // check if the table exists or not to create
+
     $query= "CREATE TABLE IF NOT EXISTS supervisor (
       username	varchar(30) NOT NULL PRIMARY KEY,
       pwd	varchar(30)  NOT NULL
   )";
-     // $sql="select * from supervisor where user='", $uname ,"'AND Pass='", $password ,"' limit 1";
 
       $result= mysqli_query($conn, $query);
       mysqli_close($conn);
@@ -75,7 +73,7 @@ function  create_account($conn){
       $result= mysqli_query($conn, $query);
       if ($result){
         $arr=mysqli_fetch_assoc($result);
-        if(count($arr)==0){
+        if(count($arr)==0){ // check if this account exists or not to create the account
           $query= "INSERT INTO supervisor (`username`, `pwd`) VALUES ('haha', '123')";
           $result= mysqli_query($conn, $query);
         }
@@ -84,7 +82,7 @@ function  create_account($conn){
         $result= mysqli_query($conn, $query);
         if ($result){
           $arr=mysqli_fetch_assoc($result);
-          if(count($arr)==0){
+          if(count($arr)==0){ // check if this account exists or not to create the account
             $query= "INSERT INTO `supervisor` (`username`, `pwd`) VALUES ('henry', '234')";
             $result= mysqli_query($conn, $query);
           }
@@ -93,18 +91,12 @@ function  create_account($conn){
           $result= mysqli_query($conn, $query);
           if ($result){
             $arr=mysqli_fetch_assoc($result);
-            if(count($arr)==0){
+            if(count($arr)==0){ // check if this account exists or not to create the account
               $query= "INSERT INTO `supervisor` (`username`, `pwd`) VALUES ('hjk', '234')";
               $result= mysqli_query($conn, $query);
             }
           }
           mysqli_close($conn);
-      // if(!mysql_fetch_array($result) ){
-      //   echo "<p>yes</p>";
-      // }
-      // else{
-      //   echo "<p>no</p>";
-      // }
   }
 }
  ?>
