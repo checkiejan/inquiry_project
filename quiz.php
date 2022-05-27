@@ -47,7 +47,6 @@
           <input type="text" name="lastname" id="lastname" required="required" maxlength="30" pattern="^[a-zA-Z\s-]+$" value="<?php if(isset($_SESSION["l_name"])) echo $_SESSION["l_name"]; ?>">
         </div>
       </fieldset>
-      <hrc class="r-quiz">
       <fieldset>
         <legend>Question 1 </legend>
         <p><label for="Question1">Finish the sentence: 'Ruby on Rails is a ......... designed by David Heinemeier Hansson.' </label></p>
@@ -57,8 +56,8 @@
       <fieldset id="question2">
         <legend>Question 2</legend>
         <P>Ruby on Rails was created by Yukihiro "Matz" Matsumoto </p>
-        <label for="question2"><input type="radio" name="question2" id="true" value="True"  /> True </label>
-        <label for="question2"><input type="radio" name="question2" id="false" value="False"  /> False </label>
+        <label for="question2"><input type="radio" name="question2" id="question2" value="True"  /> True </label>
+        <label for="question2"><input type="radio" name="question2" id="question2" value="False"  /> False </label>
       </fieldset>
       <hr>
       <fieldset>
@@ -105,7 +104,7 @@
       </p>
 
     </form>
-  </div>
+
   <?php
   require 'footer.inc'; ?>
 </body>
