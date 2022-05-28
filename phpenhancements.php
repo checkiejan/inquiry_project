@@ -48,12 +48,11 @@ require 'header.inc'; ?>
     <P>Login and session</P></div>
  <div class = "Enhance2">
     <p>This enhancement stores user information and allows it
-      to be used across multiple pages, such as usernames.
+      to be used across multiple pages. The server will check the session to decide whether it should allow users to access manage page or force users to login
     </p>
-    <p>Essentially, it holds information about a singular user,
-      and all pages can access said information.
+    <p>Essentially, The session stil exists within the life time of browser, so users can still access the page without logging in again.
     </p>
-    <p>The session used for our quiz temporarily stores numbers of attempts to login 
+    <p>The session used for our quiz temporarily stores numbers of attempts to login
         and if failed after a certain threshold, prompts the user to wait 10 seconds before retrying.
     </p>
     <p>The login information is stored within the database, rather than processes of hard coding.
