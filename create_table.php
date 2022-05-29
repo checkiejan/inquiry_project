@@ -78,21 +78,21 @@ function  create_account($conn){
           $result= mysqli_query($conn, $query);
         }
       }
-      $query = "SELECT * FROM supervisor WHERE username='henry' ";
+      $query = "SELECT * FROM supervisor WHERE username='admin' ";
         $result= mysqli_query($conn, $query);
         if ($result){
           $arr=mysqli_fetch_assoc($result);
           if(count($arr)==0){ // check if this account exists or not to create the account
-            $query= "INSERT INTO `supervisor` (`username`, `pwd`) VALUES ('henry', '234')";
+            $query= "INSERT INTO `supervisor` (`username`, `pwd`) VALUES ('admin', '234')";
             $result= mysqli_query($conn, $query);
           }
         }
-        $query = "SELECT * FROM supervisor WHERE username='hjk' ";
+        $query = "SELECT * FROM supervisor WHERE username='hung' ";
           $result= mysqli_query($conn, $query);
           if ($result){
             $arr=mysqli_fetch_assoc($result);
             if(count($arr)==0){ // check if this account exists or not to create the account
-              $query= "INSERT INTO `supervisor` (`username`, `pwd`) VALUES ('hjk', '234')";
+              $query= "INSERT INTO `supervisor` (`username`, `pwd`) VALUES ('hung', '234')";
               $result= mysqli_query($conn, $query);
             }
           }

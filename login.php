@@ -5,6 +5,8 @@ $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 create_supervisor_table($conn); // make sure the supervisor table exists
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 create_account($conn); // to create account for supervisor
+
+// the solution to limit 3 attempts is insipired by https://www.sourcecodester.com/tutorials/php/12247/how-create-login-attempt-validation-using-php.html
 if(isset($_SESSION['attempt_again'])){
   $now = time();
   if($now >= $_SESSION['attempt_again']){ // if reach the time delete all the variable to allow user to enter
