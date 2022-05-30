@@ -143,7 +143,7 @@ if(isset($_POST["lastname"])){
           }
           if($_POST["question1"]==""){
             $errMsg .= "<p>You must answer question 1</p>";
-            #$flag= false;
+            $flag= false;
           }
           if(!isset($_POST["question2"])){
             $errMsg .= "<p>You must answer question 2</p>";
@@ -201,7 +201,6 @@ if(isset($_POST["lastname"])){
             if($question5 == "5"){
 			    $score++;
 		    }
-            #$score = $score / 5 * 100;
             
             // below part will update the score into the databases
             //Inserting into attempt table

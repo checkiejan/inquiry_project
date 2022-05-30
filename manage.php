@@ -173,7 +173,6 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
                  ."<th scope=\"col\">First name</th>\n"
                  ."<th scope=\"col\">Last name</th>\n"
                  ."<th scope=\"col\">Date of attempt</th>\n"
-              //   ."<th scope=\"col\">Number of attempt</th>\n"
                  ."<th scope=\"col\">Attempt order</th>\n"
                  ."<th scope=\"col\">Score</th>\n"
                  ."<th scope=\"col\">Update</th>\n"
@@ -184,7 +183,6 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
                echo "<td>",$row["firstname"],"</td>\n";
                echo "<td>",$row["lastname"],"</td>\n";
                echo "<td>",$row["doa"],"</td>\n";
-              // echo "<td>",$row["noa"],"</td>\n";
                echo "<td>",$row["attempt_id"],"</td>\n";
                echo "<td><input form=\"form$temp\" type=\"number\" value= ",$row["score"],"  name=\"score\" min=\"0\" max=\"5\"></td>\n"; // adjust score
                echo "<td> <input form=\"form$temp\" type='submit' value='Update'> </td>";
@@ -338,7 +336,6 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
                  ."<th scope=\"col\">First name</th>\n"
                  ."<th scope=\"col\">Last name</th>\n"
                  ."<th scope=\"col\">Date of attempt</th>\n"
-              //   ."<th scope=\"col\">Number of attempt</th>\n"
                  ."<th scope=\"col\">Attempt order</th>\n"
                  ."<th scope=\"col\">Score</th>\n"
                  ."<th scope=\"col\">Update</th>\n"
@@ -349,7 +346,6 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
                echo "<td>",$row["firstname"],"</td>\n";
                echo "<td>",$row["lastname"],"</td>\n";
                echo "<td>",$row["doa"],"</td>\n";
-              // echo "<td>",$row["noa"],"</td>\n";
                echo "<td>",$row["attempt_id"],"</td>\n";
                echo "<td><input form=\"form$temp\" type=\"number\" value= ",$row["score"],"  name=\"score\" min=\"0\" max=\"5\"></td>\n";
                echo "<td> <input form=\"form$temp\" type='submit' value='Update'> </td>";
@@ -372,7 +368,7 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
          echo "<p>You have to input the student ID</p>";
          $check=false;
        }
-       elseif (!preg_match("/^([0-9]{7}|[0-9]{10})$/",$studentid)){
+       elseif (!preg_match("/^([0-9]{7}|[0-9]{10})$/",$studentid)){ //check regex to counter sql injection
          echo "<p>Please input number with the length of 7 or 10 numbers.</p>";
             $check=false;
        }

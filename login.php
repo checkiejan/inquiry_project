@@ -96,8 +96,11 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
               if(isset($_SESSION['attempt'])&&$_SESSION['attempt']<3)
               {
                 $tmp=3-$_SESSION['attempt'];
-                echo "<p>you have $tmp try left</p>";
-
+                if($tmp>1){
+                echo "<p>you have $tmp tries left</p>";}
+                elseif ($tmp==1){
+                  echo "<p>you have $tmp try left</p>";
+                }
 
               }
     					//set the time to allow login if third attempt is reach
