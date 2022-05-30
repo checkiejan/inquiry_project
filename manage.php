@@ -105,7 +105,7 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
 		<input type="text"  name="studid" value= "<?php if(isset($_SESSION["studid"])) { echo $_SESSION["studid"]; } ?>"  id="studid" size="20"  />
 	 </p>
    <p>
-		<label for="sort">How to sort</label>
+		<label for="sort">Attempts to show</label>
 		<select name="sort" id="sort" >
 			<!-- <option value="none">Please select</option> -->
 

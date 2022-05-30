@@ -103,7 +103,7 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
     					//set the time to allow login if third attempt is reach
     					if($_SESSION['attempt'] == 3){
                 $_SESSION['error']= "<p>please wait 10 seconds before try again</p>";
-    						$_SESSION['attempt_again'] = time() + 10;
+    						$_SESSION['attempt_again'] = time() + 20;
     					}
               if($_SESSION['attempt']<3){
                      echo "<p class=\"err\">Invalid UserName or Password</p>";}
@@ -121,8 +121,8 @@ if(isset($_SESSION['use']))   // Checking whether the session is already there o
 
      ?>
     <form class="login-form" action="login.php" method="post">
-      <input type="text" name="username"  required placeholder="Username"/>
-    <input type="password" name="pass" required placeholder="Password"/>
+      <input type="text" name="username"   placeholder="Username"/>
+    <input type="password" name="pass"  placeholder="Password"/>
     <input type="submit"  class="btn-form" name="login" value="LOGIN">
   </form>
 </div>
