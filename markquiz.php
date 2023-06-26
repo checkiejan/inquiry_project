@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -24,7 +29,6 @@
      ?>
  <main class="body-manage">
 <?php
-session_start();
 if(isset($_POST["stu_id"])){
   $_SESSION["studentid"]=$_POST["stu_id"];
 }
