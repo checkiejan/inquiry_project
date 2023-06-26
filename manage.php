@@ -1,6 +1,15 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
+ {
+     header("Location:login.php");
+ }
+?>
 <!DOCTYPE html>
 <?php
-session_start();
+
 require_once 'create_table.php';
 require_once 'setting.php';
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
@@ -10,24 +19,21 @@ create_attempt_table($conn);
 $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
 set_timezone($conn);
 
-if(!isset($_SESSION['use'])) // If session is not set then redirect to Login Page
- {
-     header("Location:login.php");
- }
- if (isset($_POST["firstname"]) ) // check if  user enter first name or not to keep display the data for user
+
+ if (isset($_POST["firstname"]) )
  {
    if (isset($_POST["sort"]) && $_POST["sort"]=="name")
    {
     $_SESSION["firstname"]= $_POST["firstname"];
-    unset($_SESSION["studid"]); // display only name when user choose search name
+    unset($_SESSION["studid"]);
   }
 }
-if (isset($_POST["lastname"])&& isset($_POST["sort"]) && $_POST["sort"]=="name") // check if  user enter first name or not to keep display the data for user
+if (isset($_POST["lastname"])&& isset($_POST["sort"]) && $_POST["sort"]=="name")
 {
   if (isset($_POST["sort"]) && $_POST["sort"]=="name")
   {
     $_SESSION["lastname"]= $_POST["lastname"];
-    unset($_SESSION["studid"]); // display only name when user choose search name
+    unset($_SESSION["studid"]);
   }
 }
 if (isset($_POST["studid"]))
@@ -35,14 +41,15 @@ if (isset($_POST["studid"]))
   if (isset($_POST["sort"]) && $_POST["sort"]=="id")
   {
   $_SESSION["studid"]= $_POST["studid"];
-  unset($_SESSION["lastname"]); // display only student id when user choose search id
+  unset($_SESSION["lastname"]);
   unset($_SESSION["firstname"]);
   }
 }
 if (isset($_POST["sort"])){
-  if($_POST["sort"]!="name" && $_POST["sort"]!="id"){ // don't save any data if user don't choose search by name or student id
+  if($_POST["sort"]!="name" && $_POST["sort"]!="id"){
     if(isset($_SESSION["studid"])){
       unset($_SESSION["studid"]);
+
     }
     if(isset($_SESSION["firstname"])){
       unset($_SESSION["firstname"]);
@@ -52,7 +59,7 @@ if (isset($_POST["sort"])){
     }
   }
 }
-if(isset($_POST["sort"])){ // to save the status that user chooses
+if(isset($_POST["sort"])){
 
     if ($_POST["sort"]== "all"){
       $_SESSION["choice"]=0;}
@@ -105,7 +112,7 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
 		<input type="text"  name="studid" value= "<?php if(isset($_SESSION["studid"])) { echo $_SESSION["studid"]; } ?>"  id="studid" size="20"  />
 	 </p>
    <p>
-		<label for="sort">Attempts to show</label>
+		<label for="sort">How to sort</label>
 		<select name="sort" id="sort" >
 			<!-- <option value="none">Please select</option> -->
 
@@ -127,28 +134,33 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
       <?php if(isset($_SESSION["choice"]))
      {if ($_SESSION["choice"]==3) echo "selected"; }
        ?>
-      >Search by name</option>
+      >Sort by name</option>
 			<option value="id"
       <?php if(isset($_SESSION["choice"]))
      {if ($_SESSION["choice"]==4) echo "selected"; }
        ?>
-      >Search by Student Id</option>
+      >Sort by Student Id</option>
 		</select>
 	</p>
-   <input class=" btn btn-secondary" type="submit" name="submit" value="Filter" />
+   <input class=" btn-secondary btn-sm" type="submit" name="submit" value="Filter" />
      </form>
      <hr>
 
     <?php
-  if(isset($_POST['submit'])&& isset($_POST["sort"])){ // check if user submit or not
+  if(isset($_POST['submit'])&& isset($_POST["sort"])&& $_POST["sort"]!="none"){
 
-        if ($_POST["sort"]=="all") { // choice to display all the attempts
+        // if (isset($_POST["sort"])&& $_POST["sort"]!="none" ){
+        //   $tmp=$_POST["sort"];
+        //   echo "<p>$tmp</p>";
+        // }
+        if ($_POST["sort"]=="all") {
          $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
          if (!$conn){
            echo "<p>Database connection failure</p>";
          }
          else{
-           // user inner join to call 2 tables
+
+           // $query="select * from attempt ";
            $query ="SELECT student.firstname, student.lastname, student.stu_id, attempt.doa, attempt.score, attempt.attempt_id, attempt.id
                     FROM student
                     INNER JOIN attempt ON student.stu_id = attempt.stu_id";
@@ -157,25 +169,16 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             $temp=0;
-             while ($row=mysqli_fetch_assoc($result)){ // store the form separtely from the row
-               echo "<form id=\"form$temp\"  action=\"edit.php\" method=\"post\">";
-               echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">"; // hidden input to store the id of attempt to make change
-               echo "</form>";
-               $temp+=1;
-             }
-             mysqli_free_result($result);
-            $result= mysqli_query($conn, $query);
-             $temp=0;
              echo "<table >\n";
              echo "<tr>\n"
                  ."<th scope=\"col\">Student Id</th>\n"
                  ."<th scope=\"col\">First name</th>\n"
                  ."<th scope=\"col\">Last name</th>\n"
                  ."<th scope=\"col\">Date of attempt</th>\n"
+              //   ."<th scope=\"col\">Number of attempt</th>\n"
                  ."<th scope=\"col\">Attempt order</th>\n"
                  ."<th scope=\"col\">Score</th>\n"
-                 ."<th scope=\"col\">Update</th>\n"
+                 ."<th scope=\"col\">Edit</th>\n"
                  ."</tr>\n";
              while ($row=mysqli_fetch_assoc($result)){
                echo "<tr>\n";
@@ -183,26 +186,29 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
                echo "<td>",$row["firstname"],"</td>\n";
                echo "<td>",$row["lastname"],"</td>\n";
                echo "<td>",$row["doa"],"</td>\n";
+              // echo "<td>",$row["noa"],"</td>\n";
                echo "<td>",$row["attempt_id"],"</td>\n";
-               echo "<td><input form=\"form$temp\" type=\"number\" value= ",$row["score"],"  name=\"score\" min=\"0\" max=\"5\"></td>\n"; // adjust score
-               echo "<td> <input form=\"form$temp\" type='submit' value='Update'> </td>";
+               echo "<form  action=\"edit.php\" method=\"post\">";
+               echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
+               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
+               echo "<td> <input type='submit' value='Edit'> </td>";
+               echo "</form>";
                echo "</tr>\n";
-               $temp+=1;
              }
              echo "</table>\n";
              mysqli_free_result($result);
-
            }
            mysqli_close($conn);
          }
        }
-       elseif ($_POST["sort"]=="allfirst"){ // sort all attempts get 100% on the first time
+       elseif ($_POST["sort"]=="allfirst"){
          $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
          if (!$conn){
            echo "<p>Database connection failure</p>";
          }
          else{
-            // user inner join to call 2 tables
+
+           // $query="select * from attempt ";
            $query ="SELECT student.firstname, student.lastname, student.stu_id, attempt.doa, attempt.score, attempt.attempt_id
                     FROM student
                     INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE attempt.attempt_id=1 and attempt.score=5";
@@ -217,6 +223,7 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
              ."<th scope=\"col\">First name</th>\n"
              ."<th scope=\"col\">Last name</th>\n"
              ."<th scope=\"col\">Date of attempt</th>\n"
+          //   ."<th scope=\"col\">Number of attempt</th>\n"
              ."<th scope=\"col\">Attempt order</th>\n"
              ."<th scope=\"col\">Score</th>\n"
              ."</tr>\n";
@@ -237,14 +244,14 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
          }
        }
 
-       elseif ($_POST["sort"]=="half"){ // sort all attempts get below 50% on the second try
+       elseif ($_POST["sort"]=="half"){
          $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
          if (!$conn){
            echo "<p>Database connection failure</p>";
          }
          else{
 
-            // user inner join to call 2 tables
+           // $query="select * from attempt ";
            $query ="SELECT student.firstname, student.lastname,  student.stu_id, attempt.doa, attempt.score, attempt.attempt_id
                     FROM student
                     INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE attempt.attempt_id=2 and attempt.score<3";
@@ -259,6 +266,7 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
              ."<th scope=\"col\">First name</th>\n"
              ."<th scope=\"col\">Last name</th>\n"
              ."<th scope=\"col\">Date of attempt</th>\n"
+          //   ."<th scope=\"col\">Number of attempt</th>\n"
              ."<th scope=\"col\">Attempt order</th>\n"
              ."<th scope=\"col\">Score</th>\n"
              ."</tr>\n";
@@ -278,11 +286,13 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
            mysqli_close($conn);
          }
        }
-       elseif ($_POST["sort"]=="name") { // search by name
+       elseif ($_POST["sort"]=="name") {
+         // $_SESSION=$_POST["firstname"];
+         // $_SESSION=$_POST["lastname"];
          $check=true;
           $firstname=$_POST["firstname"];
            $lastname=$_POST["lastname"];
-         if($_POST["firstname"]==""){ // make sure user enter name and validate them to coutner any type of sql injection
+         if($_POST["firstname"]==""){
            echo "<p>You have to input the first name</p>";
            $check=false;
          }
@@ -291,18 +301,18 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
               $check=false;
          }
          else {
-           $firstname=sanitise_input($_POST["firstname"]); // sanitise the input
+           $firstname=sanitise_input($_POST["firstname"]);
          }
          if($_POST["lastname"]==""){
            echo "<p>You have to input the last name</p>";
               $check=false;
          }
-         elseif (!preg_match("/^[a-zA-z\s-]*$/",$lastname)){ // make sure user enter name and validate them to coutner any type of sql injection
+         elseif (!preg_match("/^[a-zA-z\s-]*$/",$lastname)){
            echo "<p>Only alpha letters and hyphen allowed in your last name.</p>";
               $check=false;
          }
          else {
-           $lastname=sanitise_input($_POST["lastname"]); // sanitise the input
+           $lastname=sanitise_input($_POST["lastname"]);
        }
        if ($check){
          $conn= @mysqli_connect($host,$user,$pwd,$sql_db);
@@ -311,7 +321,7 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
          }
          else{
 
-            // user inner join to call 2 tables
+           // $query="select * from attempt ";
            $query ="SELECT student.firstname, student.lastname,  student.stu_id, attempt.doa, attempt.score, attempt.attempt_id, attempt.id
                     FROM student
                     INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE student.firstname=\"$firstname\" and  student.lastname=\"$lastname\"";
@@ -320,37 +330,31 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             $temp=0;
-             while ($row=mysqli_fetch_assoc($result)){ // store the form separtely from the row
-               echo "<form id=\"form$temp\"  action=\"edit.php\" method=\"post\">";
-               echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">"; // hidden input to store the id of attempt to make change
-               echo "</form>";
-               $temp+=1;
-             }
-             mysqli_free_result($result);
-            $result= mysqli_query($conn, $query);
-             $temp=0;
              echo "<table >\n";
              echo "<tr>\n"
-                 ."<th scope=\"col\">Student Id</th>\n"
-                 ."<th scope=\"col\">First name</th>\n"
-                 ."<th scope=\"col\">Last name</th>\n"
-                 ."<th scope=\"col\">Date of attempt</th>\n"
-                 ."<th scope=\"col\">Attempt order</th>\n"
-                 ."<th scope=\"col\">Score</th>\n"
-                 ."<th scope=\"col\">Update</th>\n"
-                 ."</tr>\n";
+             ."<th scope=\"col\">Student Id</th>\n"
+             ."<th scope=\"col\">First name</th>\n"
+             ."<th scope=\"col\">Last name</th>\n"
+             ."<th scope=\"col\">Date of attempt</th>\n"
+          //   ."<th scope=\"col\">Number of attempt</th>\n"
+             ."<th scope=\"col\">Attempt order</th>\n"
+             ."<th scope=\"col\">Score</th>\n"
+             ."<th scope=\"col\">Edit</th>\n"
+             ."</tr>\n";
              while ($row=mysqli_fetch_assoc($result)){
                echo "<tr>\n";
                echo "<td>",$row["stu_id"],"</td>\n";
                echo "<td>",$row["firstname"],"</td>\n";
                echo "<td>",$row["lastname"],"</td>\n";
                echo "<td>",$row["doa"],"</td>\n";
+              // echo "<td>",$row["noa"],"</td>\n";
                echo "<td>",$row["attempt_id"],"</td>\n";
-               echo "<td><input form=\"form$temp\" type=\"number\" value= ",$row["score"],"  name=\"score\" min=\"0\" max=\"5\"></td>\n";
-               echo "<td> <input form=\"form$temp\" type='submit' value='Update'> </td>";
+               echo "<form  action=\"edit.php\" method=\"post\">";
+               echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
+               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
+               echo "<td> <input type='submit' value='Edit'> </td>";
+               echo "</form>";
                echo "</tr>\n";
-               $temp+=1;
              }
              echo "</table>\n";
              mysqli_free_result($result);
@@ -361,14 +365,16 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
        }
      }
 
-     elseif ($_POST["sort"]=="id"){ // search by student id
+     elseif ($_POST["sort"]=="id"){
+      // $_SESSION["list"]=array();
+      //  $_SESSION["studid"]=$_POST["studid"];
        $check=true;
         $studentid= $_POST["studid"];
-       if ($_POST["studid"]==""){ // make sure user enter all the id and validate it to counter sql injection
+       if ($_POST["studid"]==""){
          echo "<p>You have to input the student ID</p>";
          $check=false;
        }
-       elseif (!preg_match("/^([0-9]{7}|[0-9]{10})$/",$studentid)){ //check regex to counter sql injection
+       elseif (!preg_match("/^([0-9]{7}|[0-9]{10})$/",$studentid)){
          echo "<p>Please input number with the length of 7 or 10 numbers.</p>";
             $check=false;
        }
@@ -382,7 +388,7 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
          }
          else{
 
-           // user inner join to call 2 tables
+           // $query="select * from attempt ";
            $query ="SELECT student.firstname, student.lastname,  student.stu_id, attempt.doa, attempt.score, attempt.attempt_id, attempt.id
                     FROM student
                     INNER JOIN attempt ON student.stu_id = attempt.stu_id WHERE student.stu_id=\"$studentid\" ";
@@ -391,46 +397,42 @@ if(isset($_POST["sort"])){ // to save the status that user chooses
              echo "<p>Something is wrong with ",$query,"</p>";
            }
            else{
-             $temp=0;
-             while ($row=mysqli_fetch_assoc($result)){ // store the form separtely from the row
-               echo "<form id=\"form$temp\"  action=\"edit.php\" method=\"post\">";
-               echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">"; // hidden input to store the id of attempt to make change
-               echo "</form>";
-               $temp+=1;
-             }
-             mysqli_free_result($result);
-            $result= mysqli_query($conn, $query);
-             $temp=0;
              echo "<table >\n";
              echo "<tr>\n"
-                 ."<th scope=\"col\">Student Id</th>\n"
-                 ."<th scope=\"col\">First name</th>\n"
-                 ."<th scope=\"col\">Last name</th>\n"
-                 ."<th scope=\"col\">Date of attempt</th>\n"
-                 ."<th scope=\"col\">Attempt order</th>\n"
-                 ."<th scope=\"col\">Score</th>\n"
-                 ."<th scope=\"col\">Update</th>\n"
-                 ."</tr>\n";
+             ."<th scope=\"col\">Student Id</th>\n"
+             ."<th scope=\"col\">First name</th>\n"
+             ."<th scope=\"col\">Last name</th>\n"
+             ."<th scope=\"col\">Date of attempt</th>\n"
+          //   ."<th scope=\"col\">Number of attempt</th>\n"
+             ."<th scope=\"col\">Attempt order</th>\n"
+             ."<th scope=\"col\">Score</th>\n"
+             ."<th scope=\"col\">Edit</th>\n"
+             ."</tr>\n";
+
              while ($row=mysqli_fetch_assoc($result)){
                echo "<tr>\n";
                echo "<td>",$row["stu_id"],"</td>\n";
                echo "<td>",$row["firstname"],"</td>\n";
                echo "<td>",$row["lastname"],"</td>\n";
                echo "<td>",$row["doa"],"</td>\n";
+              // echo "<td>",$row["noa"],"</td>\n";
+              //array_push($_SESSION["list"],$row["stu_id"]);
                echo "<td>",$row["attempt_id"],"</td>\n";
-               echo "<td><input form=\"form$temp\" type=\"number\" value= ",$row["score"],"  name=\"score\" min=\"0\" max=\"5\"></td>\n";
-               echo "<td> <input form=\"form$temp\" type='submit' value='Update'> </td>";
+               echo "<form  action=\"edit.php\" method=\"post\">";
+               echo "<input name =\"try_attempt\" type=\"hidden\" value= ",$row["id"],">";
+               echo "<td><input type=\"number\" value= ",$row["score"]," id=\"score\" name=\"score\" min=\"0\" max=\"5\"></td>\n";
+               echo "<td> <input type='submit' value='Edit'> </td>";
+               echo "</form>";
                echo "</tr>\n";
-               $temp+=1;
              }
              echo "</table>\n";
              mysqli_free_result($result);
            }
            mysqli_close($conn);
          }
-         // delete this user and all of his attempts by the student id
+
          echo "<form action=\"delete.php\" method=\"post\">";
-         echo "<input class=\"btn btn-secondary\" type=\"submit\" name=\"delete\" value=\"delete\">";
+         echo "<input class=\"btn-secondary btn-sm\" type=\"submit\" name=\"delete\" value=\"delete\">";
          echo "</form>";
        }
 
