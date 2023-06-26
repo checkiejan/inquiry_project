@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+?>
 <!doctype HTML>
 <html lang="en">
 <head>
@@ -18,7 +23,6 @@
 
 <body>
   <?php
-  session_start();
   require 'header.inc'; ?>
 
   <div id="quiz-body">
